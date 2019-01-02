@@ -1,0 +1,431 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/96/three.js"> </script>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <link rel="stylesheet" href="/assets/main.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <title>Ben Goodwin Development</title>
+
+  </head>
+  <body>
+    <section class="navigation" id="navbar">
+    <div class="nav-container">
+      <div class="brand">
+        <a href="#!">LOGO</a>
+      </div>
+      <nav>
+        <div class="nav-mobile">
+          <a id="nav-toggle" href="#!"><span></span></a>
+        </div>
+        <ul class="nav-list">
+          <!-- Setting the links to #! will ensure that no action takes place on click. -->
+          <li><a href="/" >HOME</a></li>
+          <li><a href="/#about">ABOUT</a></li>
+          <li><a href="/#posts">PORTFOLIO</a></li>
+          <li><a href="/#contact">CONTACT</a></li>
+          <li><a href="/#cv">CV</a></li>
+        </ul>
+      </nav>
+    </div>
+  </section>
+      <script>
+      (function($) { // Begin jQuery
+    $(function() { // DOM ready
+      // If a link has a dropdown, add sub menu toggle.
+      $('nav ul li a:not(:only-child)').click(function(e) {
+        $(this).siblings('.nav-dropdown').toggle();
+        // Close one dropdown when selecting another
+        $('.nav-dropdown').not($(this).siblings()).hide();
+        e.stopPropagation();
+      });
+      // Clicking away from dropdown will remove the dropdown class
+      $('html').click(function() {
+        $('.nav-dropdown').hide();
+      });
+      // Toggle open and close nav styles on click
+      $('#nav-toggle').click(function() {
+        $('nav ul').slideToggle();
+      });
+      // Hamburger to X toggle
+      $('#nav-toggle').on('click', function() {
+        this.classList.toggle('active');
+      });
+    }); // end DOM ready
+  })(jQuery); // end jQuery
+      </script>
+      <script>
+  window.onscroll = function() {myFunction()};
+
+  var navbar = document.getElementById("navbar");
+  var sticky = navbar.offsetTop;
+
+  function myFunction() {
+    if (window.pageYOffset >= sticky) {
+      navbar.classList.add("sticky")
+    }
+  }
+  </script>
+
+
+	    <section class="hero" id="home">
+<script>
+//@author Omar Shehata. 2015.
+//We are loading the Three.js library from the cdn here: https://cdnjs.com/libraries/three.js/
+
+var scene;
+var camera;
+var renderer;
+   var maxParticles = 1000,
+ particles,
+particleMaterial,
+particleSystem,
+   clock = new THREE.Clock(),
+deltaTime = 0;
+
+function scene_setup(){
+//This is all code needed to set up a basic ThreeJS scene
+
+//First we initialize the scene and our camera
+scene = new THREE.Scene();
+camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window.innerHeight, 0.1, 1000 );
+scene.background = new THREE.Color( 0xec3b83 );
+
+//We create the WebGL renderer and add it to the document
+renderer = new THREE.WebGLRenderer();
+      renderer = new THREE.WebGLRenderer( { alpha: true } );
+renderer.setSize( window.innerWidth, window.innerHeight );
+document.body.appendChild( renderer.domElement );
+}
+
+scene_setup();
+
+//Add your code here!
+   var geometry = new THREE.IcosahedronGeometry(1, 0);
+var material = new THREE.MeshPhongMaterial({color: 0xffffff, shading: THREE.FlatShading});
+  var material2 = new THREE.MeshPhongMaterial({color: 0xffffff, shading: THREE.FlatShading});
+    var cube = new THREE.Mesh( geometry, material );
+  var cube2 = new THREE.Mesh( geometry, material2 );
+  var cube3 = new THREE.Mesh( geometry, material );
+  var cube4 = new THREE.Mesh( geometry, material );
+//Add it to the screen
+scene.add( cube, cube2);
+cube.position.z = -3;//Shift the cube back so we can see it
+cube2.position.z = -3;
+
+   particles = new THREE.Geometry();
+for (var i = 0; i < maxParticles; i++) {
+var particle = new THREE.Vector3(random(-400, 400), random(-200, 200), random(-300, 300));
+particles.vertices.push(particle);
+}
+particleMaterial = new THREE.ParticleBasicMaterial({ color: 0x313639, size: 2 });
+particleSystem = new THREE.ParticleSystem(particles, particleMaterial);
+particleSystem.sortParticles = true;
+scene.add(particleSystem);
+
+// render loop
+function render() {
+requestAnimationFrame(render);
+
+deltaTime = clock.getDelta();
+particleSystem.rotation.y += deltaTime/4;
+
+renderer.render(scene, camera);
+}
+render();
+
+// random helper
+function random( min, max ) {
+if ( isNaN(max) ) {
+  max = min;
+  min = 0;
+}
+return Math.random() * ( max - min ) + min;
+}
+
+
+
+    var mouseTolerance = 0.4;
+
+document.onmousemove=function(e){
+var centerX = window.innerWidth * 0.75;
+var centerY = window.innerHeight * 0.75;
+
+cube.rotation.y = (e.clientX - centerX) / centerX * mouseTolerance;
+cube.rotation.x = (e.clientY - centerY) / centerY * mouseTolerance;
+cube2.rotation.y = (e.clientX - centerX) / centerX * mouseTolerance;
+cube2.rotation.x = (e.clientY - centerY) / centerY * mouseTolerance;
+cube3.rotation.y = (e.clientX - centerX) / centerX * mouseTolerance;
+cube3.rotation.x = (e.clientY - centerY) / centerY * mouseTolerance;
+particleSystem.rotation.x = (e.clientY - centerY) / centerY * mouseTolerance;
+particleSystem.rotation.y = (e.clientX - centerX) / centerX * mouseTolerance;
+};
+
+var lights = [];
+lights[0] = new THREE.DirectionalLight( 0x191c1e , 1 );
+lights[0].position.set( 1, 0, 0 );
+lights[1] = new THREE.DirectionalLight( 0x007399, 1 );
+lights[1].position.set( 0, 1, 0 );
+lights[2] = new THREE.DirectionalLight( 0x313639 , 1 );
+lights[2].position.set( 0, -1, 0);
+scene.add( lights[0] );
+scene.add( lights[1] );
+scene.add( lights[2] );
+
+//Render everything!
+function render() {
+cube.rotation.z += 0.005;
+cube.rotation.y += 0.005;
+cube2.rotation.z += -0.005;
+cube2.rotation.y += -0.005;
+cube3.rotation.z += 0.01;
+cube3.rotation.y += 0.01;
+cube4.rotation.z += 0.01;
+cube4.rotation.y += 0.01;
+  deltaTime = clock.getDelta();
+particleSystem.rotation.y += deltaTime/30;
+
+
+requestAnimationFrame( render );
+renderer.render( scene, camera );
+}
+render();
+</script>
+</section>
+
+<section id="about" class="about_section">
+  <h1 class="portfolio_title" style="margin-top: 5vh;">ABOUT ME</h1>
+  <div class="container about_cont">
+  <div class="row">
+    <div class="col-12">
+      <h2>Hi, my name is Ben Goodwin. I am a  21 year old student developer studying at the University of Winchester. Although my course is mainly focusssed on web development, I spend a lot of my time experimenting with the development of AR, VR and MR applications as well as various 2D and 3D game projects.</h2>
+      <h2>Below are some examples of some of my favorite projects that I have compiled over the last three years of University. Let me know what you think!</h2>
+      </div>
+      </div>
+    </div>
+</section>
+
+<section id="posts" class="py-5">
+
+  <h1 class="portfolio_title">PORTFOLIO</h1>
+  <div class="portfolio_container">
+        
+        <div class="col-4 portfolio_square">
+  <img src="/./assets/LUFC.png" class="featured_img">
+            <h2 class="post_title"><a href="/2018/12/24/Test3.html">The LUFC Site - Y3S1</a></h2>
+            <p class="text-info lead">
+              Dec 24, 2018
+            </p>
+
+            <p class="post_excerpt">
+              
+                <p>The LUFC News project was a rebrand of Alex Matthews’ fan made community/ social media group and website. I had a direct role in re-developing Alex’s website by creating a new Wordpress theme for him from scratch which included a login system and live chat room.</p>
+
+
+              
+            </p>
+          </div>
+        
+        <div class="col-4 portfolio_square">
+  <img src="/./assets/featured_img.png" class="featured_img">
+            <h2 class="post_title"><a href="/2018/12/24/Test2.html">Hello4</a></h2>
+            <p class="text-info lead">
+              Dec 24, 2018
+            </p>
+
+            <p class="post_excerpt">
+              
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi mollis tincidunt turpis vel posuere. Etiam luctus, risus non lacinia condimentum, leo dolor aliquet augue, ac consectetur nulla mi eu lorem. Maecenas venenatis arcu rhoncus orci ornare, in volutpat lorem rhoncus. Morbi vel accumsan justo.</p>
+
+              
+            </p>
+          </div>
+        
+        <div class="col-4 portfolio_square">
+  <img src="/./assets/featured_img.png" class="featured_img">
+            <h2 class="post_title"><a href="/2018/12/24/Test1.html">Hello3</a></h2>
+            <p class="text-info lead">
+              Dec 24, 2018
+            </p>
+
+            <p class="post_excerpt">
+              
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi mollis tincidunt turpis vel posuere. Etiam luctus, risus non lacinia condimentum, leo dolor aliquet augue, ac consectetur nulla mi eu lorem. Maecenas venenatis arcu rhoncus orci ornare, in volutpat lorem rhoncus. Morbi vel accumsan justo.</p>
+
+              
+            </p>
+          </div>
+        
+        <div class="col-4 portfolio_square">
+  <img src="/./assets/LUFC.png" class="featured_img">
+            <h2 class="post_title"><a href="/2018/12/24/Test0.html">The LUFC Site</a></h2>
+            <p class="text-info lead">
+              Dec 24, 2018
+            </p>
+
+            <p class="post_excerpt">
+              
+                <h3 id="the-brief">The Brief</h3>
+<p>For our client projects this semester, we were given a series of briefs to complete in groups. My group and I opted to take on Whitchurch Silk Mill’s brief which was to develop a way of tracking and evaluationg the visitors that entered the mill as well as monitor the popularity of their new exhibits</p>
+
+
+              
+            </p>
+          </div>
+        
+        <div class="col-4 portfolio_square">
+  <img src="/./assets/arkitektlogo.png" class="featured_img">
+            <h2 class="post_title"><a href="/2018/12/24/Test.html">Arkitekt.UI</a></h2>
+            <p class="text-info lead">
+              Dec 24, 2018
+            </p>
+
+            <p class="post_excerpt">
+              
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi mollis tincidunt turpis vel posuere. Etiam luctus, risus non lacinia condimentum, leo dolor aliquet augue, ac consectetur nulla mi eu lorem. Maecenas venenatis arcu rhoncus orci ornare, in volutpat lorem rhoncus. Morbi vel accumsan justo.</p>
+
+
+              
+            </p>
+          </div>
+        
+      </div>
+</section>
+
+<section id="contact" class="contact_section">
+<h1 class="portfolio_title" style="margin-top: 5vh;">CONTACT ME</h1>
+<div class="container contact_cont">
+  <div class="row">
+    <div class="col-xs-12 col-sm-8 col-md-6 col-sm-push-2 col-md-push-3 form__container">
+      <form action="//formspree.io/beny.goodwin@gmail.com" role="form" method="POST" autocomplete="on">
+
+        <div class="form-group">
+          <label for="name">Your Name</label>
+          <input type="text" name="name" class="form-control form-input" placeholder="Full name" required>
+        </div>
+
+        <div class="form-group">
+          <label for="_replyto">Your Email</label>
+          <input type="email" name="_replyto" class="form-control form-input" placeholder="Email" required>
+        </div>
+
+        <div class="form-group">
+          <label for="message">What would you like to say?</label>
+          <textarea id="message" name="message" class="form-control" rows="4" width="100%" placeholder="Message" required></textarea>
+        </div>
+
+        <div>
+          <input type="submit" class="contact_btn" value="Send">
+          <input type="hidden" name="_subject" value="New submission!" />
+        </div>
+      </form>
+      </div>
+      </div>
+      </div>
+</section>
+
+<section id="cv" class="cv_section">
+  <h1 class="portfolio_title" style="margin-top: 5vh;">CV</h1>
+  <div class="container cv_cont">
+  <div class="row">
+  <div class="col-12">
+  <h1>Ben Goodwin: Developer</h1>
+  <ul class="address">
+    <li>12 Chapel Field</li>
+    <li>Peasedown St. John</li>
+    <li>Bath</li>
+    <li>BA2 8TX</li>
+    <li>Email Address: beny.godwin@gmail.com</li>
+  </ul>
+  <h2>Professional Summary</h2>
+  <p>Third year developer at the University of Winchester, mainly focussed on web development but with a key personal interest in AR, VR and MR application development using both web and hardware technologies. To add on to this a focus in building 2D and 3D game environments for web, PC and console.</p>
+  <h2>Skills</h2>
+  <h4>Web</h4>
+  <ul>
+    <li>HTML</li>
+    <li>CSS/SASS</li>
+    <li>Jquery</li>
+    <li>Three.JS</li>
+    <li>Quick View IOS</li>
+    <li>AR.JS</li>
+    <li>WebGL</li>
+  </ul>
+  <h4>Frameworks</h4>
+  <ul>
+    <li>Ionic</li>
+    <li>Cordova</li>
+    <li>Jekyll</li>
+  </ul>
+  <h4>Content Management Systems</h4>
+  <ul>
+    <li>Wordpress</li>
+  </ul>
+  <h4>Databases</h4>
+  <ul>
+    <li>MySQL</li>
+    <li>Firebase</li>
+  </ul>
+  <h4>Game Engines</h4>
+  <ul>
+    <li>Unity3D</li>
+    <li>Unreal</li>
+  </ul>
+    <h2>Current Education: - June 2019</h2>
+    <p>Currently in final year of study at the Univerity of WInchester studying Bsc Digital Media Development.</p>
+    <h2>Past Education: - August 2015</h2>
+    <p>A levels completed and GCSE's completed at Ralph Allen School, Bath</p>
+    <ul>
+      <li>English Literature A2: B</li>
+      <li>English Language A2: C</li>
+      <li>History AS: B</li>
+      <li>Drama A2: B</li>
+      <li>GCSE Cores: Mixed A's and B's</li>
+    </ul>
+    <h2>Previous Work and Clients</h2>
+    <ul>
+      <li>Alex Matthews: LUFC News site (to be released 2019)</li>
+      <li>Ella Cooper: The Cakery.co.uk</li>
+      <li>Whitchurch Silk Mill: Heritage Database App (prototype)</li>
+    </ul>
+    <h4>Personal Projects: Non-client</h4>
+    <ul>
+      <li>Heartbeat: a HoloLens experience about the heart</li>
+      <li>Equalizer: a music inspired free running game</li>
+      <li>Arkitekt.UI: a Google Firebase and Quick View AR project</li>
+    </ul>
+    <h2>Personal Hobbies</h2>
+    <p>When i'm not working I enjoy being active outdoors. This includes playing sports such as rubgy and football, as well as going for long hikes or visitng heritage sites. I also working on digital designs and creating geometric artworks.</p>
+  </div>
+  </div>
+  </div>
+  </section>
+
+
+
+<footer class="page_footer">
+<div class="container">
+<div class="row">
+<div class="col-6">
+  <h4>Developed by: Ben Goodwin</h4>
+  </div>
+<div class="col-6">
+  <h4>Powered by: Jekyll and Three.JS</h4>
+  </div>
+  </div>
+  </div>
+</footer>
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.compatibility.js"></script>
+
+</body>
+</html>
+

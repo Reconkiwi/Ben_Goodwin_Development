@@ -242,119 +242,285 @@
 <h2 id="personal-gannt-chart">Personal Gannt Chart</h2>
 <p>As well as the TeamWeek and WhatsApp system that we were using, I also created a personal Gantt chart of my own deadlines:</p>
 
+<p><img src="/Ben_Goodwin_Development/assets/lufc_site_gantt.png" alt="Gantt Chart" /></p>
+
 <h2 id="development-tools">Development Tools</h2>
-<p>To develop this project I needed to use a eries of different tools and programming languages:</p>
+<p>To organise myself efficiently, I also made a list of the development tools that I would need to use:</p>
 
-<h3 id="chartjs">Chart.JS</h3>
+<h3 id="mamp">MAMP</h3>
 
-<p>After a discussion with my lecturer and some personal research, I decided to visualise the database data using Chart.JS, a JavaScript chart plugin. Although I had never used Chart.js before, having looked at the ‘Getting Started’ section of their site, I felt confident that I would be able to develop an aesthetically pleasing visual representation of the data gathered from the virtual guide section of the app.</p>
+<p>MAMP is a free local environment server that is often used when working with languages such as PHP. As WordPress sites are built using PHP, MAMP was the perfect tool for the development of Alex’s theme.</p>
 
-<p>As Lisa had said that the silk mill wanted to impress the HLF, I felt that applying the data to various different graphs would help to catch their attention. As well as this Chart.JS graphs come with prebuilt animations included as well as an easy system to change the color styling of select parts of the graphs. I thought that this would make the final product feel more polished and professional as the animations help to distract the user from the loading times of the HTML page and the easy styling methods would allow me to fit the page to Whitchurch Silk Mill’s brand.</p>
+<p><img src="/Ben_Goodwin_Development/assets/mamp.jpg" alt="Gantt Chart" /></p>
 
 <h3 id="mysql">MySQL</h3>
 
-<p>We had decided to develop our database using MySQL as we would be storing this on a basic internal server via the Rasberry Pi. Having never created a database before, I felt that there were plenty of MySQL tutorials available to me and so we chose to use this method. As well as this the language used to create queries in MySQL seemed fairly easy to pick up on a basic level, therefore I felt that I could learn it fast.</p>
+<p>WordPress also requires databases to store the posts, users and comments. Therefore, MySQL, an open source relational database system was a good option for the development of this. As well as this MAMP has phpMyAdmin, an administration tool for MySQL, integrated within it, therefore, it would be efficient to use this tool.</p>
 
 <h3 id="html-css-and-js">HTML, CSS AND JS</h3>
 
-<p>As we had decided to run our application off of an internal server via the Rasberry Pi and the system had to be accessible on mobile phones, we decided to use web languages to develop our application. As well as this both myself and Jack were quite confident about our knowledge of these languages.</p>
+<p>Like most other websites, HTML, CSS and JS are imperative to web development. Therefore, I would be using these for development as well.</p>
 
 <h3 id="php">PHP</h3>
-<p>PHP is a server-side coding language for web development. From my research it was clear that I would need to use PHP as one of my development tools for this project. as well as this I would need it to connect to the MySQL database and link it to my evaluation page. Having never used PHP as a coding language, I felt that this would take the longest for me to get to grips with.</p>
+<p>PHP is a server-side coding language for web development and is directly used during WordPress theme development. It was clear that I would need to use this during my development.</p>
 
 <h2 id="initial-development">Initial Development</h2>
+<p>Before I begin discussing the initial development of the the LUFC News theme, I will outline the WordPress plugins that I have used to help with my development and an explanation as to why I have used them.</p>
 
-<h3 id="database">Database</h3>
-<p>I began development by creating a database for our data to be collected in. During the first week, Jack worked alongside me to ensure that we both understood how the database would work and so that we both had a copy of the same table setup (Same names and types).</p>
+<h3 id="wordpress-plugins">WordPress Plugins</h3>
 
-<p>From our research we had found that we needed to set our ID row to ‘Primary’ as well as ‘AUTO_INCREMENT’, therefore, we implemented this into our database. ‘AUTO_INCREMENT’ is by default set to 1 and will increment by 1 for each new record. This is useful for the ID row as each visitor that is recorded in the database needs a unique ID. The Primary key is used to uniquely define a record. As there can only be one primary key in a table, it should be set to the most unique set of data within a record e.g. the ID so that each visitor can be defined.</p>
+<ul>
+  <li>Advanced Custom fields</li>
+</ul>
 
-<p>We then created a TIMESTAMP for each record so that the silk mill can see the times in which different visitors attended the silk mill exhibitions.</p>
+<p>Likely to be the most important plugin that I used during my development. Advanced Custom Fields are used to help improve the efficiency of creating user input fields for WordPress themes. This plugin was recommended to me by a developer on my course as he had said to me that the studio he had been working in had been using this plugin for all of their commercial products.</p>
 
-<p>Finally, we created the rest of the datasets that the silk mill needed to gather such as age, gender, country and exhibitions. For the prototype we limited the number of different exhibitions to 6 so that we could create a far fully fleshed out prototype.</p>
+<ul>
+  <li>Contact Form 7</li>
+</ul>
 
-<p>Evaluation System - Version 1
-Once Jack had mocked up a simple way of updating the database with information (through the virtual tour guide), it was my turn to begind developing a system that turned that data into graphs and charts.</p>
+<p>A simple but effective form plugin, however, it comes setup with an anti-spam software to help protect the client from spam mail.</p>
 
-<p>To draw data from the database, we required a PHP document that connected our application to the MySQL database. This is then called at the start of each page of the application.</p>
+<ul>
+  <li>Gmail SMTP</li>
+</ul>
 
-<p>Having set up a connection to the database I then had to develop a way of pulling sets of data to implement into my Chart.JS charts. I began by creating a MySQL query that pulled all data from the ‘users’ database.</p>
+<p>The WordPress emailing system fails when running on local servers, therefore, Gmail SMTP was used to help test the contact forms and user logins of the site.</p>
 
-<p>To set the data that I wanted to pull from the database I created an array of the rows that I needed. If the array is equal to the result, the query fetches the data from the database.</p>
+<ul>
+  <li>iFlyChat</li>
+</ul>
 
-<p>The result of this displays a string of data for each unique user. With the data pulled from the database, I was then able to call data.PHP in my Chart.JS page</p>
+<p>A simple chat plugin with chatrooms and embed system for multiple platforms. As well as this iFlyChat comes with its own dashboard where the administrator of the site can monitor what is being discussed in the chat with the ability to set banned words as well as kick, ban or ban the IP of any user they wish.</p>
 
-<p>I began my development by following a series of tutorials explaining how to import MySQL data into Chart.JS. Although, I quickly managed to create a very simple chart, I found it difficult to process and present the right data. Learning Chart,JS was not necessarily the problem, it was more that my MySQL queries were not sending the right information. I began troubleshooting my data.php file and messed around with my queries until I was able to represent the data that I wanted onto a graph.</p>
+<ul>
+  <li>Instagram feed</li>
+</ul>
 
-<p>I set the label dataset of the X-axis to take age from data.php. By doing this I was able to see each individual record across my X-axis with each exxhibit dataset along the Y-axis. However, the age dataset did not group people of similar ages. I experimented with my MySQL query and added ‘GROUP BY age’ to the end of this. This made visitors with the exact same age grouped onto my graph which was a slight improvement from what it previously was.</p>
+<p>A simple instagram plugin to show the clients feed.</p>
 
-<p>Unfortunately, I still felt as if the chart was not up to standard. I tried creating a MySQL query that set age ranges, however, I could not get the query to work. It wasn’t until the last version of the evaluation system that I was able to define age groups rather than individual ages.</p>
+<ul>
+  <li>Menu Image</li>
+</ul>
 
-<p>After many failed attempts to improve the quality of my chart data, I decided to focus my work on developing another, more basic, chart ready for our first evaluation. I attempted to develop a doughnut chart that represented the total number of times each exhibit had been visited.</p>
+<p>A plugin to add images or logos to the WordPress menus.</p>
 
-<p>After some research I came across the ‘SUM’ MySQL function, which adds together the number of a set row.</p>
+<ul>
+  <li>Soccer Info</li>
+</ul>
 
-<p>The result from data2.php presents the sum of each exhibit visit and looks like this.</p>
+<p>A plugin to display the league tables of specific football tournaments.</p>
 
-<p>After successfully developing two live-updating graphs, I felt that I had developed a good foundation to build my project from. However, it was still very clear that a lot of work needed to be done to ensure that the client was happy with the system.</p>
+<ul>
+  <li>WP Rest API</li>
+</ul>
 
-<p>Firstly, the first graph that I developed needed to be reworked to take age group data rather than display exhibition visits for every different age. Secondly, more data needed to be displayed onto the application to ensure that Whitchurch Silk Mill had enough evidence to show to the HLF. Finally, the system needed to be password protected so that only Whitchurch Silk Mill volunteers could have access to the confidential information displayed.</p>
+<p>JSON based rest API for Wordpress, used for the LUFC App (see LUFC App blog post for more details).</p>
 
-<h3 id="crit-review-considerations">Crit Review Considerations</h3>
-<p>During the first cohort crit review of our projects in week 8, I was given some feedback to help improve my final product:</p>
+<ul>
+  <li>Ultimate Responsive Image Slider</li>
+</ul>
 
-<p>Reconsider the design of the application
-Add more data to be evaluated
-Safeguard the information
-I felt that this was really positive impact and decided to take it onboard ready for my week 10 crit review.</p>
+<p>Simple image Slider used to display image galleries for all platforms.</p>
 
-<p>Reconsiderations and Development for Version 2
-Design</p>
+<ul>
+  <li>JWT Authentication for WP-API</li>
+</ul>
 
-<p>As I am a development student, it was suggested that I speak to a design student about improving the look and brand of my application. I reached out to a close friend of mine studying a branding and typography course in London. Him and I had a Skype conversation where we looked at the branding and color schemes of Whitchurch Silk Mill’s website. After doing this, he suggested to me that I should consider setting the main purple color of their website to each ‘bar’ element of my charts and play around with the opacity of each.</p>
+<p>Extends the WP Rest API to allow for JSON Authentication (also used for the LUFC App).</p>
 
-<p>As seen in the image, I feel that this improved the quality of my graphs and made the project feel more polished as the design fit the silk mills brand much more. As well as this I inverted the color scheme of the header as I felt that the purple background was too imposing.</p>
+<h3 id="initialising-the-theme">Initialising the Theme</h3>
+<ul>
+  <li>Step 1: Set up Underscores blank theme.</li>
+  <li>Step 2: Set up WordPress development environment</li>
+</ul>
 
-<h3 id="adding-more-data">Adding More Data</h3>
-<p>Another set of feedback that I was given during the crit review was to add more data that could be evaluated by the volunteers. I began working on this by developinmg two more bar charts. One displaying exhibitions visited based on nationality and the other, exhibitions visited in relation to gender. I used a very similar query for both graphs where I simply grouped the data by ‘gender’ and ‘nationality’ with the ‘SUM’ of each exhibit.</p>
+<p><img src="/Ben_Goodwin_Development/assets/underscores_generate.png" alt="Underscores Generator" /></p>
 
-<p>To help the volunteers have access to quick general statistics I created infographic style counters that pulled stats from the database. I am personally really proud of this section of the project and I feel that the counters next to the graphs make the project feel more complete and polished.</p>
+<p>Step 1: Setting up the Underscores blank WordPress theme proved fairly easy, the site comes with plenty of simple instructions. Having done this, the next step was to simply paste the blank theme into the themes folder in the WordPress directory wp-content/themes.</p>
 
-<p>The statistics pulled from the database use the ‘COUNT’ function in a MySQL query. For instance, to find the number of registered visitors, the number of ID’s was counted.</p>
+<p>Step 2: Having downloaded and installed the WordPress files, it was time to link the WordPress files to the localhost database. To do this, I placed the WordPress directory into MAMP’s htdocs folder then using phpMyAdmin created a database in MySQL. The last step was to access the wp-config.php file and ammend the database name, user and password:</p>
 
-<h3 id="safeguarding-information">Safeguarding Information</h3>
+<p><img src="/Ben_Goodwin_Development/assets/wp-database.png" alt="wp-db" /></p>
 
-<p>The final piece of feedback I was given was to ensure that the evaluation software was protected so that only volunteers at the silk mill could access the data collected.</p>
+<p>Once this had been completed I was able to access the theme via the appearance section of the WordPress backend:</p>
 
-<p>To do this, I created a basic password Javascript script that required a user to login to access the evaluation software. Although this system worked, I had noticed that anyone could find the password in the script through the inspect function on a webpage. This meant that the password was not secure at all. I decided to try and find a way of encrypting the password so that it would not be visible inside of the inspector. I began researching into htaccess and php login pages where passwords would be stored inside of databases.</p>
+<p><img src="/Ben_Goodwin_Development/assets/changetheme.png" alt="wp-theme-activation" /></p>
 
-<p>The problem with this was that, I would have to backtrack my work and develop an entirely new login system which I felt would set my progress back. Eventually, I came across another way of hiding my password. The solution to my problem was to obfuscate my script. This method jumbled my JS code into a more obscure format. Although, this is not the most complex safeguarding system, I believed that this was complex enough for the prototype we were developing. I feel that this was an important addition to my project as data security is extremely important in today’s society.</p>
+<ul>
+  <li>Step 3: Breaking Down the Page Setups</li>
+</ul>
 
-<h2 id="version-2">Version 2</h2>
+<p>From the research that I had completed regarding the development of Wordpress themes, I was able to see that the pages were broken down into three specific sections:</p>
 
-<p>Having made these changes I ready for the crit review, the feedback was far more positive. However, it was noticed that I had not developed a redirectory system for my evaluation system. This meant that users could directly bypass the login page and have full access to the data collected through our application. I was extremely glad that this was pointed out as it was something that I had overlooked during my development.</p>
+<ul>
+  <li>Header.php</li>
+  <li>‘PageTemplate’.php</li>
+  <li>Footer.php</li>
+</ul>
 
-<p>Changes, Fixes and Development for Final Product
-Having considered the feedback during the week 10 crit revue. It was clear that I had to re-evaluate my safeguarding system. I began by looking at ways of redirecting my page unless a user had logged in.</p>
+<p>Header.php: The header file usually contains some of the stylesheets and the navigation for the site. It is placed in a separate file so that you are able to quickly call it in every page with a simple php script:</p>
 
-<p>I ended up developing a system using PHP where, through the use of sessions and defining ‘current’ and ‘last page’, I was able to check whether or not a use has accessed the page before. After this an ‘if’ statement is called that redirects the user from the evaluation page if they have not successfully logged in through the login page</p>
+<p><img src="/Ben_Goodwin_Development/assets/getheader.png" alt="wp-getheader" /></p>
 
-<p>I was really happy with how well this system worked. No matter how i tried to gain access to the page I would always be redirected back to the login page. I think that this really strengthened the safeguarding system I had in place. With this system now in place, and more time left to experiment with the project, I decided to have a look at other areas I could strengthen.</p>
+<p>My version of the Header.php ended up looking like this:</p>
 
-<h3 id="rebuilding-age-chart">Rebuilding Age Chart</h3>
-<p>After leaving the age chart from version 1 of my project, having not been able to group by age group, I decided to return to it in the hope that I could improve it. After some experimenting, I decided to edit Jack’s form system on the virtual tour guide as well as the database so that the user could pick from a series of age groups rather than write their exact age. I then set the database age row to ‘VARCHAR’ instead of an integer so that the data would display properly. This made the age graph look far more polished and Jack was happy with the changes that I made</p>
+<p><img src="/Ben_Goodwin_Development/assets/headerphp.png" alt="header-php" /></p>
 
-<h3 id="csv-exporting">CSV Exporting</h3>
-<p>To strenthen my project even further and to improve the evaluation system for the volunteers at the silk mill, I decided to create a CSV exporting system, where volunteers could see all of the rows of data on the database and export them to an Excel document.</p>
+<p>The code for the header was fairly simple to write. As seen in the code I simply created an array that posted the primary-menu (menu-1) into the page and then styled it afterwards to display across a bar at the top of the page. As well as this I used a simple JQuery function to hide the menu when on mobile and display a simple fontawesome hamburger menu. This was an extremely simple function that I found within the underscores generated blank theme, however, I plan on changing this to something slightly animated and more stylised for the sites launch on the 3rd January.</p>
 
-<p>To create this, I developed a system that gathered the database data into an array and then echoed it into a table on the page. To export the data I created a form that posted the data to download.php. Download.php then downloads the data to a file called users.csv.</p>
+<p><img src="/Ben_Goodwin_Development/assets/finalheaderwp.png" alt="header-php" /></p>
 
-<p>I think that this addition to the system will be really helpful for the volunteers at the silk mill as they will be able to have easy access to all of the data that our virtual guide will collect. As well as this I feel that it adds a very professional and complete feel to the project.</p>
+<p><img src="/Ben_Goodwin_Development/assets/finalmobileheaderwp.png" alt="header-php" /></p>
+
+<p>Above are the final outcomes of the header. After some discussion and feedback with Alex, it was made clear that he wanted to include the logo instead of the home button text. To do this I used the Menu Image plugin and gave his logo a white circle border so that he wouldn’t lose the blue in his logo. As well as this the text originally sat indented further with smaller text, however, after my discussion with Alex he agreed to let me increase the size of the text and push it to the left.</p>
+
+<p>Footer.php: Much like the header.php file, the footer.php is used to reduce the bulky repetition of code within each page and is called in a php script much like the header with <?php get_footer ?>. The final code for my footer looked like this:</p>
+
+<p><img src="/Ben_Goodwin_Development/assets/footerphp.png" alt="footer-php" /></p>
+
+<p>Much like the header, I created an array of the secondary-menu (menu-2) which I then styled using display: flex; to create a similar sort of layout to the header. As well as this Alex required that his social media pages were available across the footer. Therefore, I used some font awesome icons and Advanced Custom Fields to create these which would allow Alex to edit the links at any time via the Wordpress backend.</p>
+
+<p>As seen in the screenshot of the footer.php, the custom field is set up by setting an editable field and then echoing that field onto the page.</p>
+
+<p><img src="/Ben_Goodwin_Development/assets/website_options.png" alt="website_options" /></p>
+
+<p>One issue that I found with this, however, was that I would have to recreate these fields on every ACF page for them to display in the footer. Luckily, a MA student was able to offer me some advice on how to store ACF fields globally. To do this I needed to add a function to the functions.php file:</p>
+
+<p><img src="/Ben_Goodwin_Development/assets/websiteoptionsfunctions.png" alt="websiteoptionsfunctions" /></p>
+
+<p>This function created an options page that allowed me to post custom fields globally. After that had been completed, I simply had to add ‘option’ to the php echo query.</p>
+
+<p><img src="/Ben_Goodwin_Development/assets/finalfooterwp.png" alt="final-footer" /></p>
+
+<p>Above is the final result of the footer, it ended up with a fairly simple design, however, it works nicely with the rest of the site.</p>
+
+<p>‘PageTemplate’.php: This php document is the main template defined for each specific page. It is also the page that compiles together both the header and the footer.</p>
+
+<h3 id="step-4-creating-the-homepage">Step 4: Creating the Homepage</h3>
+
+<ul>
+  <li>The Recent Post Grid</li>
+</ul>
+
+<p>To create the recent post grid I wrote a query to create an array of all of the posts and then display the post thumbnail as the background image with he title overlaying. Below is the final result of the query:</p>
+
+<p><img src="/Ben_Goodwin_Development/assets/newpostgrid.png" alt="new-post-query" /></p>
+
+<p>As seen in the query, whilst the site has posts it displays them in bootstrap col’s. After it has collected the posts, it simply echos that thumbnail and post title to the page. One of the problems that I faced developing this was that the posts were not limited. This meant that if left long enough the posts would take over a massive amount of the page. After doing a little research on the Stack Overflow forums, I was able to find an answer. In the array you can simply set the posts_per_page which will help to limit this.</p>
+
+<ul>
+  <li>The App Features Repeater</li>
+</ul>
+
+<p>To allow for maximum customisation of the site, I decided to look into using advanced custom fields to create grids of features for the app on the homepage. As ACF is a paid plugin it contains a lot of extra features that do not exist in regular custom fields. One of these is the repeater.</p>
+
+<p>The repeater is used so that the client can keep adding panels of the same layouts with different information. As I knew that Alex’s site would require plenty of these repeated layouts, I felt that it would be beneficial to me to learn how the ACF repeater worked.</p>
+
+<p><img src="/Ben_Goodwin_Development/assets/featuresrepeater.png" alt="acf-repeater" /></p>
+
+<p>As seen in the image above, the repeater is built by creating sub-fields. As you can see in the features repeater, I decided to use an image, text and text area. The outcome in the WordPress backend looked like this:</p>
+
+<p><img src="/Ben_Goodwin_Development/assets/featuresrepeaterbackend.png" alt="features-repeater-backend" /></p>
+
+<p>Having done this, ACF pushes out php code for each of its fields. The resulting code looks like this:</p>
+
+<p><img src="/Ben_Goodwin_Development/assets/featuresrepeatercode.png" alt="features-repeater-backend" /></p>
+
+<p>The main issue that I had with this, however, was that my subscription of ACF would not fetch some of the code for the more complex fields such as repeaters. This meant that I had to do some research to find some examples of repeater code.</p>
+
+<p>Here is the final screen shot of the homepage:</p>
+
+<p><img src="/Ben_Goodwin_Development/assets/homepage.png" alt="features-repeater-backend" /></p>
+
+<ul>
+  <li>My Opinions and Amendments</li>
+</ul>
+
+<p>After the initial development of the site, I was quite happy with the final result. However, after some discussions with some of the design students on my course I amended some of the font sizing and padding across the page. As well as this I ensure that the mobile version of the page was completely responsive so that I had a base to work from given the lack of mobile wireframes I was given.</p>
+
+<h3 id="step-5-other-pages-and-amendments">Step 5: Other Pages and Amendments</h3>
+
+<ul>
+  <li>The News Page</li>
+</ul>
+
+<p>The news page followed a very similar format to the recent news grid discussed in the homepage section, however, I removed the cap on the amount of posts being displayed so that the user can see every post written on the page.</p>
+
+<ul>
+  <li>The About Page</li>
+</ul>
+
+<p>The about page was reformatted and redesigned after me and Alex discussed my problems with the original wireframe.</p>
+
+<ul>
+  <li>The Contact Page and App Page</li>
+</ul>
+
+<p>Both of these pages included a contact form 7 as well as a google map iframe and were redesigned to differ from the original wireframes to be more mobile friendly.</p>
+
+<ul>
+  <li>The Leeds UFC+ Page</li>
+</ul>
+
+<p>The Leeds UFC+ page took advantage of repeaters and sports API plugins to give an in depth and customisable analysis of the Leeds united Football Team.</p>
+
+<ul>
+  <li>The Privacy, Terms and Community Guidelines Pages</li>
+</ul>
+
+<p>These pages were given a simple Wizzywig editor as they were very simple pages with barely formatted text.</p>
+
+<h3 id="the-login-system">The Login System</h3>
+<p>Creating the login systems for the site was one of the more difficult tasks to complete. Luckily, I was able to follow an interesting <a href="https://millionclues.com/tutorials/custom-wordpress-register-login-page/">tutorial</a> into creating custom login and register systems for users.</p>
+
+<p>As the login system is built off of the WordPress logins, the code, if anything, is more of a re-directory system. Therefore, the most important code to refer to is within the functions.php file:</p>
+
+<p><img src="/Ben_Goodwin_Development/assets/functionslogin.png" alt="login-function" /></p>
+
+<p>This code creates redirect passages for the login systems. as well as this it also calls the functions for failed login attempts as well as verifying usernames and passwords.</p>
+
+<h3 id="the-chat-system">The Chat System</h3>
+
+<p>Although, I planned to build my own chat system at first, after some consideration, it seemed more beneficial to use a plugin that would be farm more secure. Another reason for this is that as a commercial site, LUFC News would require a secure chat system that could be externally monitored with a host of features such as banning and kicking users. This is something I felt that I did not have to time to do in 12 weeks along with the LUFC app prototype.</p>
+
+<p>I managed to source a plugin called iFlyChat, a simple chat plugin for WordPress. The good thing about using this plugin was that you could export the chat to multiple platforms aside from WordPress so i would potentially be able to use it for the app as well.</p>
+
+<h2 id="final-changes-and-feedback">Final Changes and feedback</h2>
+
+<p>During development I asked for a lot of feedback so that I could make changes to the site as I developed. Most of the issues brought up were usually slight padding changes or general CSS amendments. As well as this I scheduled weekly meetings with Alex so that he could make his own decisions based on how he wanted specific parts of pages to be changed. This was extremely beneficial as it meant that I could ensure that he was always happy with the product.</p>
 
 <h2 id="final-product">Final Product</h2>
-<p>I am extremely happy with the final product (seen in the video at the top of the page) for this project. Although learning new softwares and coding languages was challenging at times, I believe that I have learnt large amount about developing back-end softwares. I think that myself and Jack worked extremely well as a team and helped each other to learn for the duration of the project. In terms of the goals that I had at the start of the project, I believe that I have achieved all but one of them. To complete final goal we will need to discuss the project with Zoe at the end of year show.</p>
 
-<p>For this project I was very concious of managing my time wisely, therefore I managed to stick to my scheduling plan very well. I think that this increased my productivity over the duration of the project</p>
+<p>I am pleased with the final product that I have created for Alex. Having shown him the development on the way in weekly intervals, I feel that he was happy with the progress that we made. As well as this I think that I have completed the goals that i had set myself for this project and have become a better developer because of it.</p>
+
+<h2 id="the-next-steps">The Next Steps</h2>
+
+<p>The next step of this project is to make a few additional changes to the site such as the mobile navigation as well as add recaptcha to logins to avoid spam accounts and emails. after this, myself and Alex aim to have the site live by the 3rd of January 2019.</p>
+
+<p>You can find the site at <a href="https://lufcnews.co.uk/">lufcnews.co.uk</a></p>
+
+<p>See the code on <a href="https://github.com/Reconkiwi/Football-Wordpress-Theme">GitHub</a></p>
+
+<h3 id="the-nlt-documents-and-screenshots-of-the-site-will-be-available-underneath-here">The NLT Documents and Screenshots of the Site will be Available Underneath here</h3>
+
+<iframe src="/Ben_Goodwin_Development/assets/negotiated_dev_placement.pdf"></iframe>
+
+<iframe src="/Ben_Goodwin_Development/assets/selfassess.pdf"></iframe>
+
+<p><img src="/Ben_Goodwin_Development/assets/homepage.png" alt="homepage" /></p>
+
+<p><img src="/Ben_Goodwin_Development/assets/about.png" alt="about" /></p>
+
+<p><img src="/Ben_Goodwin_Development/assets/app.png" alt="app" /></p>
+
+<p><img src="/Ben_Goodwin_Development/assets/lufcplus.png" alt="lufcplus" /></p>
+
+<p><img src="/Ben_Goodwin_Development/assets/contact.png" alt="contact" /></p>
+
+<p><img src="/Ben_Goodwin_Development/assets/news.png" alt="news" /></p>
+
+<p><img src="/Ben_Goodwin_Development/assets/single-news.png" alt="single-news" /></p>
 
 </div>
 </div>

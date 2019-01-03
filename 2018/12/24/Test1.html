@@ -81,6 +81,120 @@
     <div class="col-12">
   <p>Francis, a masters student in my faculty proposed to me an AR app prototype that needed building. Arkitekt.UI is an architectural client based application which aims to allow the client to have a consistent impact on the development and design of their building. It is built using Apple’s new Quick View AR and Google’s Firebase Database service.</p>
 
+<h2 id="the-brief">The Brief</h2>
+
+<p>Francis came to me in hope that I would develop a prototype for his architectural AR application. He had no designs or any preference on how it was made. The only specification was that the AR models must be updatable via a database. As this was a smaller project for me to work on, I decided that I would attempt to test out some new technologies during the development of Francis’ app.</p>
+
+<h2 id="francis-specifications">Francis’ Specifications</h2>
+
+<ul>
+  <li>Simple Design</li>
+  <li>Realtime model updating (company side)</li>
+  <li>accessible AR for clients via phone</li>
+</ul>
+
+<h2 id="target-audiences">Target Audiences</h2>
+
+<ul>
+  <li>Architectural Clients</li>
+</ul>
+
+<p>Francis had told me that the main reason for developing this prototype was to help improve client to company dialogue as he knows from working in an architectural firm that some clients leave unhappy with the final products. He believes this is due to the lack of visual representation of the building to clients, therefore, being able to send them an AR building via a secure web link could help them to spot issues faster.</p>
+
+<ul>
+  <li>Architectural Firms</li>
+</ul>
+
+<p>Help companies reduce the amount of client backlash when projects are not completed to the right standards.</p>
+
+<h2 id="time-management">Time Management</h2>
+
+<p>As this was one of my smaller projects, I set myself just over a week to see what I could create. To some extent this was to test my ability to get a project up and running quickly, however, I was also aware of other larger projects that needed to be completed as well. As it was such a small project I did not really create any Gantt charts or time management plans, I just worked on this project when I wanted a break from other ones.</p>
+
+<h2 id="brainstorming-development-ideas">Brainstorming Development Ideas</h2>
+
+<p>One of the hardest parts of the development of this project was coming up with the best system to develop it. I decided to brainstorm a series of ideas:</p>
+
+<h3 id="idea-1-unity-and-vuforia">Idea 1: Unity and Vuforia</h3>
+
+<p>My first idea was to use Unity and Vuforia to build the application. Unity is a powerful game engine that has the potential to render objects with large poly counts. This was appealing to me as I felt that Francis would have quite complex building in mind.</p>
+
+<h3 id="problems-with-idea-1">Problems with Idea 1</h3>
+
+<p>The issue with this was that Unity and Vuforia applications are quite bulky. As well as this WebGL can be quite buggy at times, so I felt that customers may come away more frustrated than content. In my opinion the only way that this idea would word properly would have been to develop the project into an app rather than a secure link, however, unity and vuforia apps are also fairly large in size which could be a deterrent for clients.</p>
+
+<h3 id="idea-2-arjs">Idea 2: AR.JS</h3>
+
+<p>AR.JS is a Javascript framework using Aframe to create AR for web. This idea fit with the Francis’ brief of being able to easily upload files and render them in AR from  almost any smart phone.</p>
+
+<h3 id="problems-with-idea-2">Problems With Idea 2</h3>
+
+<p>The problem with AR.JS is that it can only render simple objects. This was a massive issue for me as I felt that Francis would be expecting to host intricate models. As well as this AR.JS works based on QR technology which was not included in Francis’ brief. I also considered that clients may not want to print or keep hold of QR codes.</p>
+
+<h3 id="idea-3-quick-view-ar">Idea 3: Quick View AR</h3>
+
+<p>Quick View AR is a new technology brought by Apple in IOS 12. It uses the AR ready technology within the devices and allows for users to simply click on an image and see how it looks in AR. The system has been prioritised by e commerce sites to give users a new aspect of shopping, however, the technology could be used for various other applications.</p>
+
+<h3 id="problems-with-idea-3">Problems with idea 3</h3>
+
+<p>As suggested earlier, Quick View AR is explicitly available for IOS devices only. This may be a problem for Francis as it means that some of the clients he may have wanted to reach might not be able to access this technology. As well as this, Quick View AR is fairly new and the documentation was quite small.</p>
+
+<h2 id="the-solution">The Solution</h2>
+
+<p>I decided to opt for the difficult decision and build my app using Quick View AR. This was mainly as i had wanted to learn how the technology worked and the potential that it may have in the industry.</p>
+
+<h2 id="the-database">The Database</h2>
+
+<p>Francis had also said to me that he wanted a live updating database to host his models on so that he could change them for the client as he worked. For this reason I decided to research into databases that could handle these requests. I eventually came across Google Firebase which hosts a realtime database service and can update the files on the page without refreshing. Although I had never used firebase before, i decided to have a go with it as I wanted to test my skills with this project.</p>
+
+<h2 id="personal-goals">Personal Goals</h2>
+
+<ul>
+  <li>Learn Firebase</li>
+  <li>Learn Quick View AR Development</li>
+</ul>
+
+<h2 id="development">Development</h2>
+
+<p>Overall development for Quick View AR is fairly simple. The most important thing to understand is that this AR technology only works with USDZ files. Once you understand that all that needs to done is to create a div with the href to the USDZ and give it the tag ‘rel=’ar’’. The difficulty came when pulling the data from the database.</p>
+
+<p>As I suggested, when I was developing this project there was little to no documentation or tutorials to work from so I was left entirely to my own devices to come up with a solution.</p>
+
+<p><img src="/Ben_Goodwin_Development/assets/realtimedatabse.png" alt="realtime database" /></p>
+
+<p>I began by creating a database tree of the models that I wanted to post to my web app. I broke each model down in to the model, model image and model name. I was unsure of the best way to post the files directly to the page so I made a guess and put the download paths as the value of the model and model image. which I stored in the firebase storage centre:</p>
+
+<p><img src="/Ben_Goodwin_Development/assets/firebasedatabase.png" alt="realtime storage" /></p>
+
+<p>Having done this, I then began to dissect the Quick View AR HTML code given in Apple’s documentation. The next step was to create a query to pull the firebase data from the database into the correct areas. I came up with this query:</p>
+
+<p><img src="/Ben_Goodwin_Development/assets/firebasequery.png" alt="realtime storage" /></p>
+
+<p>As seen in the code above, I followed to the firebase documentation to understand exactly how to pull data from the database and then created a simple query that pasted that information into a div for each model.</p>
+
+<p>I was really pleased that I was able to come up with this and that the firebase storage download links actually worked with loading USDZ files.</p>
+
+<p>After this I began setting the app up for phone wrapping by creating a simple landing page and adding multi-screen.js, which allowed me to host multiple pages on one single html page. This was so that I could quickly build the app using ionic by replacing the src files with the firebase index.html.</p>
+
+<h2 id="problems-with-ionic-development">Problems with Ionic Development</h2>
+
+<p>One of the problems with building the html page into a web app was that the Xcode build kept failing. After some adjustments to my build settings, I found that I could only complete a build in legacy mode. I am not 100% sure as to why this is but it solved the issues.</p>
+
+<p>Another problem that I had not realised was that once the app had been built in Ionic the Quick View AR functionality had gone. I think this has something to do with the fact that the technology was designed for web rather than applications but once again I am not 100% as to why this happened.</p>
+
+<h2 id="final-thoughts">Final Thoughts</h2>
+
+<p>Overall i was really happy with thew way that this project turned out. I gave myself just over a week to complete it but finished it within three days of development. It was really fun to build and Firebase is a great database system that I hope to use again. The application did not really need to be phone wrapped as it could be sent to clients with secure links or potentially a password protection service.</p>
+
+<p>See the code on <a href="https://github.com/Reconkiwi/IOS_QUICK_AR_FIREBASE_APP">GitHub</a></p>
+
+<h2 id="below-are-some-videos-of-how-the-system-works">Below are Some Videos of how the System Works</h2>
+
+<iframe src="/Ben_Goodwin_Development/assets/firebasevideo.webm"></iframe>
+
+<iframe src="/Ben_Goodwin_Development/assets/farkitekt.ui_front_end.mp4"></iframe>
+
+
 </div>
 </div>
 </div>

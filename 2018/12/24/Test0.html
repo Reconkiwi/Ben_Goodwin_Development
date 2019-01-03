@@ -82,242 +82,53 @@
   <p>A masters student in my faculty came to me with a prototype proposal that they needed building towards their final submission. Maisie wanted me to create an AR missing cat poster application. The app was developed using AR.JS and then wrapped using ionic.</p>
 
 <h3 id="the-brief">The Brief</h3>
-<p>For our client projects this semester, we were given a series of briefs to complete in groups. My group and I opted to take on Whitchurch Silk Mill’s brief which was to develop a way of tracking and evaluationg the visitors that entered the mill as well as monitor the popularity of their new exhibits</p>
+<p>I was asked to develop an AR project to display missing cat posters via QR codes. No design was necessary as Maisie just wished for a proof of concept to see how the ar technology would work.</p>
 
-<p>Whitchurch Silk Mill had recently been given an investment from the Heritage Lottery Fund, and as part of their investment, they were asked to produce software that can process data as evidence of how their funding is improving the accessibility, popularity and maintenance of the silk mill.</p>
+<h2 id="maisies-specifications">Maisie’s Specifications</h2>
 
-<p>Throughout the duration of this project, Zoe was our point of contact. Although Zoe was very open to a variety of different ways in which we could develop this project, she did have a few specifications for us to consider.</p>
+<ul>
+  <li>Cat Posters that Appear from QR codes</li>
+</ul>
 
-<h2 id="zoes-specifications">Zoe’s Specifications</h2>
-<p>Informative
-Consistent design
-Whitchurch Silk Mill branding
-Look and feel eye-catching
-Simple to use
-Even with the specifications that Zoe had, Jack and I had a lot of freedom to develop something unique and exciting for Whitchurch Silk Mill. From the brief, it was clear that to complete this task to a high standard we needed to take a user first approach and therefore, features such as navigation and accessibility were extremely important.</p>
-
-<h2 id="the-team">The Team</h2>
-<p>Jack Bodman (Developer)
-Ben Goodwin (Developer)
-As we are both developers, initially, Jack and I felt slightly nervous about taking on both design and development roles for our project. However, after some discussion and brainstorming, we felt that we could both manage the workload as long as we stayed in contact and updated each other on our progress throughout the semester.</p>
-
-<h2 id="initial-brainstorming-and-ideas">Initial Brainstorming and Ideas</h2>
-<p>We began our project by brainstorming ideas and ways in which we would tackle the project in a systematic manner. During this period, we tried to breakdown the project into a series of smaller tasks that would need to be completed. We managed to seperate our project into three main tasks</p>
-
-<h2 id="the-breakdown">The Breakdown</h2>
-<p>Voulunteer/Evaluation system
-Databases and Backend systems
-User operated system
-Having broken the project down, it was clear that we needed to create a product that took user input in an imaginative way, recorded it, sent it to a database where the information would be stored and then, finaly, retrieved from the database and presented in a visually pleasing manner for the silk mill staff to show the Heritage Lottery Fund.</p>
-
-<p>To understand ways in which we could accomplish this, we mocked up a series of ideas.</p>
-
-<h2 id="idea-1---facebook-detectron">Idea 1 - Facebook Detectron</h2>
-
-<p>From an article we had read about the Facebook Detectron system, a fast flexible object detection system built on Caffe2, we considered developing a camera system that took images of Silk Mill attendees througout a day and ,through the use of detectron, the silk mill voulenteers would be able to find out the number of attendees that came on specific days as well as the exhibits they visited. The photos would then be deleted to save space on the system.</p>
-
-<h2 id="problems-with-idea-1">Problems With Idea 1</h2>
-<p>Although we felt that using the detectron system would be a very unique way for Whitchurch Silk Mill to evaluate the people that visited, it was clear that the development for this project may be very challenging and time consuming. As well as this the idea didnt offer visitors the chance to evaluate their experience which was a specification set by the mill.</p>
-
-<h2 id="idea-2---rfid">Idea 2 - RFID</h2>
-
-<p>Our second idea was to develop an RFID system where, upon entry, visitors would be given an RFID card with predetermined information on it such as age range or gender. As visitors walked around the silk mill, they would be able to scan their cards and begin interactive experiences or restart videos that were already playing. Each scan on their card would send data to a database that collected information about the various exhibits they had been to as well as the predefined information already on the card.</p>
-
-<h2 id="problems-with-idea-2">Problems With Idea 2</h2>
-<p>Although we felt that this system would work at the silk mill, it was clear that the information we would be collecting was not specific enough for the voulenteers at Whitchurch Silk Mill to find enough supporting evidence to give to the Heritage Lottery Fund. As well as this, we decided that it would be difficult to precisely predefine information on an RFID card for each person that visited.</p>
-
-<h2 id="idea-3---mobile-app">Idea 3 - Mobile App</h2>
-
-<p>Our third idea was to develop a mobile virtual tour guide application where visitors would be given tablets on entry with the virtual guides installed on them. Visitors would be asked at the beginning of the application to fill out a short survey to help the silk mill to gather data. Having done this, visitors would then gain access to exclusive virtual content about each exhibition. by clicking each exhibition tile on the application, information would be sent to a database where silk mill voulenteers would be able to see the amount of times each exhibit was attended per visitor.</p>
-
-<p>They would then be able to notice patterns in exhibition visits based on visitor age, gender and nationality which they could send to the Heritage Lottey Fund</p>
-
-<h2 id="problems-with-idea-3">Problems With Idea 3</h2>
-<p>One of the key issues with this proposed idea was that we had planned to develop our own Rasberry Pi tablets, programmed to only access the web application. Theoretically, this would have been a really interesting way to implement our web application, however, the system would only work if we had access to multiple programmed Rasberry Pi tablets rather than just one. This is because Whitchurch Silk Mill has a multitude of visitors throughout a day (24,000 a year) and would likely require multiple tablets to satisfy their capacity.</p>
-
-<p>As well as this the development costs of creating Rasberry Pi touchscreens would cost around Â£120 for each device. This outcome would be very costly for us as well as the client.</p>
-
-<h2 id="presentation">Presentation</h2>
-
-<p>As the mobile application project (idea 3) was far more feasable than the other two options, we agreed with the client that we would develop this system. Having said this, after our discussion with the client, it was clear that developing the Rasberry Pi mobile devices was unfeasable. Instead of this we decided to develop our application as a web app hosted on a private network that would be accessible to any silk mill visitors with a SMART phone. We felt that this was a good remedy for the situation and also made the system more accessible for visitors.</p>
+<h2 id="technology-used">Technology Used</h2>
+<p>I decided to use AR.JS to develop Maisie’s missing cat poster. This was because she wanted to be able to link to posters from the web and I wanted to learn how AR.JS worked and how I could apply that knowledge into future projects.</p>
 
 <h2 id="target-audiences">Target Audiences</h2>
-<h3 id="visitors">Visitors</h3>
 
-<p>Lisa suggested that one of the main audiences for our project were the people visiting the silk mill. To satisfy this audience it was key that we developed our web application to be easy and simple to use, making it accessible for anyone that may want to use it. As well as this, our proposed solution requires user input so that Whitchurch Silk Mill can gather data successfully. This meant that the system needed to have a good incentive to be used.</p>
+<ul>
+  <li>People With Missing Cats</li>
+</ul>
 
-<h3 id="volunteers">volunteers</h3>
+<p>Maisie wanted to make it easier for people to find their missing cats by creating a mobile community that could GPS mark their location if they had seen a specific cat on the database.</p>
 
-<p>Another target audience that we needed to consider were the volunteers at the silk mill. As one of their roles is to assess the data gathered from the virtual guide, it was important that we visualised the data in an aesthetically pleasing manner. As a solution to this, we decided to develop a live-updating infographic webpage to present the data. We felt that this would make it far easier for silk mill volunteers to find trends and statistics in the data.</p>
+<ul>
+  <li>People who own Cats</li>
+</ul>
 
-<p>Another feature of importance to the volunteers was ensuring that the data being collected was well protected and could only be safely accessed by them. As they were collecting some pieces of private information from their visitors such as gender, age and postcode, it was important that this data remain confidential. This is something we took into account during development.</p>
+<p>Maisie also wanted to aim this app at cat owners who may want to register their cat incase it were to go missing. Therefore, we chose to target owners as well as people with missing cats</p>
 
-<h3 id="heritage-lottery-fund">Heritage Lottery Fund</h3>
+<h1 id="development">Development</h1>
 
-<p>The final audience that we needed to consider during development was the Heritage Lottery Fund (HLF). As Whitchurch Silk Mill needed to show evidence of how the HLF’s investment was improving the popularity, accessibility and maintenance of the mill, it was important that we captured valuable information and statistics from our virtual guide. As well as this the main data that we wanted to show the HLF needed to be eye-catching and easy to read, so that Whitchurch Silk Mill could impress them with the progress they have made with their investment.</p>
+<p><img src="/Ben_Goodwin_Development/assets/arjscode.png" alt="AR.JS Code" /></p>
 
-<h2 id="technical-considerations">Technical Considerations</h2>
+<p>The code to develop a really simple prototype for Maisie was actually quite simple, however, I did for a while have a problem where the textures wouldn’t load onto the poster resulting in a large black triangle. The code simply works by defining the asset that you are using for AR and then the marker that will allow for the model or image to appear.</p>
 
-<p>For this project, it was important that myself and Jack considered the limitations of holding a database on a Rasberry Pi as well as the files containing the virtual guid and evaluation software. Thanks to Jacks mathmatics, we have estimated that if all 24,000 of Whitchurch Silk Mill’s signed up to the virtual tour guide, the database would require around 768MB of space per year. As well as this the application files would take up around 350KB of space. To cater for the space required by the database and application we proposed a 500GB hardrive that usually has a market value of around Â£40.</p>
+<p>Unfortunately, I was unable to get Maisie’s specifically drawn QR code working, I believe that this was due to the fact that the image files were not running off of a secure network. From my research, it seemed the WebGL would not authorise specific textures if they were not located from a secure source. This may have been one of the reasons as to why I was experiencing issues with the posters returning as black squares as well.</p>
 
-<p>Supposing the visitor count remains the same, a 500GB hard drive would be able to store data for 651 years. This would be more than enough space for the silk mill.</p>
+<h1 id="taking-the-project-further">Taking the Project Further</h1>
 
-<p>Another thing that we needed to consider was the limitations of how many visitors could connect to the Rasbjerry Pi at one time. As we were unsure of how the system would react to multiple users, it was up to us to stress test the system and log the effects.</p>
+<p>If I were to take this further, I would most likely setup a database and a front-end system so that the user could see a list of all of the missing cats and view their posters in AR, or I would have setup an import system where users can upload their own QR codes and missing cat posters attached to them.</p>
 
-<h2 id="personal-considerations">Personal Considerations</h2>
-<p>As there were only two of us in our group, it was important that we were both aware of each others strengths and weaknesses. Both myself and Jack were quite new to backend development (PHP and MySQL) and had never worked on a project that focussed on it so heavily. This meant that the project required us to learn from each other and explain how different parts of the system worked to one another.</p>
+<h1 id="final-thoughts">Final Thoughts</h1>
 
-<p>Apart from this, we both felt quite confident about developing the final product, especially the front-end systems such as the virtual guide.</p>
+<p>Although this was an extremely short project, I learn a lot about AR.JS and wish to take this project further for next semester.</p>
 
-<h2 id="organisation-and-timeline">Organisation and Timeline</h2>
-<p>Once we had decided on our project solution and the technical constraints involved, we discussed how we would develop it. During this discussion we broke the project down into 6 stages. Jack then noted them down for later reference.</p>
+<p>See the code on <a href="https://github.com/Reconkiwi/AR.JS">GitHub</a></p>
 
-<h2 id="development-stages">Development Stages</h2>
-<p>Stage 1: Discuss our proposed solutions with the client and determine which is most viable. Carry out further research into the proposed solution.
-Stage 2: Breakdown the development process and set a clear strategy for the creation of the system. Once complete begin the development process.
-Stage 3: Continue with the development of the project and aim to have complete a semi-functional prototype by the end of this stage.
-Stage 4: Begin to test and improve aspects of the first prototype while adding additional features and bug fixes.
-Stage 5: Finalise the prototype ready fo the final presentation ensuring it is bug free and ready for a live demonstration.
-Stage 6: Prepare all documentation, code, and hardware, ready for hand off to the client.
-Timeline</p>
+<h3 id="below-is-a-video-of-how-the-project-works">Below is a Video of how the Project Works</h3>
 
-<p>As we were a small group, it was vital that we used our time correctly and met our set deadlines. To ensure this we drafted up a Gantt chart. We planned to have our project completed by week 10 ready for our lecture critique. This would then allow us more time to make any extra edits and amendments ready for the submission day.</p>
+<iframe src="/Ben_Goodwin_Development/assets/maisia_ar_js.mp4"></iframe>
 
-<h2 id="seperating-the-workload">Seperating the Workload</h2>
-<p>During intial discussions, Jack and I agreed to work on each section of the project together as we were both new to some of the back-end and PHP systems. However, we then decided it would be easier to take on seperate tasks and support each other through them instead.</p>
-
-<p>Visitor Guide - Jack Bodman
-Evaluation System - Ben Goodwin
-Rasberry Pi integration - Jack Bodman
-MySQL database - Ben/Jack
-Although Jack focussed on developing both the visior guide and Rasberry Pi, we agreed that we felt the workload was spread equally as the evaluation system required me to learn MySQL, Chart.JS and PHP. As well as this I had to work very closely with the database and make a lot of changes to it to ensure the evaluation softtware worked accordingly.</p>
-
-<h2 id="personal-goals">Personal Goals</h2>
-<p>Learn PHP
-Learn MySQL
-Develop Evaluation Software
-Create Database
-Please the Client</p>
-
-<h2 id="personal-gannt-chart">Personal Gannt Chart</h2>
-<p>To stay on task of my role within the group I created a perdsonal Gantt chart to track my development processes. As i was learning some new software and code languages, it was clear that I needed to systematically plan my workflow.</p>
-
-<h2 id="development">Development</h2>
-<p>As I mainly focussed on the evaluation system and database for this project, I will discuss my development processes for these tasks rather than Jack’s processes. I will be discussing the changes that I made to Jack’s sections of the project later in the write-up.</p>
-
-<h2 id="development-tools">Development Tools</h2>
-<p>To develop this project I needed to use a eries of different tools and programming languages:</p>
-
-<h3 id="chartjs">Chart.JS</h3>
-
-<p>After a discussion with my lecturer and some personal research, I decided to visualise the database data using Chart.JS, a JavaScript chart plugin. Although I had never used Chart.js before, having looked at the ‘Getting Started’ section of their site, I felt confident that I would be able to develop an aesthetically pleasing visual representation of the data gathered from the virtual guide section of the app.</p>
-
-<p>As Lisa had said that the silk mill wanted to impress the HLF, I felt that applying the data to various different graphs would help to catch their attention. As well as this Chart.JS graphs come with prebuilt animations included as well as an easy system to change the color styling of select parts of the graphs. I thought that this would make the final product feel more polished and professional as the animations help to distract the user from the loading times of the HTML page and the easy styling methods would allow me to fit the page to Whitchurch Silk Mill’s brand.</p>
-
-<h3 id="mysql">MySQL</h3>
-
-<p>We had decided to develop our database using MySQL as we would be storing this on a basic internal server via the Rasberry Pi. Having never created a database before, I felt that there were plenty of MySQL tutorials available to me and so we chose to use this method. As well as this the language used to create queries in MySQL seemed fairly easy to pick up on a basic level, therefore I felt that I could learn it fast.</p>
-
-<h3 id="html-css-and-js">HTML, CSS AND JS</h3>
-
-<p>As we had decided to run our application off of an internal server via the Rasberry Pi and the system had to be accessible on mobile phones, we decided to use web languages to develop our application. As well as this both myself and Jack were quite confident about our knowledge of these languages.</p>
-
-<h3 id="php">PHP</h3>
-<p>PHP is a server-side coding language for web development. From my research it was clear that I would need to use PHP as one of my development tools for this project. as well as this I would need it to connect to the MySQL database and link it to my evaluation page. Having never used PHP as a coding language, I felt that this would take the longest for me to get to grips with.</p>
-
-<h2 id="initial-development">Initial Development</h2>
-
-<h3 id="database">Database</h3>
-<p>I began development by creating a database for our data to be collected in. During the first week, Jack worked alongside me to ensure that we both understood how the database would work and so that we both had a copy of the same table setup (Same names and types).</p>
-
-<p>From our research we had found that we needed to set our ID row to ‘Primary’ as well as ‘AUTO_INCREMENT’, therefore, we implemented this into our database. ‘AUTO_INCREMENT’ is by default set to 1 and will increment by 1 for each new record. This is useful for the ID row as each visitor that is recorded in the database needs a unique ID. The Primary key is used to uniquely define a record. As there can only be one primary key in a table, it should be set to the most unique set of data within a record e.g. the ID so that each visitor can be defined.</p>
-
-<p>We then created a TIMESTAMP for each record so that the silk mill can see the times in which different visitors attended the silk mill exhibitions.</p>
-
-<p>Finally, we created the rest of the datasets that the silk mill needed to gather such as age, gender, country and exhibitions. For the prototype we limited the number of different exhibitions to 6 so that we could create a far fully fleshed out prototype.</p>
-
-<p>Evaluation System - Version 1
-Once Jack had mocked up a simple way of updating the database with information (through the virtual tour guide), it was my turn to begind developing a system that turned that data into graphs and charts.</p>
-
-<p>To draw data from the database, we required a PHP document that connected our application to the MySQL database. This is then called at the start of each page of the application.</p>
-
-<p>Having set up a connection to the database I then had to develop a way of pulling sets of data to implement into my Chart.JS charts. I began by creating a MySQL query that pulled all data from the ‘users’ database.</p>
-
-<p>To set the data that I wanted to pull from the database I created an array of the rows that I needed. If the array is equal to the result, the query fetches the data from the database.</p>
-
-<p>The result of this displays a string of data for each unique user. With the data pulled from the database, I was then able to call data.PHP in my Chart.JS page</p>
-
-<p>I began my development by following a series of tutorials explaining how to import MySQL data into Chart.JS. Although, I quickly managed to create a very simple chart, I found it difficult to process and present the right data. Learning Chart,JS was not necessarily the problem, it was more that my MySQL queries were not sending the right information. I began troubleshooting my data.php file and messed around with my queries until I was able to represent the data that I wanted onto a graph.</p>
-
-<p>I set the label dataset of the X-axis to take age from data.php. By doing this I was able to see each individual record across my X-axis with each exxhibit dataset along the Y-axis. However, the age dataset did not group people of similar ages. I experimented with my MySQL query and added ‘GROUP BY age’ to the end of this. This made visitors with the exact same age grouped onto my graph which was a slight improvement from what it previously was.</p>
-
-<p>Unfortunately, I still felt as if the chart was not up to standard. I tried creating a MySQL query that set age ranges, however, I could not get the query to work. It wasn’t until the last version of the evaluation system that I was able to define age groups rather than individual ages.</p>
-
-<p>After many failed attempts to improve the quality of my chart data, I decided to focus my work on developing another, more basic, chart ready for our first evaluation. I attempted to develop a doughnut chart that represented the total number of times each exhibit had been visited.</p>
-
-<p>After some research I came across the ‘SUM’ MySQL function, which adds together the number of a set row.</p>
-
-<p>The result from data2.php presents the sum of each exhibit visit and looks like this.</p>
-
-<p>After successfully developing two live-updating graphs, I felt that I had developed a good foundation to build my project from. However, it was still very clear that a lot of work needed to be done to ensure that the client was happy with the system.</p>
-
-<p>Firstly, the first graph that I developed needed to be reworked to take age group data rather than display exhibition visits for every different age. Secondly, more data needed to be displayed onto the application to ensure that Whitchurch Silk Mill had enough evidence to show to the HLF. Finally, the system needed to be password protected so that only Whitchurch Silk Mill volunteers could have access to the confidential information displayed.</p>
-
-<h3 id="crit-review-considerations">Crit Review Considerations</h3>
-<p>During the first cohort crit review of our projects in week 8, I was given some feedback to help improve my final product:</p>
-
-<p>Reconsider the design of the application
-Add more data to be evaluated
-Safeguard the information
-I felt that this was really positive impact and decided to take it onboard ready for my week 10 crit review.</p>
-
-<p>Reconsiderations and Development for Version 2
-Design</p>
-
-<p>As I am a development student, it was suggested that I speak to a design student about improving the look and brand of my application. I reached out to a close friend of mine studying a branding and typography course in London. Him and I had a Skype conversation where we looked at the branding and color schemes of Whitchurch Silk Mill’s website. After doing this, he suggested to me that I should consider setting the main purple color of their website to each ‘bar’ element of my charts and play around with the opacity of each.</p>
-
-<p>As seen in the image, I feel that this improved the quality of my graphs and made the project feel more polished as the design fit the silk mills brand much more. As well as this I inverted the color scheme of the header as I felt that the purple background was too imposing.</p>
-
-<h3 id="adding-more-data">Adding More Data</h3>
-<p>Another set of feedback that I was given during the crit review was to add more data that could be evaluated by the volunteers. I began working on this by developinmg two more bar charts. One displaying exhibitions visited based on nationality and the other, exhibitions visited in relation to gender. I used a very similar query for both graphs where I simply grouped the data by ‘gender’ and ‘nationality’ with the ‘SUM’ of each exhibit.</p>
-
-<p>To help the volunteers have access to quick general statistics I created infographic style counters that pulled stats from the database. I am personally really proud of this section of the project and I feel that the counters next to the graphs make the project feel more complete and polished.</p>
-
-<p>The statistics pulled from the database use the ‘COUNT’ function in a MySQL query. For instance, to find the number of registered visitors, the number of ID’s was counted.</p>
-
-<h3 id="safeguarding-information">Safeguarding Information</h3>
-
-<p>The final piece of feedback I was given was to ensure that the evaluation software was protected so that only volunteers at the silk mill could access the data collected.</p>
-
-<p>To do this, I created a basic password Javascript script that required a user to login to access the evaluation software. Although this system worked, I had noticed that anyone could find the password in the script through the inspect function on a webpage. This meant that the password was not secure at all. I decided to try and find a way of encrypting the password so that it would not be visible inside of the inspector. I began researching into htaccess and php login pages where passwords would be stored inside of databases.</p>
-
-<p>The problem with this was that, I would have to backtrack my work and develop an entirely new login system which I felt would set my progress back. Eventually, I came across another way of hiding my password. The solution to my problem was to obfuscate my script. This method jumbled my JS code into a more obscure format. Although, this is not the most complex safeguarding system, I believed that this was complex enough for the prototype we were developing. I feel that this was an important addition to my project as data security is extremely important in today’s society.</p>
-
-<h2 id="version-2">Version 2</h2>
-
-<p>Having made these changes I ready for the crit review, the feedback was far more positive. However, it was noticed that I had not developed a redirectory system for my evaluation system. This meant that users could directly bypass the login page and have full access to the data collected through our application. I was extremely glad that this was pointed out as it was something that I had overlooked during my development.</p>
-
-<p>Changes, Fixes and Development for Final Product
-Having considered the feedback during the week 10 crit revue. It was clear that I had to re-evaluate my safeguarding system. I began by looking at ways of redirecting my page unless a user had logged in.</p>
-
-<p>I ended up developing a system using PHP where, through the use of sessions and defining ‘current’ and ‘last page’, I was able to check whether or not a use has accessed the page before. After this an ‘if’ statement is called that redirects the user from the evaluation page if they have not successfully logged in through the login page</p>
-
-<p>I was really happy with how well this system worked. No matter how i tried to gain access to the page I would always be redirected back to the login page. I think that this really strengthened the safeguarding system I had in place. With this system now in place, and more time left to experiment with the project, I decided to have a look at other areas I could strengthen.</p>
-
-<h3 id="rebuilding-age-chart">Rebuilding Age Chart</h3>
-<p>After leaving the age chart from version 1 of my project, having not been able to group by age group, I decided to return to it in the hope that I could improve it. After some experimenting, I decided to edit Jack’s form system on the virtual tour guide as well as the database so that the user could pick from a series of age groups rather than write their exact age. I then set the database age row to ‘VARCHAR’ instead of an integer so that the data would display properly. This made the age graph look far more polished and Jack was happy with the changes that I made</p>
-
-<h3 id="csv-exporting">CSV Exporting</h3>
-<p>To strenthen my project even further and to improve the evaluation system for the volunteers at the silk mill, I decided to create a CSV exporting system, where volunteers could see all of the rows of data on the database and export them to an Excel document.</p>
-
-<p>To create this, I developed a system that gathered the database data into an array and then echoed it into a table on the page. To export the data I created a form that posted the data to download.php. Download.php then downloads the data to a file called users.csv.</p>
-
-<p>I think that this addition to the system will be really helpful for the volunteers at the silk mill as they will be able to have easy access to all of the data that our virtual guide will collect. As well as this I feel that it adds a very professional and complete feel to the project.</p>
-
-<h2 id="final-product">Final Product</h2>
-<p>I am extremely happy with the final product (seen in the video at the top of the page) for this project. Although learning new softwares and coding languages was challenging at times, I believe that I have learnt large amount about developing back-end softwares. I think that myself and Jack worked extremely well as a team and helped each other to learn for the duration of the project. In terms of the goals that I had at the start of the project, I believe that I have achieved all but one of them. To complete final goal we will need to discuss the project with Zoe at the end of year show.</p>
-
-<p>For this project I was very concious of managing my time wisely, therefore I managed to stick to my scheduling plan very well. I think that this increased my productivity over the duration of the project</p>
 
 </div>
 </div>

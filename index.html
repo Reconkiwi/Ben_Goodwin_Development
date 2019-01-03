@@ -18,7 +18,7 @@
     <section class="navigation" id="navbar">
     <div class="nav-container">
       <div class="brand">
-        <a href="#!">LOGO</a>
+        <a href="#!">BGD</a>
       </div>
       <nav>
         <div class="nav-mobile">
@@ -76,8 +76,7 @@
 
 	    <section class="hero" id="home">
 <script>
-//@author Omar Shehata. 2015.
-//We are loading the Three.js library from the cdn here: https://cdnjs.com/libraries/three.js/
+
 
 var scene;
 var camera;
@@ -90,14 +89,11 @@ particleSystem,
 deltaTime = 0;
 
 function scene_setup(){
-//This is all code needed to set up a basic ThreeJS scene
 
-//First we initialize the scene and our camera
 scene = new THREE.Scene();
 camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window.innerHeight, 0.1, 1000 );
 scene.background = new THREE.Color( 0xec3b83 );
 
-//We create the WebGL renderer and add it to the document
 renderer = new THREE.WebGLRenderer();
       renderer = new THREE.WebGLRenderer( { alpha: true } );
 renderer.setSize( window.innerWidth, window.innerHeight );
@@ -106,7 +102,6 @@ document.body.appendChild( renderer.domElement );
 
 scene_setup();
 
-//Add your code here!
    var geometry = new THREE.IcosahedronGeometry(1, 0);
 var material = new THREE.MeshPhongMaterial({color: 0xffffff, shading: THREE.FlatShading});
   var material2 = new THREE.MeshPhongMaterial({color: 0xffffff, shading: THREE.FlatShading});
@@ -114,9 +109,9 @@ var material = new THREE.MeshPhongMaterial({color: 0xffffff, shading: THREE.Flat
   var cube2 = new THREE.Mesh( geometry, material2 );
   var cube3 = new THREE.Mesh( geometry, material );
   var cube4 = new THREE.Mesh( geometry, material );
-//Add it to the screen
+
 scene.add( cube, cube2);
-cube.position.z = -3;//Shift the cube back so we can see it
+cube.position.z = -3
 cube2.position.z = -3;
 
    particles = new THREE.Geometry();
@@ -140,7 +135,7 @@ renderer.render(scene, camera);
 }
 render();
 
-// random helper
+
 function random( min, max ) {
 if ( isNaN(max) ) {
   max = min;
@@ -178,7 +173,6 @@ scene.add( lights[0] );
 scene.add( lights[1] );
 scene.add( lights[2] );
 
-//Render everything!
 function render() {
 cube.rotation.z += 0.005;
 cube.rotation.y += 0.005;
@@ -218,7 +212,7 @@ render();
         
         <div class="col-4 portfolio_square">
   <img src="/Ben_Goodwin_Development/./assets/LUFC.png" class="featured_img">
-            <h2 class="post_title"><a href="/Ben_Goodwin_Development/2018/12/24/Test3.html">The LUFC Site - Y3S1</a></h2>
+            <h2 class="post_title"><a href="/Ben_Goodwin_Development/2018/12/24/TheLUFCSite.html">The LUFC Site - Y3S1</a></h2>
             <p class="text-info lead">
               Dec 24, 2018
             </p>
@@ -234,7 +228,7 @@ render();
         
         <div class="col-4 portfolio_square">
   <img src="/Ben_Goodwin_Development/./assets/LUFC.png" class="featured_img">
-            <h2 class="post_title"><a href="/Ben_Goodwin_Development/2018/12/24/Test2.html">The LUFC News App</a></h2>
+            <h2 class="post_title"><a href="/Ben_Goodwin_Development/2018/12/24/TheLUFCApp.html">The LUFC News App - Y3S1</a></h2>
             <p class="text-info lead">
               Dec 24, 2018
             </p>
@@ -249,10 +243,26 @@ render();
           </div>
         
         <div class="col-4 portfolio_square">
-  <img src="/Ben_Goodwin_Development/./assets/arkitektlogo.png" class="featured_img">
-            <h2 class="post_title"><a href="/Ben_Goodwin_Development/2018/12/24/Test1.html">Arkitekt.UI</a></h2>
+  <img src="/Ben_Goodwin_Development/./assets/catqr.png" class="featured_img">
+            <h2 class="post_title"><a href="/Ben_Goodwin_Development/2018/12/23/CatQR.html">AR Lost Cat Poster - Y3S1</a></h2>
             <p class="text-info lead">
-              Dec 24, 2018
+              Dec 23, 2018
+            </p>
+
+            <p class="post_excerpt">
+              
+                <p>A masters student in my faculty came to me with a prototype proposal that they needed building towards their final submission. Maisie wanted me to create an AR missing cat poster application. The app was developed using AR.JS and then wrapped using ionic.</p>
+
+
+              
+            </p>
+          </div>
+        
+        <div class="col-4 portfolio_square">
+  <img src="/Ben_Goodwin_Development/./assets/arkitektlogo.png" class="featured_img">
+            <h2 class="post_title"><a href="/Ben_Goodwin_Development/2018/12/22/Arkitekt.UI.html">Arkitekt.UI - Y3S1</a></h2>
+            <p class="text-info lead">
+              Dec 22, 2018
             </p>
 
             <p class="post_excerpt">
@@ -265,15 +275,31 @@ render();
           </div>
         
         <div class="col-4 portfolio_square">
-  <img src="/Ben_Goodwin_Development/./assets/catqr.png" class="featured_img">
-            <h2 class="post_title"><a href="/Ben_Goodwin_Development/2018/12/24/Test0.html">AR Lost Cat Poster</a></h2>
+  <img src="/Ben_Goodwin_Development/./assets/heart.png" class="featured_img">
+            <h2 class="post_title"><a href="/Ben_Goodwin_Development/2018/04/24/SilkMill0.html">HeatBeat MR - Y2S2</a></h2>
             <p class="text-info lead">
-              Dec 24, 2018
+              Apr 24, 2018
             </p>
 
             <p class="post_excerpt">
               
-                <p>A masters student in my faculty came to me with a prototype proposal that they needed building towards their final submission. Maisie wanted me to create an AR missing cat poster application. The app was developed using AR.JS and then wrapped using ionic.</p>
+                <p>For this semester, we were asked to develop a product based motion graphic. The project was required to have typography and some form of compositing. Other than this, we were allowed to come up with a unique idea to develop.</p>
+
+
+              
+            </p>
+          </div>
+        
+        <div class="col-4 portfolio_square">
+  <img src="/Ben_Goodwin_Development/./assets/cogs.png" class="featured_img">
+            <h2 class="post_title"><a href="/Ben_Goodwin_Development/2018/04/24/SilkMill.html">The Silk Mill - Y2S2</a></h2>
+            <p class="text-info lead">
+              Apr 24, 2018
+            </p>
+
+            <p class="post_excerpt">
+              
+                <p>For our client projects this semester, we were given a series of briefs to complete in groups. My group and I opted to take on Whitchurch Silk Mill’s brief which was to develop a way of tracking and evaluating the visitors that entered the mill as well as monitor the popularity of their new exhibits.</p>
 
 
               

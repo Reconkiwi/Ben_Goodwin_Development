@@ -1,0 +1,203 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/96/three.js"> </script>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <link rel="stylesheet" href="/Ben_Goodwin_Development/assets/main.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <title>Ben Goodwin Development</title>
+
+  </head>
+  <body>
+    <section class="navigation" id="navbar">
+    <div class="nav-container">
+      <div class="brand">
+        <a href="#!">LOGO</a>
+      </div>
+      <nav>
+        <div class="nav-mobile">
+          <a id="nav-toggle" href="#!"><span></span></a>
+        </div>
+        <ul class="nav-list">
+          <!-- Setting the links to #! will ensure that no action takes place on click. -->
+          <li><a href="/Ben_Goodwin_Development/">HOME</a></li>
+          <li><a href="/Ben_Goodwin_Development/#about">ABOUT</a></li>
+          <li><a href="/Ben_Goodwin_Development/#posts">PORTFOLIO</a></li>
+          <li><a href="/Ben_Goodwin_Development/#contact">CONTACT</a></li>
+          <li><a href="/Ben_Goodwin_Development/#cv">CV</a></li>
+        </ul>
+      </nav>
+    </div>
+  </section>
+      <script>
+      (function($) { // Begin jQuery
+    $(function() { // DOM ready
+      // If a link has a dropdown, add sub menu toggle.
+      $('nav ul li a:not(:only-child)').click(function(e) {
+        $(this).siblings('.nav-dropdown').toggle();
+        // Close one dropdown when selecting another
+        $('.nav-dropdown').not($(this).siblings()).hide();
+        e.stopPropagation();
+      });
+      // Clicking away from dropdown will remove the dropdown class
+      $('html').click(function() {
+        $('.nav-dropdown').hide();
+      });
+      // Toggle open and close nav styles on click
+      $('#nav-toggle').click(function() {
+        $('nav ul').slideToggle();
+      });
+      // Hamburger to X toggle
+      $('#nav-toggle').on('click', function() {
+        this.classList.toggle('active');
+      });
+    }); // end DOM ready
+  })(jQuery); // end jQuery
+      </script>
+      <script>
+  window.onscroll = function() {myFunction()};
+
+  var navbar = document.getElementById("navbar");
+  var sticky = navbar.offsetTop;
+
+  function myFunction() {
+    if (window.pageYOffset >= sticky) {
+      navbar.classList.add("sticky")
+    }
+  }
+  </script>
+
+
+	    <h2 class="single_post_title">HeatBeat MR - Y2S2</h2>
+
+<div class="container singe_post_cont">
+  <div class="row">
+    <div class="col-12">
+  <p>For this semester, we were asked to develop a product based motion graphic. The project was required to have typography and some form of compositing. Other than this, we were allowed to come up with a unique idea to develop.</p>
+
+<iframe src="/Ben_Goodwin_Development/assets/heartbeat.mp4"></iframe>
+
+<h2 id="the-brief">The Brief</h2>
+
+<p>For this semester, we were asked to develop a product based motion graphic. The project was required to have typography and some form of compositing. Other than these constraints we were given free reign to come up with a unique idea to develop.</p>
+
+<p>As well as this, we were given three example task ideas to help guide or idea choices:</p>
+
+<ul>
+  <li>Opening Title Sequence</li>
+  <li>Product Visualisation</li>
+  <li>Educational Video</li>
+  <li>Initial Ideas</li>
+</ul>
+
+<p>I began my development process by coming up with a few project ideas:</p>
+
+<h2 id="idea-1">Idea 1</h2>
+
+<p>My first idea was to develop a mock version of the royal army montage adverts aimed at a development or design company. The idea proposed was supposed to be quite comdeic and feature Scott Pilgrim sketch style overlays to accompany it. At first, I thought that this would be a fun project to do, however, I wasn’t very confident in my filming ability so decided to consider other options.</p>
+
+<h2 id="idea-2">Idea 2</h2>
+
+<p>My second idea was to develop was to develop a Cinema4D based motion graphic that focussed on presenting a product, such as a new phone or new piece of technology. As I have quite a lot of experience using Cinema4d, I felt that I was far more suited to this project. However, I really wanted to test my abilities and push myself to create something out of the ordinary.</p>
+
+<h2 id="chosen-idea">Chosen Idea</h2>
+
+<p>Having brainstormed a series of different possibilities, for my motion graphic, I found that I did not feel passionate about developing any of my ideas. Therefore, I decided to try and think outside the box. This eventually led to me deciding that I wanted to create a motion graphic that I could programme. As I had recieved positive feedback from my animation project final outcome, where I developed my animation into an in-game sprite, I felt that developing my motion graphic as apposed to using softwares such as after effects would be a really unique way of presenting my work.</p>
+
+<p>It was clear to me, that if I was planning on programming my motion graphic, it would need to have an element of interactivity to it. I eventually decided, after some discussion with my lecturer, that I would attempt to develop something for the Microsoft HoloLens (a mixed reality headset). For me, this was an extremely exciting avenue to take as I had never developed a product for AR, VR OR MR. As well as this mixed reality is quite a new technology meaning that I would developing applications for extremely powerful technology. I was very aware, however, of the risks of attempting HoloLens development. As I would need to spend time both programming as well and designing, I knew that I would have an extremely heavy workload for the project.</p>
+
+<p>The HoloLens application
+Once I had decided on the platform that I was developing my motion graphic on, it was important to find an audience focus before coming up with a set idea. Having experienced it in school when I was younger, I felt that I wanted to take an educational route where I would attempt to gamify education. This is something that I felt really passionate about pursuing, so decided to focus my project on secondary school learning</p>
+
+<p>To focus my project even further, I wanted to find a charity that could also build the application for. The best fit was to develop a motion graphic about the heart. As the heart is such an important organ in the body and the British Heart Foundation are a prominent charity in the United Kingdom, I felt that this suited a HoloLens project perfectly. As well as this secondary school students are required to learn about the heart as part of their GCSE’s. This meant that I could focus really heavily on the educational aspects of the project and possibly learn something myself as well.</p>
+
+<h2 id="moodboard">Moodboard</h2>
+
+<p>I developed a simple moodboard of different heart shapes and representations. I began my search looking at realistic hearts, however, I felt that, as I had to 3D model and animate it, it would be much easier to take a more basic approach. From this, I decided that I wanted to create a low-poly style heart as apposed to a cartoon or realistic heart. I think that this was a good choice for me as I have always been really interested in geometric and low-poly design.</p>
+
+<h2 id="research">Research</h2>
+<p>To gain a better understanding of the heart, before I began developing my motion graphic, I took the time to read a series of GCSE workbooks about the heart. This research was really important for me as I was trying to develop a motion graphic that would help students with their education as well as raise awareness. This was also a massive help when I was developing my script for the product.</p>
+
+<h2 id="storyboard">Storyboard</h2>
+
+<p>Having decided on the art style I was going to focus on, I began drawing up an initial storyboard for my motion graphic. In hindsight, I feel that my storyboard may have been slightly too advanced and hopeful considering I had to programme and design my project. The premise of the storyboard, however, was to simply take the user through a guide of the heart, what its made up of, how it works, the health risks and ways of protecting your heart.</p>
+
+<p>As I was developing for secondary school children, I felt that information presented in the motion graphic did not need to be extremely complex. As well as this, I also wanted to develop the project as a tool that the British Heart Foundation could use to raise awareness about heart health. Therefore, the information needed to be interesting but not so complex that the user became distracted.</p>
+
+<h2 id="treatment">Treatment</h2>
+<p>Having created my storyboard, I decided to create a treatment that included the concept, visual/audio considerations, the script and a few technical considerations</p>
+
+<h2 id="timeline">Timeline</h2>
+
+<p>As I was tasked with such a heavy workload for this project, I needed to plan my time accordingly so that I would have enough time to design and develop my project. As well as this I set myself contingency plans incase I fell behind schedule at any point of the project. This was ended up beign very useful when trying to organise my weekly tasks.</p>
+
+<h2 id="cinema4d-modelling">Cinema4D Modelling</h2>
+<p>To create the low poly heart that I wanted for the basis of my project I designed a model using Cinema4D. As I have used Cinema4D before I got back to grips with the software extremely fast.</p>
+
+<p>I was quite happy with the final version of my heart model as I think that it looked like a good representation of the hear. I do feel, if I hade allowed myself slightly more time, I could have polished it slightly more. Possibly by adding extra valves at the top and sculpting the shape slightly better. However, I was reslly concious of the time that I had and felt that it worked well enough.</p>
+
+<h2 id="trailer">Trailer</h2>
+<p>To get myself excited about the project, I decided to focus on creating a short Cinema4D animation to show off the model and get people excited about the project via social media.</p>
+
+<p>I decided to experiment with creating heartbeats using the explosion tool. I keyframed exlosion radius to the speed of a heartbeat I found online.</p>
+
+<p>Below is the final outcome of the trailer</p>
+
+<p>I was really happy with the outcome of the video, however, the static effect that I added, completely ruined the sound of the video on phones which was a massive shame and something that I overlooked</p>
+
+<h2 id="trailer-feedback">Trailer Feedback</h2>
+<p>I was given some feedback over Instagram about my trailer. A few people suggested to me that a heart beats twice per cylce. Although I was aware of this fact, I had meant for the animation to be more representational of a heart. However, after this feedback I realised that I needed to make the beating more obvious and took that into my animations for the final product.</p>
+
+<h2 id="c4d-animations">C4D Animations</h2>
+<p>The first animations that I created for my heart were using Cinema4D’S ‘point level animation’ system. I felt that these looked really interesting and would have had a massive impact on my project. However, I had not considered the fact that Unity does not support point level animation when you import a FBX file. This set me back heavily as it meant that a lot of the animations I had created were unusable. To fix this issue I created some simpler animations that I knew that I could port to unity.</p>
+
+<h2 id="holo-development">Holo Development</h2>
+<p>HoloLens development was probably the most difficult thing that I have had to do since becoming a student developer. As I had never touched on mixed reality before, I was theoretically learning a completely new software as Unity has its own seperate API especially for mixed reality. Luckily there were a lot of tutorials on how to develop for it. As well as this I ended up collaborating with some 2nd year sound students, who developed all of the sound files for my interactive motion graphic. This took a massive workload off of me. However, due to recording studio booking, I was not given the sound files until a night before the submission date.</p>
+
+<p>As most of my animations required me to know the speed of various sounds I was forced to code a lot of the animations in my project within the Unity program. This made the project extremely challenging and time consuming for me.</p>
+
+<p>As seen in the screen capture, due to me aquiring the sound files so late in development, I had to code the the UI text animations to play exactly to the narration files I was given. This was an extremely lengthy process and meant that I had to keep replaying the program to test whether or not I was synced up.</p>
+
+<p>As well as this, because of the time it had taken me to sync the narration, I was unable to implement any of the other animations I had built in Unity apart from a simple heartbeat. This was really dissapointing for me as I think that it reduced the overall quality of my project.</p>
+
+<h2 id="project-feedback">Project Feedback</h2>
+<p>During my development, I looked for a lot of feedback on my project so that I could improve the overall quality of my motion graphic. Most of my feedback was sound related where it was suggested to me that the backing track music was too loud. I decided to tone this down for my project submission and I feel that it now adds a good ambience to the project.</p>
+
+<h2 id="fulfilling-the-brief">Fulfilling the brief</h2>
+<p>The brief required a level of compositing. Arguably I could suggest that my project was made up of three main layers. The UI text elements, the heart animations and reality itself. When developing for HoloLens it was important to consider how color choices, font sizes and styling would be effected in different environments. As spatial mapping can be used anywhere with the HoloLens to create in-room holigrams, it was important to choose the right colors and fonts for my text. I ended up using Microsoft’s mixed reality font for my project as it is quite bold and easy to read. I also tested a series of font colors to see which showed up the best. Surprisingly I found that white was the most prominent within reality.</p>
+
+<h2 id="final-opinions">Final Opinions</h2>
+<p>I feel that I pushed my abilities extremely hard in this project and I am proud that I was the first student on my course to develop an application for the HoloLens. However, due to a number of reasons my development time was pushed back heavily which meant that I could not add some of the features that I wanted to. This is really dissapointing for me, but I will take it onboard for my future projects</p>
+
+</div>
+</div>
+</div>
+
+
+<footer class="page_footer">
+<div class="container">
+<div class="row">
+<div class="col-6">
+  <h4>Developed by: Ben Goodwin</h4>
+  </div>
+<div class="col-6">
+  <h4>Powered by: Jekyll and Three.JS</h4>
+  </div>
+  </div>
+  </div>
+</footer>
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.compatibility.js"></script>
+
+</body>
+</html>
+

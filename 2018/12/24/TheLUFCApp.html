@@ -1,0 +1,385 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/96/three.js"> </script>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <link rel="stylesheet" href="/Ben_Goodwin_Development/assets/main.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <title>Ben Goodwin Development</title>
+
+  </head>
+  <body>
+    <section class="navigation" id="navbar">
+    <div class="nav-container">
+      <div class="brand">
+        <a href="#!">LOGO</a>
+      </div>
+      <nav>
+        <div class="nav-mobile">
+          <a id="nav-toggle" href="#!"><span></span></a>
+        </div>
+        <ul class="nav-list">
+          <!-- Setting the links to #! will ensure that no action takes place on click. -->
+          <li><a href="/Ben_Goodwin_Development/">HOME</a></li>
+          <li><a href="/Ben_Goodwin_Development/#about">ABOUT</a></li>
+          <li><a href="/Ben_Goodwin_Development/#posts">PORTFOLIO</a></li>
+          <li><a href="/Ben_Goodwin_Development/#contact">CONTACT</a></li>
+          <li><a href="/Ben_Goodwin_Development/#cv">CV</a></li>
+        </ul>
+      </nav>
+    </div>
+  </section>
+      <script>
+      (function($) { // Begin jQuery
+    $(function() { // DOM ready
+      // If a link has a dropdown, add sub menu toggle.
+      $('nav ul li a:not(:only-child)').click(function(e) {
+        $(this).siblings('.nav-dropdown').toggle();
+        // Close one dropdown when selecting another
+        $('.nav-dropdown').not($(this).siblings()).hide();
+        e.stopPropagation();
+      });
+      // Clicking away from dropdown will remove the dropdown class
+      $('html').click(function() {
+        $('.nav-dropdown').hide();
+      });
+      // Toggle open and close nav styles on click
+      $('#nav-toggle').click(function() {
+        $('nav ul').slideToggle();
+      });
+      // Hamburger to X toggle
+      $('#nav-toggle').on('click', function() {
+        this.classList.toggle('active');
+      });
+    }); // end DOM ready
+  })(jQuery); // end jQuery
+      </script>
+      <script>
+  window.onscroll = function() {myFunction()};
+
+  var navbar = document.getElementById("navbar");
+  var sticky = navbar.offsetTop;
+
+  function myFunction() {
+    if (window.pageYOffset >= sticky) {
+      navbar.classList.add("sticky")
+    }
+  }
+  </script>
+
+
+	    <h2 class="single_post_title">The LUFC News App - Y3S1</h2>
+
+<div class="container singe_post_cont">
+  <div class="row">
+    <div class="col-12">
+  <p>The LUFC News App was a follow on from the LUFC Site where I was asked to develop a prototype that included login systems and post data directly from the site itself.</p>
+
+<h3 id="the-brief">The Brief</h3>
+
+<p>Having developed the new LUFC News site for Alex, I agreed to start work on a prototype for him for his companies app. Although Alex did not have any designs for the app, he allowed me the freedom to implement my own designs. Therefore, The role was both development and design based.</p>
+
+<p>Alex wanted a simple and streamlined application that effectively pulled data from the site to the app such as posts, users and discussions. Here were Alex’s specifications for the app:</p>
+
+<h2 id="alexs-specifications">Alex’s Specifications</h2>
+<ul>
+  <li>Linked to the LUFC News site</li>
+  <li>Consistent design</li>
+  <li>LUFC News branding</li>
+  <li>Look and feel eye-catching</li>
+  <li>Simple to use</li>
+  <li>User logins</li>
+  <li>User chat systems</li>
+  <li>WordPress post data across both platforms</li>
+</ul>
+
+<p>As there were no designs, I was left to build these from my own imagination.</p>
+
+<h2 id="team-and-target-audience">Team and Target Audience</h2>
+
+<p>For detailed information regarding the team and our target audiences, please visit the blog post discussing the LUFC News site!</p>
+
+<h3 id="the-team">The Team</h3>
+
+<ul>
+  <li>Alex Matthews: Owner of LUFC News</li>
+  <li>Matt Hampsey: Designer</li>
+  <li>Myself: Developer</li>
+</ul>
+
+<h3 id="target-audiences">Target Audiences</h3>
+
+<ul>
+  <li>LUFC News Subscribers</li>
+  <li>Leeds United Fans</li>
+  <li>Andrea Radrizzani</li>
+</ul>
+
+<h3 id="brainstorming-and-wireframing">Brainstorming and Wireframing</h3>
+
+<p>To ensure that I had a good idea to pitch to Alex during our first meeting, I set out to come up with a series of development tools and wireframes so that we could decide on the best possible solution for development.</p>
+
+<h3 id="idea-1-wrapping-a-styled-html-site">Idea 1: Wrapping a Styled HTML Site</h3>
+
+<p>My first idea was to create the app as if I were developing a regular HTML website using a ‘one page’ Javascript framework and then subsequently phone wrapping it by placing the whole file inside a blank Ionic src folder and building it from there. This is something that i had done previously for Alex when developing the first prototype for his app.</p>
+
+<h3 id="problems-with-idea-1">Problems with Idea 1</h3>
+
+<p>My main issue with this idea was that I felt slightly unprofessional and lazy compiling his app in this way. This process works extremely well for very basic prototypes, however, as Alex had already received one of these, I wanted to ensure that his new prototype was to a higher standard than the previous.</p>
+
+<h3 id="idea-2-building-directly-to-ionic-using-angular">Idea 2: Building directly to Ionic using Angular</h3>
+
+<p>Another idea that I had was to build the app up from a blank Ionic app. Ionic’s most recent update included Angular integration, therefore, it would be a good chance to learn a new framework and coding language. As well as this Ionic is a popular framework for web app development, so it was likely that there would be plenty of documentation to help me stay on track.</p>
+
+<h3 id="problems-with-idea-2">Problems with Idea 2</h3>
+
+<p>The issues facing this development were that, as I had suggested earlier, I had never built an application using Ionic nor had I ever used Angular as a coding language. This would mean that it would likely take me longer to learn how to use the language and how the framework works.</p>
+
+<h3 id="idea-3-xcode-and-android-studio">Idea 3: Xcode and Android Studio</h3>
+
+<p>The final option was to develop the app using Xcode and Android Studio. This would probably be the most professional development outcome as many companies will develop applications directly for each platform IOS and Android whereas frameworks such as Ionic are simple and developed for both platforms simultaneously.</p>
+
+<h3 id="problems-with-idea-3">Problems with Idea 3</h3>
+
+<p>Unfortunately the largest problem faced with this idea were the time constraints. I did not have enough time to develop an app twice for each platform. As well as this I have never used these technologies before and the amount of work that I would need to put in to get the prototype working was not feasible.</p>
+
+<h3 id="the-final-solution">The Final Solution</h3>
+
+<p>I eventually decided to pitch the 2nd idea that I had to Alex where I would build an application directly into the Ionic framework. I felt that this would be a good chance for me to learn some new skills and push my development capabilities further.</p>
+
+<h3 id="the-first-meeting-with-alex">The First Meeting with Alex</h3>
+
+<p>Having decided on my preferred idea, I pitched this to Alex during our first meeting. Alex seemed happy with my decision moving forwards and ensured that I understood exactly what he wanted the app to do. Having gotten the go ahead from Alex I decided to breakdown the project into the main tasks that I needed to complete.</p>
+
+<h3 id="the-breakdown">The Breakdown</h3>
+
+<ul>
+  <li>Setup Wordpress API’S</li>
+  <li>Display WordPress posts to app</li>
+  <li>Create login menus</li>
+  <li>Setup JSON Authentication</li>
+  <li>Design the leftover pages</li>
+</ul>
+
+<p>Having broken the project down into the main tasks it seemed clear to me that I needed to set the API’s up first before I could begin the development of the app. Once again, Alex organised weekly meetings with me to ensure that I stayed on track of my work and so that he could give his own personal input at each stage of the apps development.</p>
+
+<h3 id="organisation-and-timelien">Organisation and Timelien</h3>
+
+<p>To organise my time precisely I created a set of development stages that I could work towards each week. As the site needed to be completed before I began work on the app prototype, my time was limited to around 4 weeks.</p>
+
+<h3 id="development-stages">Development Stages</h3>
+
+<ul>
+  <li>Stage 1: Setup WordPress API’s</li>
+  <li>Stage 2: Strategise for efficient app development</li>
+  <li>Stage 3: Begin developing the blank Ionic template</li>
+  <li>Stage 4: Display WordPress posts to app</li>
+  <li>Stage 5: Bug test and amend</li>
+  <li>Stage 6: Setup Login landing page</li>
+  <li>Stage 7: JSON Wordpress Auth</li>
+  <li>Stage 8: Complete final page designs</li>
+  <li>stage 9: Bug test ready for pitch</li>
+</ul>
+
+<h2 id="timeline">Timeline</h2>
+
+<p><img src="/Ben_Goodwin_Development/assets/teamweek.png" alt="TeamWeek" /></p>
+
+<p>Once again, we continued to use TeamWeek and our WhatsApp chat to plan our schedules accordingly.</p>
+
+<h2 id="personal-goals">Personal Goals</h2>
+
+<ul>
+  <li>Learn Ionic framework</li>
+  <li>Learn Angular</li>
+  <li>Learn to setup WordPress API’s</li>
+  <li>Keep the Client happy</li>
+  <li>Finish the prototype having learnt new skills</li>
+</ul>
+
+<p>I felt that learning Ionic would be a good skill to have as a developer as I had been building a series of AR applications this semester and may need to wrap them for mobile use. As well as this Angular is a good language to have an understanding of and could help in employment situations in  the future</p>
+
+<h2 id="personal-gantt-chart">Personal Gantt Chart</h2>
+
+<p>As well as this to stay on task I created a personal Gantt Chart so that I could set my own deadlines:</p>
+
+<p><img src="/Ben_Goodwin_Development/assets/lufcapptimeline.png" alt="TeamWeek" /></p>
+
+<p>As seen in the timeline, I had a very limited window to get a prototype for Alex up and running. This meant that i needed to work extremely quickly and efficiently to avoid any issues or problems.</p>
+
+<h2 id="development-tools">Development Tools</h2>
+
+<p>To gain a better understanding of the development process, I briefly researched into the tools that I would be using for development:</p>
+
+<h3 id="ionic">Ionic</h3>
+
+<p>Ionic is an open source SDK for rapid hybrid mobile development. This means once the app is created it can be built for any mobile device. This allows for quick creating of applications as well as fast deployment. Ionic 4 now heavily uses Angular for development.</p>
+
+<h3 id="angular">Angular</h3>
+
+<p>Angular is a TypeScript open source, front-end web application framework. It is used directly with Ionic 4 and I would need to learn it for the prototypes development.</p>
+
+<h3 id="rest-apis">Rest API’s</h3>
+
+<p>Rest API’s take advantage HTTP when being used for web, therefore, developers are not required to download libraries or additional software to use them.</p>
+
+<h2 id="development">Development</h2>
+
+<ul>
+  <li>Creating the Ionic template</li>
+</ul>
+
+<p>The first thing that I needed to do was setup and install Ionic on to my computer:</p>
+
+<p><img src="/Ben_Goodwin_Development/assets/ionicinstall.png" alt="ionic install" /></p>
+
+<p>By running the command above in terminal I was able to install Ionic globally to my computer. The next step was to create a new Ionic project:</p>
+
+<p><img src="/Ben_Goodwin_Development/assets/ionicnewblank.png" alt="ionic install" /></p>
+
+<p>I chose to use the sidebar template on my Ionic app as it came set up with a really basic side-bar menu and hamburger button. As I was limited to four weeks I felt that it would be more beneficial to create the navigation like this rather than spend more of my time creating my own navigation system.</p>
+
+<p>Having done this, by accessing the root directory of the Ionic app in terminal you can type the command ‘Ionic serve’ which will launch the app locally to your web browser. The outcome looked a little something like this:</p>
+
+<p><img src="/Ben_Goodwin_Development/assets/ionictemplatelayout.png" alt="ionic install" /></p>
+
+<ul>
+  <li>Setting up the WP-Rest API</li>
+</ul>
+
+<p>Once the base template was setup, I needed to configure the WordPress Rest API so that I could pull data from the site. I decided to use the WP Rest-API plugin, mainly because it is so well documented and many people have used it to display WordPress posts via Ionic. Once installed, i was able to see the data in JSON form by going to localhost:8888/wordpress/wp-json/wp/v2/posts. The result looked like this:</p>
+
+<p><img src="/Ben_Goodwin_Development/assets/wprestapi.png" alt="Rest API" /></p>
+
+<ul>
+  <li>Pulling Wordpress Posts from the API</li>
+</ul>
+
+<p>The next stage was to link the Rest API endpoint to our Ionic app. To do this I needed to add the following code to the environment.ts and environment.prod.ts files:</p>
+
+<p><img src="/Ben_Goodwin_Development/assets/environmentts.png" alt="Rest API endpoint" /></p>
+
+<p>As well as this I needed to set up a data service that could act as the middle ground between the API endpoint and the app pages. Usually, to do this you are able to use the code ‘ionic generate’, however, for an unknown reason, doing this would update angular and break my applications. Unfortunately, I was unable to find a solution to this, therefore, I was forced to create pages manually which took some research and some time to set up.</p>
+
+<p><img src="/Ben_Goodwin_Development/assets/data_service.png" alt="Data Service" /></p>
+
+<p>As seen in the code above, the data service ‘GET’ the Rest API data from the WordPress site and wait for a response.</p>
+
+<p>Once the data service has received a response, the next step was to allow the homepage to log the data collected:</p>
+
+<p><img src="/Ben_Goodwin_Development/assets/homepagets.png" alt="Home Data Log" /></p>
+
+<p>As seen by the code, the data service collects the API data and then logs it inside of the browser inspector.</p>
+
+<p>After successfully logging this data to the inspector, the next step was to post this data to the home.html page so that it was visible to the user. This was done with the following code:</p>
+
+<p><img src="/Ben_Goodwin_Development/assets/homepagehtml.png" alt="Home news feed" /></p>
+
+<p>Following the WP Rest-API documentation, it was fairly simple echoing the data on to the page. The final outcome looked like this:</p>
+
+<p><img src="/Ben_Goodwin_Development/assets/posttilesapp.png" alt="Home news feed" /></p>
+
+<ul>
+  <li>Creating the Login Page</li>
+</ul>
+
+<p><img src="/Ben_Goodwin_Development/assets/authts.png" alt="auth ts" /></p>
+
+<p>The next step of creating the prototype for the app was to setup an authentication service. This was set up in a similar way to the data service discussed earlier, however, the authentication service tries to locate the usernames and passwords of the WordPress site.</p>
+
+<p>Unfortunately after some research, it seemed that I would require configuring JWT Authentication for the WP Rest-API. Having read through the documentation, it was clear that I needed to make changes to the wp-config.php and .htaccess files.</p>
+
+<p>I added JTW Authentication keys to the wp-config file and added the following to the .htaccess file:</p>
+
+<p><img src="/Ben_Goodwin_Development/assets/htaccess.png" alt="htaccess" /></p>
+
+<p>I did struggle for a little while to find the .htaccess file as i did not realise that it was a hidden file on my mac.</p>
+
+<p>As I had already set up the authentication service for the login system the last notable thing that needed doing was creating the login page itself.</p>
+
+<p><img src="/Ben_Goodwin_Development/assets/loginhtml.png" alt="login page" /></p>
+
+<p>As seen in the code above, I created a simple form that linked to the authentication service via login.ts that allowed for the form to check whether or not the username and password matched the usernames and passwords in the database. The final outcome looked like this:</p>
+
+<p><img src="/Ben_Goodwin_Development/assets/loginhtmlpage.png" alt="login page" /></p>
+
+<p>I decided to add a continue as guest function as the login system did not have any sign up functions and would limit the amount of users available to access the app. As well as this I set the login page as the root directory for the app so that it acts as a landing page for the user. This is why there is no navigation menu available, to ensure that the user can’t access other pages without defining in they are a guest or have an account.</p>
+
+<ul>
+  <li>Problems with the Login Page</li>
+</ul>
+
+<p>The main issue with the login system is that once you are logged in there is no logout function. It keeps the login button available on the navigation menu which directs the user back to login again. Given more time I would have allocated some time to create a session system when if the user is logged in a logout button replaces the login button and by pressing it, it will end the session. As well as this the login system requires a recaptcha to avoid any unwanted spam.</p>
+
+<ul>
+  <li>The API Problem</li>
+</ul>
+
+<p>Another problem I faced during development was the lack of funding to acquire an API in time for the submission. This meant that I was unable to setup any of the live fixtures, results and league tables on the app as I could not be granted access to the data. This was a bit of a shame but I still mapped out how I felt the pages should look so that Alex could have a good understanding of what he wanted for when he had available funding.</p>
+
+<ul>
+  <li>The iFlyChat Problem</li>
+</ul>
+
+<p>As I wanted to add a multi-platform chat service to the site and app, I attempted to use a chat plugin for WordPress with multiple platform support. As iFlyChat has HTML integration, I believed that I would be able to call this embed into the index.html of the LUFC News app. Unfortunately, the embed is returning an error which I believe to be caused by the companies outdated code. i have contacted them about this but was unable to receive any information back in time for this submission. This was a massive disappointment as I feel that the chat system would have strengthened the final product much more.</p>
+
+<h2 id="final-thoughts">Final Thoughts</h2>
+
+<p>Overall, I am happy with what I have learnt during this project. As well as this Alex was extremely happy with the overall design and feel of the app. We have been in discussions regarding his feedback and he has decided that he will be investing in an API so that I can fully develop the app for a beta launch next month which is really exciting.</p>
+
+<h2 id="next-steps">Next Steps</h2>
+
+<p>The next step will be to set up sessions for the logins, create a logout button, get the sport API working and finally configure the chat system. We hope for the app to be available on all devices by the end of next month.</p>
+
+<p>For information regarding the NLT documents and handover booklet please visit the blog page discussing the LUFC News site.</p>
+
+<p>See the code on <a href="https://github.com/Reconkiwi/Football-RESTAPI-APP">GitHub</a></p>
+
+<h3 id="below-are-some-screenshots-of-the-final-product">Below are some screenshots of the final product</h3>
+
+<p><img src="/Ben_Goodwin_Development/assets/loginhtmlpage.png" alt="login page" /></p>
+
+<p><img src="/Ben_Goodwin_Development/assets/loginhtmlwrong.png" alt="home page" /></p>
+
+<p><img src="/Ben_Goodwin_Development/assets/posttilesapp.png" alt="home page" /></p>
+
+<p><img src="/Ben_Goodwin_Development/assets/singlepostapp.png" alt="single post" /></p>
+
+<p><img src="/Ben_Goodwin_Development/assets/appnav.png" alt="nav" /></p>
+
+<p><img src="/Ben_Goodwin_Development/assets/fixturesapp.png" alt="fixtures page" /></p>
+
+<p><img src="/Ben_Goodwin_Development/assets/livepitchapp.png" alt="live feed page" /></p>
+
+</div>
+</div>
+</div>
+
+
+<footer class="page_footer">
+<div class="container">
+<div class="row">
+<div class="col-6">
+  <h4>Developed by: Ben Goodwin</h4>
+  </div>
+<div class="col-6">
+  <h4>Powered by: Jekyll and Three.JS</h4>
+  </div>
+  </div>
+  </div>
+</footer>
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.compatibility.js"></script>
+
+</body>
+</html>
+

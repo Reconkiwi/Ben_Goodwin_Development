@@ -120,6 +120,11 @@ width: 70px;
 display: block;
 }
 
+.brand a {
+
+  font-size: 5vw;
+}
+
 nav {
 width: 100%;
 padding: 70px 0 15px;
@@ -282,7 +287,12 @@ height: auto;
 
 .about_section {
 
-  margin-bottom: 80vh;
+  margin-bottom: 120vh;
+}
+
+.brand a {
+
+  font-size: 7vw;
 }
 
 }

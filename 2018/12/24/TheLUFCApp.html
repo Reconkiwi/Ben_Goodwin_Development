@@ -11,7 +11,25 @@
     <link rel="stylesheet" href="http://metrik.space/assets/main.css">
     <link href="https://fonts.googleapis.com/css?family=Rajdhani:600" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link rel="apple-touch-icon" sizes="60x60" href="http://metrik.space/assets/favicon.ico/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="http://metrik.space/assets/favicon.ico/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="http://metrik.space/assets/favicon.ico/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="http://metrik.space/assets/favicon.ico/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="http://metrik.space/assets/favicon.ico/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="http://metrik.space/assets/favicon.ico/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="http://metrik.space/assets/favicon.ico/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="http://metrik.space/assets/favicon.ico/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="http://metrik.space/assets/favicon.ico/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="http://metrik.space/assets/favicon.ico/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="http://metrik.space/assets/favicon.ico/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="http://metrik.space/assets/favicon.ico/favicon-16x16.png">
+    <link rel="manifest" href="/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="http://metrik.space/assets/favicon.ico/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
     <title>METRIK</title>
+    <meta name="description" content="Welcome to Metrik. My name is Ben Goodwin. I am a 21 year old student developer studying at the University of Winchester. Although my course is mainly focussed on web development, I spend a lot of my time experimenting with the development of AR, VR and MR applications as well as various 2D and 3D game projects.">
+    <meta name="keywords" content="developer,student,code,design,development,designer,bristol,client,3D,web,websites,augmented reality,virtual reality,mixed reality,bath,winchester,vufroia,unity3d,unity,portfolio">
 
   </head>
   <body>
@@ -188,7 +206,7 @@
 
 <h2 id="timeline">Timeline</h2>
 
-<p><img src="/home/assets/teamweek.png" alt="TeamWeek" /></p>
+<p><img src="http://metrik.space/assets/teamweek.png" alt="TeamWeek" /></p>
 
 <p>Once again, we continued to use TeamWeek and our WhatsApp chat to plan our schedules accordingly.</p>
 
@@ -208,7 +226,7 @@
 
 <p>As well as this to stay on task I created a personal Gantt Chart so that I could set my own deadlines:</p>
 
-<p><img src="/home/assets/lufcapptimeline.png" alt="TeamWeek" /></p>
+<p><img src="http://metrik.space/assets/lufcapptimeline.png" alt="TeamWeek" /></p>
 
 <p>As seen in the timeline, I had a very limited window to get a prototype for Alex up and running. This meant that i needed to work extremely quickly and efficiently to avoid any issues or problems.</p>
 
@@ -236,17 +254,17 @@
 
 <p>The first thing that I needed to do was setup and install Ionic on to my computer:</p>
 
-<p><img src="/home/assets/ionicinstall.png" alt="ionic install" /></p>
+<p><img src="http://metrik.space/assets/ionicinstall.png" alt="ionic install" /></p>
 
 <p>By running the command above in terminal I was able to install Ionic globally to my computer. The next step was to create a new Ionic project:</p>
 
-<p><img src="/home/assets/ionicnewblank.png" alt="ionic install" /></p>
+<p><img src="http://metrik.space/assets/ionicnewblank.png" alt="ionic install" /></p>
 
 <p>I chose to use the sidebar template on my Ionic app as it came set up with a really basic side-bar menu and hamburger button. As I was limited to four weeks I felt that it would be more beneficial to create the navigation like this rather than spend more of my time creating my own navigation system.</p>
 
 <p>Having done this, by accessing the root directory of the Ionic app in terminal you can type the command ‘Ionic serve’ which will launch the app locally to your web browser. The outcome looked a little something like this:</p>
 
-<p><img src="/home/assets/ionictemplatelayout.png" alt="ionic install" /></p>
+<p><img src="http://metrik.space/assets/ionictemplatelayout.png" alt="ionic install" /></p>
 
 <ul>
   <li>Setting up the WP-Rest API</li>
@@ -254,7 +272,7 @@
 
 <p>Once the base template was setup, I needed to configure the WordPress Rest API so that I could pull data from the site. I decided to use the WP Rest-API plugin, mainly because it is so well documented and many people have used it to display WordPress posts via Ionic. Once installed, i was able to see the data in JSON form by going to localhost:8888/wordpress/wp-json/wp/v2/posts. The result looked like this:</p>
 
-<p><img src="/home/assets/wprestapi.png" alt="Rest API" /></p>
+<p><img src="http://metrik.space/assets/wprestapi.png" alt="Rest API" /></p>
 
 <ul>
   <li>Pulling Wordpress Posts from the API</li>
@@ -262,33 +280,33 @@
 
 <p>The next stage was to link the Rest API endpoint to our Ionic app. To do this I needed to add the following code to the environment.ts and environment.prod.ts files:</p>
 
-<p><img src="/home/assets/environmentts.png" alt="Rest API endpoint" /></p>
+<p><img src="http://metrik.space/assets/environmentts.png" alt="Rest API endpoint" /></p>
 
 <p>As well as this I needed to set up a data service that could act as the middle ground between the API endpoint and the app pages. Usually, to do this you are able to use the code ‘ionic generate’, however, for an unknown reason, doing this would update angular and break my applications. Unfortunately, I was unable to find a solution to this, therefore, I was forced to create pages manually which took some research and some time to set up.</p>
 
-<p><img src="/home/assets/data_service.png" alt="Data Service" /></p>
+<p><img src="http://metrik.space/assets/data_service.png" alt="Data Service" /></p>
 
 <p>As seen in the code above, the data service ‘GET’ the Rest API data from the WordPress site and wait for a response.</p>
 
 <p>Once the data service has received a response, the next step was to allow the homepage to log the data collected:</p>
 
-<p><img src="/home/assets/homepagets.png" alt="Home Data Log" /></p>
+<p><img src="http://metrik.space/assets/homepagets.png" alt="Home Data Log" /></p>
 
 <p>As seen by the code, the data service collects the API data and then logs it inside of the browser inspector.</p>
 
 <p>After successfully logging this data to the inspector, the next step was to post this data to the home.html page so that it was visible to the user. This was done with the following code:</p>
 
-<p><img src="/home/assets/homepagehtml.png" alt="Home news feed" /></p>
+<p><img src="http://metrik.space/assets/homepagehtml.png" alt="Home news feed" /></p>
 
 <p>Following the WP Rest-API documentation, it was fairly simple echoing the data on to the page. The final outcome looked like this:</p>
 
-<p><img src="/home/assets/posttilesapp.png" alt="Home news feed" /></p>
+<p><img src="v/assets/posttilesapp.png" alt="Home news feed" /></p>
 
 <ul>
   <li>Creating the Login Page</li>
 </ul>
 
-<p><img src="/home/assets/authts.png" alt="auth ts" /></p>
+<p><img src="http://metrik.space/assets/authts.png" alt="auth ts" /></p>
 
 <p>The next step of creating the prototype for the app was to setup an authentication service. This was set up in a similar way to the data service discussed earlier, however, the authentication service tries to locate the usernames and passwords of the WordPress site.</p>
 
@@ -296,17 +314,17 @@
 
 <p>I added JTW Authentication keys to the wp-config file and added the following to the .htaccess file:</p>
 
-<p><img src="/home/assets/htaccess.png" alt="htaccess" /></p>
+<p><img src="http://metrik.space/assets/htaccess.png" alt="htaccess" /></p>
 
 <p>I did struggle for a little while to find the .htaccess file as i did not realise that it was a hidden file on my mac.</p>
 
 <p>As I had already set up the authentication service for the login system the last notable thing that needed doing was creating the login page itself.</p>
 
-<p><img src="/home/assets/loginhtml.png" alt="login page" /></p>
+<p><img src="http://metrik.space/assets/loginhtml.png" alt="login page" /></p>
 
 <p>As seen in the code above, I created a simple form that linked to the authentication service via login.ts that allowed for the form to check whether or not the username and password matched the usernames and passwords in the database. The final outcome looked like this:</p>
 
-<p><img src="/home/assets/loginhtmlpage.png" alt="login page" /></p>
+<p><img src="http://metrik.space/assets/loginhtmlpage.png" alt="login page" /></p>
 
 <p>I decided to add a continue as guest function as the login system did not have any sign up functions and would limit the amount of users available to access the app. As well as this I set the login page as the root directory for the app so that it acts as a landing page for the user. This is why there is no navigation menu available, to ensure that the user can’t access other pages without defining in they are a guest or have an account.</p>
 
@@ -342,19 +360,19 @@
 
 <h3 id="below-are-some-screenshots-of-the-final-product">Below are some screenshots of the final product</h3>
 
-<p><img src="/home/assets/loginhtmlpage.png" alt="login page" /></p>
+<p><img src="http://metrik.space/assets/loginhtmlpage.png" alt="login page" /></p>
 
-<p><img src="/home/assets/loginhtmlwrong.png" alt="home page" /></p>
+<p><img src="http://metrik.space/assets/loginhtmlwrong.png" alt="home page" /></p>
 
-<p><img src="/home/assets/posttilesapp.png" alt="home page" /></p>
+<p><img src="http://metrik.space/assets/posttilesapp.png" alt="home page" /></p>
 
-<p><img src="/home/assets/singlepostapp.png" alt="single post" /></p>
+<p><img src="http://metrik.space/assets/singlepostapp.png" alt="single post" /></p>
 
-<p><img src="/home/assets/appnav.png" alt="nav" /></p>
+<p><img src="http://metrik.space/assets/appnav.png" alt="nav" /></p>
 
-<p><img src="/home/assets/fixturesapp.png" alt="fixtures page" /></p>
+<p><img src="http://metrik.space/assets/fixturesapp.png" alt="fixtures page" /></p>
 
-<p><img src="/home/assets/livepitchapp.png" alt="live feed page" /></p>
+<p><img src="http://metrik.space/assets/livepitchapp.png" alt="live feed page" /></p>
 
 </div>
 </div>

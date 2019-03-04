@@ -2,6 +2,8 @@
 <html lang="en">
   <head>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/96/three.js"> </script>
+    <script src="https://cdn.jsdelivr.net/gh/cferdinandi/smooth-scroll/dist/smooth-scroll.polyfills.min.js"></script>
+
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -9,7 +11,7 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
     <link rel="stylesheet" href="assets/main.css">
-    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Rajdhani:600" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <title>Ben Goodwin Development</title>
 
@@ -18,7 +20,6 @@
     <section class="navigation" id="navbar">
     <div class="nav-container">
       <div class="brand">
-        <a href="#!">BGD</a>
       </div>
       <nav>
         <div class="nav-mobile">
@@ -26,11 +27,11 @@
         </div>
         <ul class="nav-list">
           <!-- Setting the links to #! will ensure that no action takes place on click. -->
-          <li><a href="#home">HOME</a></li>
-          <li><a href="#about">ABOUT</a></li>
-          <li><a href="#posts">PORTFOLIO</a></li>
-          <li><a href="#contact">CONTACT</a></li>
-          <li><a href="#cv">CV</a></li>
+          <li><a data-scroll href="#home">HOME</a></li>
+          <li><a data-scroll href="#posts">PORTFOLIO</a></li>
+          <li><a data-scroll href="#about">ABOUT ME</a></li>
+          <li><a data-scroll href="#contact">CONTACT</a></li>
+          <li><a data-scroll href="#cv">CV</a></li>
         </ul>
       </nav>
     </div>
@@ -144,6 +145,16 @@ if ( isNaN(max) ) {
 return Math.random() * ( max - min ) + min;
 }
 
+window.addEventListener( 'resize', onWindowResize, false );
+
+function onWindowResize(){
+
+    camera.aspect = window.innerWidth / window.innerHeight;
+    camera.updateProjectionMatrix();
+
+    renderer.setSize( window.innerWidth, window.innerHeight );
+
+}
 
 
     var mouseTolerance = 0.4;
@@ -193,120 +204,135 @@ render();
 </script>
 </section>
 
-<section id="about" class="about_section">
-  <h1 class="portfolio_title" style="margin-top: 5vh;">ABOUT ME</h1>
-  <div class="container about_cont">
-  <div class="row">
-    <div class="col-12">
-      <h2>Hi, my name is Ben Goodwin. I am a  21 year old student developer studying at the University of Winchester. Although my course is mainly focusssed on web development, I spend a lot of my time experimenting with the development of AR, VR and MR applications as well as various 2D and 3D game projects.</h2>
-      <h2>Below are some examples of some of my favorite projects that I have compiled over the last three years of University. Let me know what you think!</h2>
-      </div>
-      </div>
-    </div>
-</section>
-
 <section id="posts" class="py-5">
 
   <h1 class="portfolio_title">PORTFOLIO</h1>
   <div class="portfolio_container">
         
-        <div class="col-4 portfolio_square">
-  <img src="/Ben_Goodwin_Development/./assets/LUFC.png" class="featured_img">
-            <h2 class="post_title"><a href="/Ben_Goodwin_Development/2018/12/24/TheLUFCSite.html">The LUFC Site - Y3S1</a></h2>
-            <p class="text-info lead">
+        <div class="col-12 portfolio_square">
+  <img src="/Ben_Goodwin_Development/./assets/lufcnewsmockup2.png" class="featured_img">
+            <h1 class="post_title"><a href="/Ben_Goodwin_Development/2018/12/24/TheLUFCSite.html">The LUFC News Site - Y3S1</a></h1>
+
+            <h4 class="post_excerpt">
+              
+                <p>The LUFC News project was a rebrand of Alex Matthews’ fan made community social media group and website. I had a direct role in re-developing Alex’s website by creating a new Wordpress theme for him from scratch which included a login system and live chat room.</p>
+
+
+              
+            </h4>
+            <h4 class="text-info lead" style="text-align: RIGHT;">
               Dec 24, 2018
-            </p>
+            </h4>
 
-            <p class="post_excerpt">
-              
-                <p>The LUFC News project was a rebrand of Alex Matthews’ fan made community/ social media group and website. I had a direct role in re-developing Alex’s website by creating a new Wordpress theme for him from scratch which included a login system and live chat room.</p>
-
-
-              
-            </p>
           </div>
         
-        <div class="col-4 portfolio_square">
-  <img src="/Ben_Goodwin_Development/./assets/LUFC.png" class="featured_img">
-            <h2 class="post_title"><a href="/Ben_Goodwin_Development/2018/12/24/TheLUFCApp.html">The LUFC News App - Y3S1</a></h2>
-            <p class="text-info lead">
-              Dec 24, 2018
-            </p>
+        <div class="col-12 portfolio_square">
+  <img src="/Ben_Goodwin_Development/./assets/lufcappmockup.png" class="featured_img">
+            <h1 class="post_title"><a href="/Ben_Goodwin_Development/2018/12/24/TheLUFCApp.html">The LUFC News App - Y3S1</a></h1>
 
-            <p class="post_excerpt">
+            <h4 class="post_excerpt">
               
                 <p>The LUFC News App was a follow on from the LUFC Site where I was asked to develop a prototype that included login systems and post data directly from the site itself.</p>
 
 
               
-            </p>
+            </h4>
+            <h4 class="text-info lead" style="text-align: RIGHT;">
+              Dec 24, 2018
+            </h4>
+
           </div>
         
-        <div class="col-4 portfolio_square">
-  <img src="/Ben_Goodwin_Development/./assets/catqr.png" class="featured_img">
-            <h2 class="post_title"><a href="/Ben_Goodwin_Development/2018/12/23/CatQR.html">AR Lost Cat Poster - Y3S1</a></h2>
-            <p class="text-info lead">
-              Dec 23, 2018
-            </p>
+        <div class="col-12 portfolio_square">
+  <img src="/Ben_Goodwin_Development/./assets/ARcatmockup.png" class="featured_img">
+            <h1 class="post_title"><a href="/Ben_Goodwin_Development/2018/12/23/CatQR.html">AR Lost Cat Poster - Y3S1</a></h1>
 
-            <p class="post_excerpt">
+            <h4 class="post_excerpt">
               
                 <p>A masters student in my faculty came to me with a prototype proposal that they needed building towards their final submission. Maisie wanted me to create an AR missing cat poster application. The app was developed using AR.JS and then wrapped using ionic.</p>
 
 
               
-            </p>
+            </h4>
+            <h4 class="text-info lead" style="text-align: RIGHT;">
+              Dec 23, 2018
+            </h4>
+
           </div>
         
-        <div class="col-4 portfolio_square">
-  <img src="/Ben_Goodwin_Development/./assets/arkitektlogo.png" class="featured_img">
-            <h2 class="post_title"><a href="/Ben_Goodwin_Development/2018/12/22/Arkitekt.UI.html">Arkitekt.UI - Y3S1</a></h2>
-            <p class="text-info lead">
-              Dec 22, 2018
-            </p>
+        <div class="col-12 portfolio_square">
+  <img src="/Ben_Goodwin_Development/./assets/Arkitektmockup.png" class="featured_img">
+            <h1 class="post_title"><a href="/Ben_Goodwin_Development/2018/12/22/Arkitekt.UI.html">Arkitekt.UI - Y3S1</a></h1>
 
-            <p class="post_excerpt">
+            <h4 class="post_excerpt">
               
                 <p>Francis, a masters student in my faculty proposed to me an AR app prototype that needed building. Arkitekt.UI is an architectural client based application which aims to allow the client to have a consistent impact on the development and design of their building. It is built using Apple’s new Quick View AR and Google’s Firebase Database service.</p>
 
 
               
-            </p>
+            </h4>
+            <h4 class="text-info lead" style="text-align: RIGHT;">
+              Dec 22, 2018
+            </h4>
+
           </div>
         
-        <div class="col-4 portfolio_square">
-  <img src="/Ben_Goodwin_Development/./assets/heart.png" class="featured_img">
-            <h2 class="post_title"><a href="/Ben_Goodwin_Development/2018/04/24/SilkMill0.html">HeatBeat MR - Y2S2</a></h2>
-            <p class="text-info lead">
-              Apr 24, 2018
-            </p>
+        <div class="col-12 portfolio_square">
+  <img src="/Ben_Goodwin_Development/./assets/heartbeatmodel.PNG" class="featured_img">
+            <h1 class="post_title"><a href="/Ben_Goodwin_Development/2018/04/24/SilkMill0.html">HeatBeat MR - Y2S2</a></h1>
 
-            <p class="post_excerpt">
+            <h4 class="post_excerpt">
               
                 <p>For this semester, we were asked to develop a product based motion graphic. The project was required to have typography and some form of compositing. Other than this, we were allowed to come up with a unique idea to develop.</p>
 
 
               
-            </p>
+            </h4>
+            <h4 class="text-info lead" style="text-align: RIGHT;">
+              Apr 24, 2018
+            </h4>
+
           </div>
         
-        <div class="col-4 portfolio_square">
-  <img src="/Ben_Goodwin_Development/./assets/cogs.png" class="featured_img">
-            <h2 class="post_title"><a href="/Ben_Goodwin_Development/2018/04/24/SilkMill.html">The Silk Mill - Y2S2</a></h2>
-            <p class="text-info lead">
-              Apr 24, 2018
-            </p>
+        <div class="col-12 portfolio_square">
+  <img src="/Ben_Goodwin_Development/./assets/silkmillmock.png" class="featured_img">
+            <h1 class="post_title"><a href="/Ben_Goodwin_Development/2018/04/24/SilkMill.html">The Silk Mill - Y2S2</a></h1>
 
-            <p class="post_excerpt">
+            <h4 class="post_excerpt">
               
                 <p>For our client projects this semester, we were given a series of briefs to complete in groups. My group and I opted to take on Whitchurch Silk Mill’s brief which was to develop a way of tracking and evaluating the visitors that entered the mill as well as monitor the popularity of their new exhibits.</p>
 
 
               
-            </p>
+            </h4>
+            <h4 class="text-info lead" style="text-align: RIGHT;">
+              Apr 24, 2018
+            </h4>
+
           </div>
         
       </div>
+</section>
+
+<section id="about" class="about_section">
+  <h1 class="portfolio_title" style="margin-top: 5vh;">ABOUT ME</h1>
+  <div class="container about_cont">
+    <div class="row">
+      <div class="col-12">
+       	<div class="media">
+          <div class="col-sm-12 col-lg-4">
+                <img src="./assets/me.jpg" class="media-object" id="me">
+            </div>
+            <div class="col-sm-12 col-lg-8">
+            <div class="media-body">
+              <h1 class="media-heading" style="padding-top: 2vw;">Who am I?</h1>
+                <h4>My name is Ben Goodwin. I am a 21 year old student developer studying at the University of Winchester. Although my course is mainly focussed on web development, I spend a lot of my time experimenting with the development of AR, VR and MR applications as well as various 2D and 3D game projects.</h4>
+              <h4 style="padding-top: 2vw">Below are some examples of some of my favorite projects that I have compiled over the last three years of University. Let me know what you think!</h4>
+            </div>
+            </div>
+        </div>
+        </div>
+
 </section>
 
 <section id="contact" class="contact_section">
@@ -347,13 +373,6 @@ render();
   <div class="row">
   <div class="col-12">
   <h1>Ben Goodwin: Developer</h1>
-  <ul class="address">
-    <li>12 Chapel Field</li>
-    <li>Peasedown St. John</li>
-    <li>Bath</li>
-    <li>BA2 8TX</li>
-    <li>Email Address: beny.godwin@gmail.com</li>
-  </ul>
   <h2>Professional Summary</h2>
   <p>Third year developer at the University of Winchester, mainly focussed on web development but with a key personal interest in AR, VR and MR application development using both web and hardware technologies. To add on to this a focus in building 2D and 3D game environments for web, PC and console.</p>
   <h2>Skills</h2>
@@ -417,21 +436,9 @@ render();
   </div>
   </section>
 
-
-
-<footer class="page_footer">
-<div class="container">
-<div class="row">
-<div class="col-6">
-  <h4>Developed by: Ben Goodwin</h4>
-  </div>
-<div class="col-6">
-  <h4>Powered by: Jekyll and Three.JS</h4>
-  </div>
-  </div>
-  </div>
-</footer>
-
+<script>
+	var scroll = new SmoothScroll('a[href*="#"]');
+</script>
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
@@ -439,4 +446,5 @@ render();
 
 </body>
 </html>
+
 

@@ -15,27 +15,28 @@ width: 100vw;
 }
 
 a {
-
-font-family: 'Roboto', sans-serif !important;
+font-family: 'Rajdhani', sans-serif;
+font-weight: bold;
 
 }
 
 h1 {
 
-font-family: 'Roboto', sans-serif !important;
+font-family: 'Rajdhani', sans-serif;
 
 }
 
 h2 {
 
-font-family: 'Roboto', sans-serif !important;
+font-family: 'Rajdhani', sans-serif;
 
 }
 
 p {
 
-font-family: 'Roboto', sans-serif !important;
+font-family: 'Rajdhani', sans-serif;
 color:  	#313639 !important;
+font-weight: lighter;
 
 }
 
@@ -75,8 +76,10 @@ display: block;
 padding: 0 30px;
 line-height: 70px;
 background: #313639;
+font-size: 1.5vw;
 color: #ec3b83;
 text-decoration: none;
+font-weight: bold;
 /*
 The full path of this code is nav ul li a:not(:only-child):after. This means that the code will apply to any a tag in our nav list that is NOT an only child, aka any dropdown. The :after means it comes after the output of the tag. I’ve decided that to specify any nav item as a dropdown, it will be followed by a unicode arrow – ▾ (#9662).
 */
@@ -138,6 +141,7 @@ float: none;
 nav ul li a {
 padding: 15px;
 line-height: 20px;
+font-size: 4vw;
 }
 nav ul li ul li a {
 padding-left: 30px;
@@ -232,9 +236,8 @@ margin-bottom: 5vh;
 
 .portfolio_container {
 
-    background-color: #ec3b83 !important;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     flex-wrap: wrap;
     padding: 10px;
     width: 80vw;
@@ -257,51 +260,15 @@ height: auto;
 
 }
 
-@media only screen and (max-width: 600px) {
-
-
-.portfolio_container {
-
-  flex-direction: column;
-  width: 100vw;
-}
 
 .portfolio_square {
 
   width: 100vw;
   justify-content: center;
-}
-
-.featured_img {
-
-width: 80vw;
-height: auto;
+  margin-top: 5vh;
+  background-color: #ec3b83 !important;
 
 }
-
-.post_title {
-
-  width: 80vw;
-}
-
-.portfolio_square p {
-
-  width: 80vw;
-
-}
-
-.about_section {
-
-  margin-bottom: 120vh;
-}
-
-.brand a {
-
-  font-size: 7vw;
-}
-
-}
-
 
 
 .post_title  a {
@@ -319,17 +286,20 @@ color: 	#313639 !important;
 .about_section {
 
 height: 80vh;
+width: 80vw;
+margin: auto;
 }
 
 .about_cont {
 
   background-color: #ec3b83 !important;
-
+  margin-bottom: 5vh;
 }
 
 .about_cont h2 {
 
   padding: 2vw;
+  font-weight: lighter;
 
 }
 
@@ -427,4 +397,167 @@ margin-top: 5vh;
   border: 2px solid #313639;
   margin-left: 7.5vw;
   margin-right: 7.5vw;
+}
+
+#me {
+
+  width: 23vw; height: auto; padding: 2vw 1vh;
+}
+
+
+
+.media {
+
+display: flex;
+
+}
+
+.text-info lead {
+
+  font-size: 5vw;
+}
+
+
+
+@media only screen and (max-width: 800px) {
+
+
+  .about_section {
+
+    width: 86vw;
+    margin: auto;
+  }
+
+  .portfolio_container {
+
+    flex-direction: column;
+    width: 90vw;
+  }
+
+  .portfolio_square {
+
+    width: 100%;
+    justify-content: center;
+
+  }
+
+  .featured_img {
+
+  width: 80vw;
+  height: auto;
+
+  }
+
+  .post_title {
+
+    width: 80vw;
+  }
+
+  .contact_section {
+
+    margin-top: 100vh;
+    width: 86vw;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  #me {
+
+    width: 100%;
+    display: block;
+    margin: auto;
+    margin-top: 3vh;
+
+  }
+
+  .about_cont {
+
+    display: block;
+  }
+
+  .media {
+
+  display: flex;
+  flex-direction: column;
+
+  }
+
+  .cv_cont {
+
+  margin: auto;
+  width: 86vw;
+
+   }
+
+
+
+}
+
+@media only screen and (max-width: 600px) {
+
+
+.portfolio_container {
+
+  flex-direction: column;
+  width: 100vw;
+}
+
+.portfolio_square {
+
+  width: 100vw;
+  justify-content: center;
+
+}
+
+.featured_img {
+
+width: 80vw;
+height: auto;
+
+}
+
+.post_title {
+
+  width: 80vw;
+}
+
+.portfolio_square p {
+
+  width: 80vw;
+
+}
+
+
+.brand a {
+
+  font-size: 7vw;
+}
+
+.about_section {
+
+  width: 93vw;
+  margin: auto;
+  margin-bottom: 40vh;
+}
+
+.contact_section {
+
+width: 93vw;
+
+}
+
+.cv_cont {
+
+margin: auto;
+width: 93vw;
+
+ }
+
+
+#me {
+
+margin-top: 5vh;
+
+}
+
 }

@@ -561,3 +561,13 @@ margin-top: 5vh;
 }
 
 }
+
+@media only screen and (max-width: 350px) {
+
+  .about_section {
+
+  margin-bottom: 120vh;
+
+  }
+
+}

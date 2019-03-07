@@ -92,14 +92,22 @@
   </script>
 
 
-	    <div class="container singe_post_cont" style="margin-top: 15vh;">
+	    <div class="container singe_post_cont" style="margin-top: 15vh; background-color: transparent !important; color: white">
   <div class="row">
     <div class="col-12">
 
-  <p>A masters student in my faculty came to me with a prototype proposal that they needed building towards their final submission. Maisie wanted me to create an AR missing cat poster application. The app was developed using AR.JS and then wrapped using ionic.</p>
+  <div style="color: #313639;">
+A masters student in my faculty came to me with a prototype proposal that they needed building towards their final submission. Maisie wanted me to create an AR missing cat poster application. The app was developed using AR.JS and then wrapped using ionic..
+</div>
+
+<div class="single-post-header" style="background-color: #ec3b83; margin-bottom: 10vh;">
+<img src="http://metrik.space/assets/ARcatmockup.png" style="border: none;" />
+
+<h1 class="post_title" style="text-align: center; color: #eee9e9;">AR Lost Cat Posters - Y3S1</h1>
+</div>
 
 <h3 id="the-brief">The Brief</h3>
-<p>I was asked to develop an AR project to display missing cat posters via QR codes. No design was necessary as Maisie just wished for a proof of concept to see how the ar technology would work.</p>
+<h6 id="i-was-asked-to-develop-an-ar-project-to-display-missing-cat-posters-via-qr-codes-no-design-was-necessary-as-maisie-just-wished-for-a-proof-of-concept-to-see-how-the-ar-technology-would-work">I was asked to develop an AR project to display missing cat posters via QR codes. No design was necessary as Maisie just wished for a proof of concept to see how the ar technology would work.</h6>
 
 <h2 id="maisies-specifications">Maisie’s Specifications</h2>
 
@@ -108,7 +116,7 @@
 </ul>
 
 <h2 id="technology-used">Technology Used</h2>
-<p>I decided to use AR.JS to develop Maisie’s missing cat poster. This was because she wanted to be able to link to posters from the web and I wanted to learn how AR.JS worked and how I could apply that knowledge into future projects.</p>
+<h6 id="i-decided-to-use-arjs-to-develop-maisies-missing-cat-poster-this-was-because-she-wanted-to-be-able-to-link-to-posters-from-the-web-and-i-wanted-to-learn-how-arjs-worked-and-how-i-could-apply-that-knowledge-into-future-projects">I decided to use AR.JS to develop Maisie’s missing cat poster. This was because she wanted to be able to link to posters from the web and I wanted to learn how AR.JS worked and how I could apply that knowledge into future projects.</h6>
 
 <h2 id="target-audiences">Target Audiences</h2>
 
@@ -116,29 +124,29 @@
   <li>People With Missing Cats</li>
 </ul>
 
-<p>Maisie wanted to make it easier for people to find their missing cats by creating a mobile community that could GPS mark their location if they had seen a specific cat on the database.</p>
+<h6 id="maisie-wanted-to-make-it-easier-for-people-to-find-their-missing-cats-by-creating-a-mobile-community-that-could-gps-mark-their-location-if-they-had-seen-a-specific-cat-on-the-database">Maisie wanted to make it easier for people to find their missing cats by creating a mobile community that could GPS mark their location if they had seen a specific cat on the database.</h6>
 
 <ul>
   <li>People who own Cats</li>
 </ul>
 
-<p>Maisie also wanted to aim this app at cat owners who may want to register their cat incase it were to go missing. Therefore, we chose to target owners as well as people with missing cats</p>
+<h6 id="maisie-also-wanted-to-aim-this-app-at-cat-owners-who-may-want-to-register-their-cat-incase-it-were-to-go-missing-therefore-we-chose-to-target-owners-as-well-as-people-with-missing-cats">Maisie also wanted to aim this app at cat owners who may want to register their cat incase it were to go missing. Therefore, we chose to target owners as well as people with missing cats</h6>
 
 <h1 id="development">Development</h1>
 
 <p><img src="http://metrik.space/assets/arjscode.png" alt="AR.JS Code" /></p>
 
-<p>The code to develop a really simple prototype for Maisie was actually quite simple, however, I did for a while have a problem where the textures wouldn’t load onto the poster resulting in a large black triangle. The code simply works by defining the asset that you are using for AR and then the marker that will allow for the model or image to appear.</p>
+<h6 id="the-code-to-develop-a-really-simple-prototype-for-maisie-was-actually-quite-simple-however-i-did-for-a-while-have-a-problem-where-the-textures-wouldnt-load-onto-the-poster-resulting-in-a-large-black-triangle-the-code-simply-works-by-defining-the-asset-that-you-are-using-for-ar-and-then-the-marker-that-will-allow-for-the-model-or-image-to-appear">The code to develop a really simple prototype for Maisie was actually quite simple, however, I did for a while have a problem where the textures wouldn’t load onto the poster resulting in a large black triangle. The code simply works by defining the asset that you are using for AR and then the marker that will allow for the model or image to appear.</h6>
 
-<p>Unfortunately, I was unable to get Maisie’s specifically drawn QR code working, I believe that this was due to the fact that the image files were not running off of a secure network. From my research, it seemed the WebGL would not authorise specific textures if they were not located from a secure source. This may have been one of the reasons as to why I was experiencing issues with the posters returning as black squares as well.</p>
+<h6 id="unfortunately-i-was-unable-to-get-maisies-specifically-drawn-qr-code-working-i-believe-that-this-was-due-to-the-fact-that-the-image-files-were-not-running-off-of-a-secure-network-from-my-research-it-seemed-the-webgl-would-not-authorise-specific-textures-if-they-were-not-located-from-a-secure-source-this-may-have-been-one-of-the-reasons-as-to-why-i-was-experiencing-issues-with-the-posters-returning-as-black-squares-as-well">Unfortunately, I was unable to get Maisie’s specifically drawn QR code working, I believe that this was due to the fact that the image files were not running off of a secure network. From my research, it seemed the WebGL would not authorise specific textures if they were not located from a secure source. This may have been one of the reasons as to why I was experiencing issues with the posters returning as black squares as well.</h6>
 
 <h1 id="taking-the-project-further">Taking the Project Further</h1>
 
-<p>If I were to take this further, I would most likely setup a database and a front-end system so that the user could see a list of all of the missing cats and view their posters in AR, or I would have setup an import system where users can upload their own QR codes and missing cat posters attached to them.</p>
+<h6 id="if-i-were-to-take-this-further-i-would-most-likely-setup-a-database-and-a-front-end-system-so-that-the-user-could-see-a-list-of-all-of-the-missing-cats-and-view-their-posters-in-ar-or-i-would-have-setup-an-import-system-where-users-can-upload-their-own-qr-codes-and-missing-cat-posters-attached-to-them">If I were to take this further, I would most likely setup a database and a front-end system so that the user could see a list of all of the missing cats and view their posters in AR, or I would have setup an import system where users can upload their own QR codes and missing cat posters attached to them.</h6>
 
 <h1 id="final-thoughts">Final Thoughts</h1>
 
-<p>Although this was an extremely short project, I learn a lot about AR.JS and wish to take this project further for next semester.</p>
+<h6 id="although-this-was-an-extremely-short-project-i-learn-a-lot-about-arjs-and-wish-to-take-this-project-further-for-next-semester">Although this was an extremely short project, I learn a lot about AR.JS and wish to take this project further for next semester.</h6>
 
 <p>See the code on <a href="https://github.com/Reconkiwi/AR.JS">GitHub</a></p>
 

@@ -398,10 +398,23 @@ margin-top: 5vh;
 
 }
 
+.singe_post_cont h3{
+
+margin-top: 5vh;
+
+}
+
+.singe_post_cont h6{
+
+margin-top: 1vh;
+
+}
+
 .singe_post_cont iframe{
 
   width: 80%;
   height: auto;
+  min-height: 50vh;
   border: 2px solid #313639;
   margin-left: 7.5vw;
   margin-right: 7.5vw;

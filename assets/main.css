@@ -368,9 +368,9 @@ body {
 
 .singe_post_cont {
 
-  background-color: #ec3b83 !important;
   margin-top: 5vh;
   font-weight: bold;
+  color: white;
 
 }
 
@@ -388,15 +388,25 @@ margin-top: 5vh;
   border: 2px solid #313639;
   margin-left: 7.5vw;
   margin-right: 7.5vw;
+  margin-top: 5vh;
+  margin-bottom: 5vh
+}
+
+.singe_post_cont h2{
+
+margin-top: 5vh;
+
 }
 
 .singe_post_cont iframe{
 
   width: 80%;
-  height: 80vh;
+  height: auto;
   border: 2px solid #313639;
   margin-left: 7.5vw;
   margin-right: 7.5vw;
+  margin-top: 5vh;
+  margin-bottom: 5vh
 }
 
 #me {
@@ -417,7 +427,10 @@ display: flex;
   font-size: 5vw;
 }
 
+.single-post-sub-head {
 
+  color: #ec3b83 !important;
+}
 
 @media only screen and (max-width: 800px) {
 

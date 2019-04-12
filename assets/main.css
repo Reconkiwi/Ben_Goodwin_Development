@@ -273,14 +273,14 @@ height: auto;
 
 .post_title  a {
 
-color:  #313639 !important;
+color:  #eee9e9 !important;
 
 }
 
 .post_excerpt {
 
 color: 	#313639 !important;
-
+text-align: left;
 }
 
 .about_section {
@@ -435,9 +435,9 @@ display: flex;
 
 }
 
-.text-info lead {
+.text-info {
 
-  font-size: 5vw;
+  color: #eee9e9 !important;
 }
 
 .single-post-sub-head {

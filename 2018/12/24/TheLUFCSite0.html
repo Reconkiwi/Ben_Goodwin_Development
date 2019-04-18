@@ -103,7 +103,7 @@ The mixed reality tower defence was a prototype built using Unity3D for Microsof
 </div>
 
 <div class="single-post-header" style="background-color: #ec3b83; margin-bottom: 10vh;">
-<iframe width="60%" height="auto" src="https://www.youtube.com/embed/7QgzWAvaBhU" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
+<iframe width="460" height="315" src="https://www.youtube.com/embed/9sD3ZXzgsp0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
 
 <h1 class="post_title" style="text-align: center; color: #eee9e9;">Mixed Reality Tower Defence - Y3S2</h1>
 </div>
@@ -381,6 +381,52 @@ The mixed reality tower defence was a prototype built using Unity3D for Microsof
 <h6 id="to-setup-the-vuforia-database-i-needed-to-sign-up-for-a-vuforia-development-account-and-then-add-a-licence-key-in-the-licence-manager-one-this-was-completed-i-needed-to-verify-my-key-inside-of-the-vuforia-configuration-under-the-global-setting">To setup the Vuforia database I needed to sign up for a Vuforia development account and then add a licence key in the ‘Licence Manager’. One this was completed, I needed to verify my key inside of the Vuforia configuration under the ‘Global’ setting.</h6>
 
 <p><img src="https://metrik.space/assets/targetmanager.png" alt="developer mode" /></p>
+
+<h6 id="after-this-i-was-able-to-simply-add-my-images-to-vuforias-target-manager-it-was-important-that-i-tried-to-keep-the-tracking-quality-as-high-as-possible-to-ensure-that-the-hololens-could-easily-find-and-track-the-image-without-any-latency-or-jumpiness-from-the-image-above-it-can-be-seen-that-i-initially-used-a-one-star-image-quality-target-in-an-attempt-to-track-the-board-this-made-it-extremely-difficult-to-render-the-holographic-board-above-the-image-thus-i-needed-to-find-a-more-complex-imagepattern-to-track">After this, I was able to simply add my images to Vuforia’s target manager. It was important that I tried to keep the tracking quality as high as possible to ensure that the HoloLens could easily find and track the image without any latency or jumpiness. From the Image above it can be seen that I initially used a one star image quality target in an attempt to track the board. This made it extremely difficult to render the holographic board above the image, thus, I needed to find a more complex image/pattern to track.</h6>
+
+<h6 id="once-the-image-targets-had-been-setup-the-target-manager-will-allow-you-to-download-the-database-as-a-unity-package-which-can-be-simply-opened-to-compile-it-into-your-unity-project">Once the image targets had been setup, the target manager will allow you to download the database as a Unity package which can be simply opened to compile it into your Unity project.</h6>
+
+<p><img src="https://metrik.space/assets/imagetrackingsetup.png" alt="developer mode" /></p>
+
+<h6 id="after-the-database-had-been-imported-i-was-able-to-click-on-the-vuforia-image-gameobject-mentioned-earlier-in-the-hierarchy-and-set-it-to-track-a-specific-image-from-my-database-as-seen-in-the-picture-above-i-have-chosen-to-track-the-tower-card-with-this-gameobject-after-this-i-simply-added-a-tower-gameobject-to-the-hierarchy-and-set-it-as-the-child-of-the-vuforia-image-gameobject-this-means-that-whenever-vuforia-recognises-the-tower-image-it-will-generate-the-hologram-of-the-tower-it-should-be-noted-however-that-the-hologram-will-spawn-in-relation-to-its-distance-from-the-image-gameobject-in-the-unity-scene-therefore-it-is-often-good-practice-to-ensure-that-the-hologram-is-directly-above-the-image-target-unless-intended-otherwise">After the database had been imported, I was able to click on the Vuforia image Gameobject (mentioned earlier) in the hierarchy and set it to track a specific image from my database. As seen in the picture above, I have chosen to track the ‘tower’ card with this Gameobject. After this, I simply added a tower Gameobject to the hierarchy and set it as the child of the Vuforia image Gameobject. This means that whenever Vuforia recognises the tower image, it will generate the hologram of the tower! It should be noted, however, that the hologram will spawn in relation to its distance from the image Gameobject in the Unity scene. Therefore, it is often good practice to ensure that the hologram is directly above the image target unless intended otherwise.</h6>
+
+<h3 id="so-we-have-image-tracking-down-now-what">So we have image tracking down……. now what!?</h3>
+
+<h3 class="single-post-sub-head">Enemy Navigation</h3>
+
+<h6 id="having-successfully-managed-to-image-track-my-image-targets-inside-the-hololens-it-was-time-to-work-out-how-i-would-best-go-about-creating-an-ai-enemy-to-navigate-towards-a-specific-location-having-discussed-a-few-possibilities-with-my-lecturer-i-decided-to-settle-on-attempting-to-implement-unitys-inbuilt-navigation-and-pathfinding">Having successfully managed to image track my image targets inside the HoloLens, it was time to work out how I would best go about creating an AI enemy to navigate towards a specific location. Having discussed a few possibilities with my lecturer, I decided to settle on attempting to implement Unity’s inbuilt navigation and pathfinding.</h6>
+
+<h6 id="as-i-have-worked-on-hololens-projects-before-i-knew-that-i-often-found-it-more-beneficial-to-test-specific-mechanics-in-separate-unity-projects-to-avoid-any-of-my-code-rolling-over-or-accidentally-manipulating-some-of-my-other-scripts-i-decided-to-learn-the-basics-of-navigation-and-pathfinding-inside-of-a-very-basic-unity-scene">As I have worked on HoloLens projects before, I knew that I often found it more beneficial to test specific mechanics in separate Unity projects to avoid any of my code rolling over or accidentally manipulating some of my other scripts. I decided to learn the basics of navigation and pathfinding inside of a very basic Unity scene.</h6>
+
+<h6 id="the-documentation-for-unitys-navigation-and-pathfinding-can-be-found-here">The documentation for Unity’s navigation and pathfinding can be found <a href="https://docs.unity3d.com/Manual/Navigation.html">here.</a></h6>
+
+<p><img src="https://metrik.space/assets/pathfindandnavbasescene.png" alt="developer mode" /></p>
+
+<h3 id="navigation-and-pathfinding-basics">Navigation and Pathfinding Basics</h3>
+
+<h3 id="unity-navigation-is-made-up-of-three-main-components">Unity navigation is made up of three main components:</h3>
+
+<ul>
+  <li>Navmesh</li>
+  <li>Navmesh agent</li>
+  <li>The pathfinding script</li>
+</ul>
+
+<h6 id="firstly-i-needed-to-open-the-navigation-window-within-unity-this-can-be-found-by-navigating-to-window--ai--navigation-once-this-has-been-completed-a-window-will-appear-with-the-options-agents-areas-bake-and-object-after-this-i-needed-to-create-my-ground-plane-and-wall-gameobjects-having-done-this-i-clicked-both-of-them-and-navigated-to-the-object-panel-in-the-navigation-window-from-here-i-needed-to-se-the-mesh-renderer-to-navigation-static-this-defines-to-unitys-inbuilt-navigation-that-these-objects-are-available-to-be-navigated-through">Firstly, I needed to open the navigation window within Unity. This can be found by navigating to Window &gt; AI &gt; Navigation. Once this has been completed a window will appear with the options Agents, Areas, Bake and Object. After this, I needed to create my ground plane and wall Gameobjects. Having done this, I clicked both of them and navigated to the ‘Object’ panel in the Navigation window. From here, I needed to se the ‘Mesh Renderer’ to ‘Navigation Static’. This defines to Unity’s inbuilt navigation that these objects are available to be navigated through.</h6>
+
+<p><img src="https://metrik.space/assets/navmeshbakingtest.png" alt="developer mode" /></p>
+
+<h6 id="after-this-i-navigated-to-the-bake-panel-and-hit-bake-above-is-the-result-of-this-inside-of-the-bake-panel-there-and-many-options-that-you-are-able-to-change-such-as-agent-radius-height-max-slope-and-step-height-these-can-help-to-alter-the-pathfinding-ability-of-your-navmesh-agents-eg-whether-they-can-climb-a-specific-slope-or-jump-over-a-specific-wall-as-i-was-working-with-flat-surfaces-i-didnt-really-need-to-touch-on-these-at-all-as-seen-from-the-image-baking-the-navmesh-defines-the-areas-that-the-navmeshagent-can-move-through-as-the-wall-is-above-the-maximum-slope-height-the-navmesh-bakes-around-the-wall-defining-that-the-agent-will-not-be-able-to-move-through-it">After this, I navigated to the ‘Bake’ panel and hit bake. Above is the result of this. Inside of the bake panel, there and many options that you are able to change such as agent radius, height, max slope and step height. These can help to alter the pathfinding ability of your Navmesh agents e.g. whether they can climb a specific slope or jump over a specific wall. As I was working with flat surfaces, I didn’t really need to touch on these at all. As seen from the image, baking the navmesh defines the areas that the NavmeshAgent can move through. As the wall is above the maximum slope height, the Navmesh bakes around the wall defining that the agent will not be able to move through it.</h6>
+
+<h3 id="creating-enemy-pathfinding">Creating Enemy pathfinding</h3>
+
+<p><img src="https://metrik.space/assets/navmeshagentsetup.png" alt="developer mode" /></p>
+
+<h6 id="the-next-step-was-to-create-an-enemy-gameobject-and-a-target-gameobject-for-testing-mine-were-defined-by-two-cubes-of-different-colours-once-this-had-been-done-i-added-the-nav-mesh-agent-component-to-my-enemy-this-simply-defines-to-the-navigation-system-that-my-enemy-gameobject-is-an-agent-and-that-it-can-move-across-the-navmesh-inside-of-the-nav-mesh-agent-component-you-are-able-to-change-various-mechanics-such-as-speed-angular-speed-and-obstacle-avoidance-properties-once-again-as-i-was-working-with-a-very-simple-scene-i-left-these-alone-for-the-time-being">The next step was to create an ‘enemy’ Gameobject and a ‘target’ Gameobject. For testing mine were defined by two cubes of different colours. Once this had been done, I added the ‘Nav Mesh Agent’ component to my ‘enemy’. This simply defines to the Navigation system that my ‘enemy’ Gameobject is an agent and that it can move across the Navmesh. Inside of the ‘Nav Mesh Agent’ component you are able to change various mechanics such as speed, angular speed and obstacle avoidance properties. Once again, as I was working with a very simple scene, I left these alone for the time being.</h6>
+
+<h3 id="lets-write-some-code">Lets write some code!</h3>
+
+<p><img src="https://metrik.space/assets/movetheagenttest.png" alt="developer mode" /></p>
 
 </div>
 </div>

@@ -428,6 +428,16 @@ The mixed reality tower defence was a prototype built using Unity3D for Microsof
 
 <p><img src="https://metrik.space/assets/movetheagenttest.png" alt="developer mode" /></p>
 
+<h6 id="i-created-a-simple-script-that-in-short-tells-the-agent-to-move-towards-a-destination-i-created-a-serialised-field-that-allowed-me-to-set-the-target-destination-of-the-enemy-this-meant-that-i-could-simply-drag-and-drop-the-target-gameobject-into-the-serialised-field-and-set-it-as-the-target-destination">I created a simple script that in short tells the agent to move towards a destination. I created a serialised field that allowed me to set the target destination of the enemy. This meant that I could simply drag and drop the ‘target’ Gameobject into the serialised field and set it as the target destination.</h6>
+
+<p><img src="https://metrik.space/assets/destination.png" alt="developer mode" /></p>
+
+<h6 id="after-this-i-found-the-navmeshagent-component-from-this-the-gameobject-that-this-script-is-attached-too-and-set-its-name-to--navmeshagent-once-the-navmeshagent-is-defined-i-ran-an-if-statement-inside-of-the-update-function-called-once-per-frame-which-checks-to-see-whether-or-not-a-destination-has-been-defined-if-it-has-the-target-vector-is-set-to-the-destination-and-the-navmeshagent-sets-its-destination-to-the-target-here-is-the-result-of-my-code-below">After this, I found the NavMeshAgent component from ‘this’ (the Gameobject that this script is attached too) and set its name to -navMeshAgent. Once the NavMeshAgent is defined, I ran an if statement inside of the Update function (called once per frame) which checks to see whether or not a destination has been defined. If it has, the target vector is set to the destination and the NavMeshAgent sets its destination to the target. Here is the result of my code below:</h6>
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/lyOOBTSqarQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
+
+<h3 id="combining-pathfinding-with-vuforia">Combining Pathfinding with Vuforia</h3>
+
 </div>
 </div>
 </div>

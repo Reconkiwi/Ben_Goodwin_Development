@@ -438,6 +438,317 @@ The mixed reality tower defence was a prototype built using Unity3D for Microsof
 
 <h3 id="combining-pathfinding-with-vuforia">Combining Pathfinding with Vuforia</h3>
 
+<h6 id="i-began-compiling-the-scripts-and-assets-from-the-navmesh-testing-scene-and-implemented-them-into-the-vuforia-project-that-i-had-started-as-i-hoped-i-was-able-to-bake-a-navmesh-onto-my-holographic-board-which-i-had-hoped-would-allow-my-enemy-to-travel-to-the-destination-that-i-had-set-in-ar-unfortunately-this-did-not-work-quite-how-i-had-imagined">I began compiling the scripts and assets from the navmesh testing scene and implemented them into the Vuforia project that I had started. As I hoped, I was able to bake a navmesh onto my holographic board which I had hoped would allow my enemy to travel to the destination that I had set in AR. Unfortunately, this did not work quite how I had imagined.</h6>
+
+<h6 id="as-the-navmesh-baked-before-the-game-had-begun-i-believe-that-the-navmesh-instantiated-at-the-same-distance-from-the-camera-in-comparison-to-that-in-the-inspector-this-meant-that-the-agent-would-teleport-to-this-world-location-and-away-from-the-image-tracked-board">As the navmesh baked before the game had begun, I believe that the navmesh instantiated at the same distance from the camera in comparison to that in the inspector. This meant that the agent would teleport to this world location and away from the image tracked board.</h6>
+
+<h6 id="i-began-researching-ways-to-fix-this-problem-however-i-found-little-information-as-nobody-seemed-to-be-using-navmeshing-in-ar-or-mr-eventually-i-was-able-to-find-a-unity-tutorial-on-creating-navmesh-surfaces-during-runtime">I began researching ways to fix this problem, however, I found little information as nobody seemed to be using navmeshing in AR or MR. Eventually, I was able to find a Unity tutorial on creating NavMesh Surfaces during runtime.</h6>
+
+<h6 id="you-can-find-the-tutorial-here">You can find the tutorial <a href="https://unity3d.com/learn/tutorials/topics/navigation/baking-navmesh-runtime">here.</a></h6>
+
+<h3 id="fixing-the-navmesh-problem">Fixing the NavMesh Problem!</h3>
+
+<h6 id="i-imported-four-scripts-from-the-unity-tutorial-found-above-these-included-the-navmesh-link-navmesh-modifier-navmesh-surface-and-navmesh-modifier-volume-i-attached-the-navmesh-surface-script-to-my-board-and-then-created-a-simple-spawner-and-surface-builder-script-i-will-discuss-the-spawning-section-of-the-script-after-this">I imported four scripts from the Unity tutorial found above. These included the Navmesh Link, Navmesh Modifier, NavMesh Surface and NavMesh Modifier Volume. I attached the Navmesh Surface script to my board and then created a simple spawner and surface builder script. I will discuss the spawning section of the script after this.</h6>
+
+<p><img src="https://metrik.space/assets/navmeshsurfacescript.png" alt="developer mode" /></p>
+
+<h6 id="as-shown-in-the-tutorial-i-created-an-array-of-surfaces-that-i-needed-to-include-in-my-navmesh-on-start-the-script-simply-looks-for-the-number-of-surfaces-in-the-array-and-creates-a-navmesh-on-each-surface-the-result-looked-like-this">As shown in the tutorial, i created an array of surfaces that I needed to include in my NavMesh. On ‘Start’ the script simply looks for the number of surfaces in the array and creates a NavMesh on each surface. The result looked like this:</h6>
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/WH7i9twg03E" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
+
+<h3 id="oooooooh-thats-a-lot-of-latency">OOOOOOOH THAT’S A LOT OF LATENCY</h3>
+
+<h6 id="i-began-testing-my-build-settings-in-an-attempt-to-reduce-latency-problems-i-found-that-setting-the-texture-quality-to-eight-res-removed-the-latency-from-the-game-and-didnt-compromise-the-quality-of-the-image-i-decided-to-push-this-further-and-add-a-few-more-textures-and-polygons-to-stress-test-the-game-here-were-the-results">I began testing my build settings in an attempt to reduce latency problems. I found that setting the texture quality to ‘eight res’ removed the latency from the game and didn’t compromise the quality of the image. I decided to push this further and add a few more textures and polygons to stress test the game. Here were the results:</h6>
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/_VggyzAAvDU" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
+
+<h6 id="as-seen-above-the-latency-was-better-than-previously-even-with-the-larger-polgon-and-texture-count-however-i-was-a-little-worried-about-the-amount-of-time-that-it-was-taking-to-register-the-image-target-i-decided-to-ignore-that-for-the-time-being-a-start-on-creating-an-enemy-spawner">As seen above, the latency was better than previously. Even with the larger polgon and texture count. However, i was a little worried about the amount of time that it was taking to register the image target. I decided to ignore that for the time being a start on creating an enemy spawner.</h6>
+
+<h3 id="this-is-where-my-idea-changed-a-little">This is where my idea changed a little</h3>
+
+<h6 id="i-decided-that-there-was-a-potential-for-me-to-build-a-slightly-more-interactive-project-than-i-had-previously-planned-i-decided-to-attempt-to-make-a-prototype-for-a-mixed-reality-tower-defence-game-where-the-user-would-place-tiles-of-towers-to-defend-their-base-from-incoming-waves-of-enemies">I decided that there was a potential for me to build a slightly more interactive project than I had previously planned. I decided to attempt to make a prototype for a mixed reality tower defence game where the user would place tiles of towers to defend their base from incoming waves of enemies.</h6>
+
+<h3 id="back-to-enemy-spawning">Back to enemy spawning!</h3>
+
+<h6 id="i-began-by-converting-my-enemy-gameobject-into-a-prefab-that-i-could-call-and-spawn-multiple-of">I began by converting my enemy Gameobject into a prefab that I could call and spawn multiple of.</h6>
+
+<p><img src="https://metrik.space/assets/enemyprefab.png" alt="developer mode" /></p>
+
+<h6 id="having-done-this-i-need-to-create-a-script-that-instantiated-the-navmesh-agent">Having done this, I need to create a script that instantiated the NavMesh Agent:</h6>
+
+<p><img src="https://metrik.space/assets/navmeshagentspawn.png" alt="developer mode" /></p>
+
+<h6 id="to-ensure-that-i-was-able-to-create-this-script-efficiently-i-was-required-to-use-specific-unity-libraries-i-chose-to-use-the-unity-ai-library-for-nacmesh-agent-settingsdestination-settings-whereas-the-windows-speech-library-was-needed-to-add-voice-recognition-into-the-game-this-was-used-to-tell-the-game-when-to-begin-a-round">To ensure that I was able to create this script efficiently, I was required to use specific Unity libraries. I chose to use the Unity AI library for NacMesh agent settings/destination settings whereas the Windows Speech library was needed to add voice recognition into the game. This was used to tell the game when to begin a round.</h6>
+
+<h6 id="before-the-start-function-i-defined-public-variables-for-the-enemy-prefab-begin-wave-voice-command-and-agent-destination-this-meant-that-i-would-be-able-to-edit-these-variables-within-the-unity-inspector-or-drag-gameobjects-into-the-destination-and-enemy-prefab-fields-inside-of-the-start-function-i-created-a-keyword-recogniser-which-used-the-the-begin-command-string-as-reference-for-the-voice-command-i-wanted-unity-to-listen-out-for">Before the Start() function, I defined public variables for the enemy prefab, begin wave voice command and agent destination. This meant that I would be able to edit these variables within the Unity inspector or drag Gameobjects into the destination and enemy prefab fields. Inside of the Start() function, I created a keyword recogniser which used the the begin command string as reference for the voice command I wanted Unity to listen out for.</h6>
+
+<h6 id="after-this-a-keyword-recogniser-function-gets-called-which-essentially-waits-for-the-keywords-to-be-called-and-then-completes-an-action-in-this-instance-the-action-called-was-the-spawnagent-function-inside-of-this-function-the-attacker-prefab-is-instantiated-and-transformed-to-the-position-of-the-spawner-once-this-has-completed-unity-locates-destination-inside-of-the-gameobjects-attackermove-script-sets-it-as-the-goal-and-then-moves-towards-it-finally-spawnagent-is-invoked-continuously-at-a-random-range-between-two-variables-this-creates-a-constant-stream-of-enemies-rather-than-waves-however-this-was-used-to-stress-test-the-project-on-the-hololens-to-ensure-there-was-no-latency">After this, a keyword recogniser function gets called which essentially waits for the keyword(s) to be called and then completes an action. In this instance, the action called was the SpawnAgent() function. Inside of this function, the attacker prefab is instantiated and transformed to the position of the spawner. Once this has completed, Unity locates destination inside of the GameObjects AttackerMove script, sets it as the goal and then moves towards it. Finally, SpawnAgent is invoked continuously at a random range between two variables. This creates a constant stream of enemies rather than waves, however, this was used to stress test the project on the HoloLens to ensure there was no latency.</h6>
+
+<h3 id="but-there-was-loads-of-latency">BUT THERE WAS LOADS OF LATENCY!</h3>
+
+<h6 id="during-a-user-testing-session-it-was-found-that-the-latency-became-severely-worse-with-the-implementation-of-more-gameobjects-to-a-point-where-the-game-became-unplayable-as-well-as-this-the-board-tracking-was-becoming-more-unstable-than-previously-even-with-world-anchors-which-added-to-the-severity-of-the-latency">During a user testing session, it was found that the latency became severely worse with the implementation of more GameObjects to a point where the game became unplayable. As well as this, the board tracking was becoming more unstable than previously, even with world anchors, which added to the severity of the latency.</h6>
+
+<h3 id="it-was-time-to-come-up-with-a-drastic-solution">IT WAS TIME TO COME UP WITH A DRASTIC SOLUTION</h3>
+
+<h3 class="single-post-sub-head">Rebuilding the Game Without Vuforia</h3>
+
+<h6 id="the-decision-to-remove-vuforia-from-the-application-was-a-difficult-decision-as-it-meant-that-i-would-need-to-entirely-rebuild-the-application-from-scratch-in-the-space-of-about-four-weeks-before-the-end-of-year-show-however-from-personal-experience-i-have-never-received-notable-latency-when-working-on-hololens-applications-without-vuforia-therefore-i-believed-the-problem-to-be-entirely-vuforia-related-this-was-not-the-definitive-reason-for-the-cause-of-the-latency-however-i-was-willing-to-take-a-risk-by-rebuilding-the-application-without-it">The decision to remove Vuforia from the application was a difficult decision as it meant that I would need to entirely rebuild the application from scratch in the space of about four weeks before the end of year show. However, from personal experience, I have never received notable latency when working on HoloLens applications without Vuforia. Therefore, I believed the problem to be entirely Vuforia related. This was not the definitive reason for the cause of the latency, however, I was willing to take a risk by rebuilding the application without it.</h6>
+
+<h3 class="single-post-sub-head">Saving as Much Time as Possible</h3>
+
+<h6 id="to-get-started-quickly-on-the-redevelopment-of-my-application-i-decided-to-strip-down-one-of-my-already-existing-unity-hololens-projects-heartbeat-so-that-my-scene-would-be-setup-ready-with-the-holotoolkit-camera-and-project-settings-this-reduced-development-time-significantly-and-allowed-me-to-focus-on-retrieving-as-many-of-my-original-assets-as-possible-aside-from-the-board-itself-most-of-the-assets-and-scripts-were-easy-to-transport-into-the-new-unity-project">To get started quickly on the redevelopment of my application, I decided to strip down one of my already existing Unity HoloLens projects (Heartbeat) so that my scene would be setup ready with the HoloToolkit, camera and project settings. This reduced development time significantly and allowed me to focus on retrieving as many of my original assets as possible. Aside from the board itself, most of the assets and scripts were easy to transport into the new Unity project.</h6>
+
+<h3 id="the-navmesh-problem">The NavMesh Problem!</h3>
+
+<h6 id="once-again-the-navmesh-spawning-caused-major-problems-when-reacting-with-the-holotoolkit-for-some-reason-the-navmesh-surfaces-code-would-entirely-ignore-the-surfaces-thati-was-trying-to-target-and-simply-create-a-mesh-the-size-of-the-room-that-i-was-standing-in-this-meant-that-the-enemies-would-not-spawn-as-or-move-as-the-spawner-was-too-far-away-from-the-navmesh-i-attempted-to-fix-this-bug-however-i-was-unable-to-come-up-with-a-solution-for-it-therefore-i-decided-to-come-up-with-a-new-way-to-spawn-and-move-enemies-towards-a-target-location">Once again the NavMesh spawning caused major problems when reacting with the HoloToolkit. For some reason, the NavMesh surfaces code would entirely ignore the surfaces thatI was trying to target and simply create a mesh the size of the room that I was standing in. This meant that the enemies would not spawn as or move as the spawner was too far away from the NavMesh. I attempted to fix this bug, however, I was unable to come up with a solution for it. Therefore, I decided to come up with a new way to spawn and move enemies towards a target location!</h6>
+
+<h3 class="single-post-sub-head">Waypointing</h3>
+
+<h6 id="having-looked-at-a-series-of-tower-defence-tutorials-for-desktop-builds-i-could-not-find-anybody-that-had-built-one-for-the-hololens-however-i-will-link-the-tutorials-at-the-end-of-this-as-they-helped-with-some-of-the-programming-it-seemed-clear-that-developers-favoured-using-waypoints-to-move-their-enemy-units-i-believe-this-is-due-to-the-fact-that-enemies-in-this-style-of-game-have-only-ever-got-to-move-in-one-specific-route-therefore-if-designed-correctly-developers-do-not-need-to-account-for-enemies-colliding-with-any-towers-or-other-terrains-as-the-designated-route-will-already-be-set">Having looked at a series of tower defence tutorials for desktop builds (I could not find anybody that had built one for the HoloLens, however, I will link the tutorials at the end of this as they helped with some of the programming), it seemed clear that developers favoured using waypoints to move their enemy units. I believe this is due to the fact that enemies in this style of game have only ever got to move in one specific route, therefore, if designed correctly, developers do not need to account for enemies colliding with any towers or other terrains as the designated route will already be set.</h6>
+
+<h6 id="i-began-by-creating-a-series-of-empty-gameobjects-all-named-waypoint-at-each-point-where-my-enemy-would-need-to-change-the-direction-that-it-was-moving-in-eg-a-corner-the-first-waypoint-being-at-the-start-of-the-map-and-the-last-being-inside-of-the-castledefence-point-having-done-this-i-set-the-waypoints-to-be-visible-in-the-inspector-using-the-gizmo-feature-inside-of-the-unity-software-the-final-product-looked-like-this">I began by creating a series of empty GameObjects all named ‘waypoint’ at each point where my enemy would need to change the direction that it was moving in e.g. a corner. The first waypoint being at the start of the map and the last being inside of the castle/defence point. Having done this, I set the waypoints to be visible in the inspector using the gizmo feature inside of the Unity software. The final product looked like this:</h6>
+
+<p><img src="https://metrik.space/assets/waypointgizmos.png" alt="developer mode" /></p>
+
+<h6 id="i-then-created-a-script-that-simply-placed-all-of-the-waypoints-into-an-array-this-then-determined-the-distance-between-each-waypoint-the-code-looked-like-this">I then created a script that simply placed all of the waypoints into an array. This then determined the distance between each waypoint. The code looked like this:</h6>
+
+<p><img src="https://metrik.space/assets/waypointparentcode.png" alt="developer mode" /></p>
+
+<h6 id="the-code-creates-a-static-transform-array-called-points-the-reason-that-it-is-static-rather-than-private-was-to-ensure-that-other-scripts-could-easily-reference-the-array-externally-once-this-is-done-the-script-defines-the-distance-between-each-point">The code creates a static Transform array called points. The reason that it is static rather than private was to ensure that other scripts could easily reference the array externally. Once this is done the script defines the distance between each point.</h6>
+
+<h3 class="single-post-sub-head">Rebuilding the AttackerMove script</h3>
+
+<h6 id="as-the-game-was-no-longer-navmesh-as-a-movement-ground-for-the-enemy-i-needed-to-re-write-my-attackermove-script-as-my-enemy-would-not-have-a-mesh-to-move-on-the-waypointing-system-was-designed-to-counteract-this-by-setting-points-for-th-enemy-to-move-towards-the-rewritten-script-looked-like-this">As the game was no longer NavMesh as a movement ground for the enemy, I needed to re-write my AttackerMove script as my enemy would not have a mesh to move on. The waypointing system was designed to counteract this by setting points for th enemy to move towards. The rewritten script looked like this:</h6>
+
+<p><img src="https://metrik.space/assets/moveenemywaypoint.png" alt="developer mode" /></p>
+
+<h6 id="before-the-start-function-variables-are-defined-for-the-enemy-speed-target-and-wavepoint-index-the-speed-float-was-public-so-that-i-was-able-to-edit-the-enemies-speed-within-the-inspector-inside-of-the-start-function-the-target-is-set-to-the-static-array-waypoints-and-the-target-is-set-to-0-of-the-array">Before the Start() function, variables are defined for the enemy speed, target and wavepoint index. The speed float was public so that I was able to edit the enemies speed within the inspector. Inside of the Start() function, the target is set to the static array waypoints and the target is set to 0 of the array.</h6>
+
+<h6 id="the-update-function-then-transforms-the-enemy-to-the-target-waypoint-by-multiplying-the-enemy-speed-by-timedeltatime-once-the-enemy-is-withing-001f-of-the-waypoint-a-function-is-run-called-getnextwaypoint-this-initially-checks-if-there-are-any-more-waypoints-if-there-are-it-will-increase-the-waypoint-number-in-the-array-by-one-thus-setting-a-new-destination-target-if-there-are-no-more-waypoints-available-then-the-script-calls-the-endpath-function-the-endpath-function-reducaes-the-players-lives-by-1-more-on-the-later-and-destroys-the-enemy-gameobject">The Update() function then transforms the enemy to the target waypoint by multiplying the enemy speed by time.deltatime. Once the enemy is withing 0.01f of the waypoint, a function is run called GetNextWaypoint(). This initially checks if there are any more waypoints, if there are, it will increase the waypoint number in the array by one, thus. setting a new destination target. If there are no more waypoints available, then the script calls the EndPath() function. The EndPath() function reducaes the players lives by 1 (more on the later) and destroys the enemy GameObject.</h6>
+
+<h3 class="single-post-sub-head">User Testing the New Waypointing System</h3>
+
+<h6 id="during-the-testing-phase-of-my-waypointing-system-i-found-that-i-had-set-the-distance-before-the-waypoint-was-changed-too-high-this-resulted-in-the-enemies-changing-direction-much-earlier-than-i-wanted-them-too-i-eventually-reduced-the-distance-down-to-00f-which-i-felt-left-an-almost-perfect-representation-of-how-i-wanted-the-enemies-to-move-here-is-the-result">During the testing phase of my waypointing system, I found that I had set the distance before the waypoint was changed too high. This resulted in the enemies, changing direction much earlier than I wanted them too. I eventually reduced the distance down to 0.0f which I felt left an almost perfect representation of how I wanted the enemies to move. Here is the result:</h6>
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/z09YcHnDHDA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
+
+<h6 id="as-shown-in-the-video-above-the-enemy-gameobject-reaches-each-waypoint-and-then-changes-direction-if-i-were-to-have-more-time-i-would-have-liked-to-include-some-sort-of-object-collision-script-which-would-have-helped-stop-the-enemy-from-moving-through-the-tower-gameobjects-however-i-believe-that-this-would-have-required-a-different-form-of-movement-rather-than-waypointing">As shown in the video above, the enemy GameObject reaches each waypoint and then changes direction. If I were to have more time, I would have liked to include some sort of object collision script which would have helped stop the enemy from moving through the tower GameObjects. However, I believe that this would have required a different form of movement rather than waypointing.</h6>
+
+<h3 class="single-post-sub-head">Waves</h3>
+
+<h6 id="the-next-stage-was-to-create-a-wave-generator-so-that-i-could-alter-the-number-of-enemies-as-well-as-their-speed-and-health-stats-i-wanted-to-be-able-to-create-waves-within-the-inspector-as-i-felt-that-this-would-be-an-efficient-way-of-quickly-building-a-large-number-of-levels-i-began-by-setting-up-an-array-called-waves">The next stage was to create a wave generator so that I could alter the number of enemies as well as their speed and health stats. I wanted to be able to create waves within the inspector as I felt that this would be an efficient way of quickly building a large number of levels. I began by setting up an array called waves:</h6>
+
+<p><img src="https://metrik.space/assets/wavearray.png" alt="developer mode" /></p>
+
+<h6 id="as-shown-above-i-created-a-serialisable-field-called-wave-that-was-filled-with-various-editable-properties-such-as-name-count-rate-and-prefab-or-enemy-this-was-then-converted-into-an-array-called-waves-which-allowed-me-to-create-multiple-instances-of-the-wave-field-within-the-inspector-before-the-game-begins-the-wave-is-also-set-to-0-to-ensure-that-the-game-doesnt-start-at-a-random-level-the-result-of-this-can-be-shown-in-the-inspector">As shown above i created a serialisable field called ‘Wave’ that was filled with various editable properties such as name, count, rate and prefab or ‘enemy’. This was then converted into an array called ‘Waves’ which allowed me to create multiple instances of the Wave field within the inspector. Before the game begins, the Wave is also set to 0 to ensure that the game doesn’t start at a random level. The result of this can be shown in the inspector:</h6>
+
+<p><img src="https://metrik.space/assets/enemywaves.png" alt="developer mode" /></p>
+
+<h6 id="as-shown-this-form-of-wave-creation-allowed-me-to-hand-build-a-series-of-waves-with-different-enemies-counts-and-spawn-rates-which-meant-that-i-was-able-to-steadily-increase-the-difficulty-of-the-game-each-time-a-new-wave-was-spawned-something-that-i-did-not-consider-however-was-that-the-game-breaks-if-multiple-waves-have-the-same-name-when-the-unity-reaches-one-a-duplicate-wave-name-it-will-automatically-reset-the-wave-number-to-0-i-am-not-completely-sure-why-this-happens-however-i-decided-to-make-sure-that-waves-were-saved-with-different-names-to-avoid-the-bug">As shown, this form of wave creation allowed me to hand build a series of waves with different enemies, counts and spawn rates which meant that I was able to steadily increase the difficulty of the game each time a new wave was spawned. Something that I did not consider, however, was that the game breaks if multiple waves have the same name. When the Unity reaches one a duplicate wave name, it will automatically reset the wave number to 0. I am not completely sure why this happens, however, I decided to make sure that waves were saved with different names to avoid the bug.</h6>
+
+<h6 id="the-real-difficulty-however-came-when-i-tried-to-implement-voice-recognition-into-the-game-as-suggested-before-i-was-initially-using-unitys-windows-speech-library-with-the-keyword-recogniser-to-create-speech-recognition-the-problem-with-this-was-that-i-was-unable-to-get-the-recogniser-to-recognise-more-than-one-word-or-phrase-this-meant-that-i-would-not-be-able-to-create-multiple-phrases-such-as-wave-starting-and-building-towers">The real difficulty, however, came when I tried to implement voice recognition into the game. As suggested before, I was initially using Unity’s windows speech library with the keyword recogniser to create speech recognition. The problem with this was that I was unable to get the recogniser to recognise more than one word or phrase. This meant that I would not be able to create multiple phrases such as wave starting and building towers.</h6>
+
+<h3 id="the-solution">The Solution!</h3>
+
+<h6 id="the-holotoolkit-luckily-came-with-speech-recognition-scripts-that-i-could-use-to-easily-implement-speech-recognition-iunto-my-game-this-is-something-that-i-had-never-encountered-before-when-developing-for-hololens-but-i-found-it-really-simple-to-setup-firstly-i-added-the-speech-input-source-script-to-the-the-cameras-input-handler">The HoloToolkit luckily came with speech recognition scripts that I could use to easily implement speech recognition iunto my game. This is something that i had never encountered before when developing for HoloLens, but, I found it really simple to setup. Firstly, I added the speech input source script to the the cameras input handler.</h6>
+
+<p><img src="https://metrik.space/assets/speechinputsource.png" alt="developer mode" /></p>
+
+<h6 id="after-this-i-simply-created-three-keywords-start-wave-build-tower-and-build-missile-these-would-then-be-called-in-the-speech-input-handler-another-holotoolkit-script-attached-to-my-game-manager-gameobject-the-result-looked-like-this">After this, I simply created three keywords ‘Start Wave’, ‘Build Tower’ and ‘Build Missile’. These would then be called in the speech input handler (another HoloToolkit script) attached to my game manager GameObject. The result looked like this:</h6>
+
+<p><img src="https://metrik.space/assets/speechinputhandler.png" alt="developer mode" /></p>
+
+<h6 id="in-the-inspector-side-of-this-script-i-selected-each-keyword-and-set-a-function-to-run-every-time-the-keyword-was-called-when-the-next-wave-keyword-was-called-the-wavecompleted-function-was-called">In the inspector side of this script, I selected each keyword and set a function to run every time the keyword was called. When the ‘Next Wave’ keyword was called the WaveCompleted() function was called.</h6>
+
+<p><img src="https://metrik.space/assets/wavecompleted.png" alt="developer mode" /></p>
+
+<h6 id="the-wavecompleted-function-worked-very-simply-firstly-it-begins-the-spawnagent-coroutine-starts-the-wave-and-then-increases-the-wave-count-so-that-the-next-level-begins-when-the-start-wave-keyword-is-detected-as-well-as-this-the-script-checks-whether-there-are-any-more-waves-within-the-waves-array-if-there-are-no-longer-anymore-waves-the-wave-count-restarts-the-game-resets">The WaveCompleted() function worked very simply. Firstly, it begins the SpawnAgent coroutine (starts the wave) and then increases the wave count so that the next level begins when the ‘Start Wave’ keyword is detected. As well as this, the script checks whether there are any more waves within the ‘Waves’ array. If there are no longer anymore waves, the wave count restarts (the game resets).</h6>
+
+<h3 class="single-post-sub-head">Spawning Waves</h3>
+
+<h6 id="once-the-wavecompleted-function-is-completed-the-enemy-prefab-needs-to-be-instantiated-the-spawnagent-coroutine-that-is-called-requires-an-ienumerator-which-defines-the-wave-as-a-a-variable-after-this-the-ienumerator-checks-the-wave-count-and-runs-a-spawnenemy-function-once-this-has-been-completed-the-spawnagent-runs-the-spawnenemy-function-equal-to-the-waves-count-variable">Once the WaveCompleted() function is completed, the enemy prefab needs to be instantiated. The SpawnAgent coroutine that is called requires an IEnumerator which defines the ‘Wave’ as a a variable. After this, the IEnumerator checks the wave count and runs a SpawnEnemy function. Once this has been completed, The SpawnAgent runs the SpawnEnemy function equal to the waves count variable.</h6>
+
+<h6 id="the-spawnenemy-function-finds-the-enemy-prefab-and-instantiates-it-to-the-spawn-position-this-is-repeated-until-the-ienumerator-has-detected-that-the-wave-count-is-0-the-code-looks-like-this">The SpawnEnemy() function finds the enemy prefab and instantiates it to the spawn position. This is repeated until the IEnumerator has detected that the wave count is 0. The code looks like this:</h6>
+
+<p><img src="https://metrik.space/assets/instantiatewave.png" alt="developer mode" /></p>
+
+<h3 id="the-final-wave-spawn-result">The Final Wave Spawn result</h3>
+
+<h6 id="finally-i-created-a-series-of-different-cube-prefabs-of-different-colours-to-represent-varied-enemies-with-varied-speeds-and-then-setup-a-series-of-waves-using-these-prefabs-with-different-counts-and-rates-this-was-the-result">Finally, I created a series of different cube prefabs of different colours to represent varied enemies with varied speeds and then setup a series of waves using these prefabs with different counts and rates. This was the result:</h6>
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/p4fj9glkaMQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
+
+<h3 class="single-post-sub-head">Defining and Displaying Player Stats</h3>
+
+<p><img src="https://metrik.space/assets/playerstats.png" alt="developer mode" /></p>
+
+<h6 id="the-player-stats-script-simply-defines-the-number-of-lives-and-the-money-that-the-player-starts-with-both-of-these-are-static-variables-as-they-need-to-be-accessed-outside-of-the-player-stats-script-an-example-of-this-can-be-seen-in-the-attackermove-script-mentioned-earlier-where-the-lives-are-reduced-by-one-when-an-enemy-reaches-the-final-waypoint">The player stats script simply defines the number of lives and the money that the player starts with. Both of these are static variables as they need to be accessed outside of the player stats script. An example of this can be seen in the AttackerMove script mentioned earlier where the lives are reduced by one when an enemy reaches the final waypoint.</h6>
+
+<h3 class="single-post-sub-head">Player UI</h3>
+
+<p><img src="https://metrik.space/assets/livesui.png" alt="developer mode" />
+<img src="https://metrik.space/assets/moneyui.png" alt="developer mode" /></p>
+
+<h6 id="the-user-interface-scripts-are-extremely-simple-they-simply-turn-the-lives-and-money-variables-into-strings-that-are-displayed-on-the-canvas-this-canvas-is-displayed-over-the-camera-ie-over-the-view-of-the-hololens-this-was-used-to-create-a-visual-representation-of-these-variables-for-the-ease-of-the-user-as-white-is-the-easiest-font-colour-to-see-on-the-hololens-i-chose-to-opt-for-this-as-well-as-one-of-microsofts-suggested-fonts-i-did-have-some-issues-displaying-the-ui-as-it-appeared-differently-on-the-hololens-than-it-did-on-the-unity-scene-viewer-however-after-some-tinkering-i-was-able-to-configure-this-correctly">The user interface scripts are extremely simple. They simply turn the lives and money variables into strings that are displayed on the canvas. This canvas is displayed over the camera i.e. over the view of the HoloLens. This was used to create a visual representation of these variables for the ease of the user. As white is the easiest font colour to see on the HoloLens, i chose to opt for this as well as one of Microsofts suggested fonts. I did have some issues displaying the UI as it appeared differently on the HoloLens than it did on the Unity scene viewer. However, after some tinkering I was able to configure this correctly.</h6>
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/qK0rguNJce4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
+<p>TOWER Spawning</p>
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/dCE0lN4c7fU" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
+
+<h6 id="the-result-of-which-looked-like-this-the-videos-show-the-ui-in-action-with-the-reduction-of-lives-and-money-when-certain-requirements-are-met-this-will-be-discussed-later-on">The result of which looked like this. The videos show the UI in action with the reduction of lives and money when certain requirements are met. This will be discussed later on!</h6>
+
+<h3 class="single-post-sub-head">Buying Towers</h3>
+
+<h6 id="as-mentioned-earlier-the-towers-were-setup-to-be-bought-through-the-voice-command-buy-tower-and-buy-missile-similarly-the-the-next-wave-command-as-both-of-the-tower-purchasing-command-are-in-essence-the-same-code-i-will-only-discuss-the-code-for-the-build-tower-command">As mentioned earlier, the towers were setup to be bought through the voice command ‘Buy Tower’ and ‘Buy Missile’ similarly the the ‘Next Wave’ command. As both of the tower purchasing command are in essence the same code, I will only discuss the code for the ‘Build Tower’ command.</h6>
+
+<p><img src="https://metrik.space/assets/towerbuysetup.png" alt="developer mode" /></p>
+
+<h6 id="the-first-step-was-to-setup-a-series-of-variables-that-we-needed-to-write-the-script-both-of-the-tower-types-needed-to-be-public-as-i-needed-to-drag-the-prefab-into-the-field-within-the-inspector-as-for-the-objcamera-i-could-have-left-this-private-as-the-camera-is-found-within-the-script-however-i-kept-it-public-for-testing-to-ensure-that-my-camera-was-being-found-i-also-created-a-private-vector-named-spawn-position-used-to-deifine-where-the-tower-would-be-instantiated-as-well-as-a-private-integer-to-help-define-the-distance-i-wanted-spawn-position-to-be-from-the-camera">The first step was to setup a series of variables that we needed to write the script. Both of the tower types needed to be public as I needed to drag the prefab into the field within the inspector. As for the objcamera, I could have left this private as the camera is found within the script. However, I kept it public for testing to ensure that my camera was being found. I also created a private vector named spawn position, used to deifine where the tower would be instantiated as well as a private integer to help define the distance i wanted spawn position to be from the camera.</h6>
+
+<p><img src="https://metrik.space/assets/objcamerafind.png" alt="developer mode" /></p>
+
+<h6 id="inside-of-the-start-method-i-set-the-objcamera-to-find-the-camera-with-the-tag-main-camera-tags-can-be-set-in-the-inspector-which-is-what-i-done-with-my-mixed-reality-camera">Inside of the Start() method, I set the objcamera to find the camera with the tag ‘Main Camera’. Tags can be set in the inspector which is what I done with my mixed reality camera.</h6>
+
+<p><img src="https://metrik.space/assets/buytowerfunction.png" alt="developer mode" /></p>
+
+<h6 id="once-the-keyword-buy-tower-is-called-the-buytower-function-is-called-i-set-this-up-with-an-if-statement-that-checks-whether-the-player-has-more-or-equal-to-the-cost-of-the-tower-if-yes-the-cost-of-the-tower-is-subtracted-from-the-overall-stats-of-the-player-the-spawn-position-is-then-set-to-in-front-of-the-camera-depending-on-the-distancetocamera-variable-and-the-gameobject-is-instantiated">Once the keyword ‘Buy Tower’ is called, the BuyTower() function is called. I set this up with an if statement that checks whether the player has more or equal to the cost of the tower. If yes, the cost of the tower is subtracted from the overall stats of the player. The spawn position is then set to in front of the camera (depending on the DistanceToCamera variable) and the GameObject is instantiated.</h6>
+
+<p><img src="https://metrik.space/assets/towerworth.png" alt="developer mode" /></p>
+
+<h6 id="the-tower-costing-works-very-similar-to-the-player-stats-however-it-is-set-up-with-a-public-integer-so-that-i-was-able-to-change-the-cost-of-a-tower-prefab-without-having-to-write-a-new-script-for-each-tower">The tower costing works very similar to the player stats, however, it is set up with a public integer so that I was able to change the cost of a tower prefab without having to write a new script for each tower.</h6>
+
+<h6 id="the-buying-system-works-exactly-the-same-with-the-missile-turret-however-responds-to-the-voice-command-buy-missile">The buying system works exactly the same with the missile turret, however, responds to the voice command ‘Buy Missile’</h6>
+<h3 class="single-post-sub-head">Placing Towers and Moving the Board</h3>
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/g2MjC8sb19M" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
+
+<h6 id="another-important-factor-was-to-ensure-that-i-added-gesture-handling-to-the-application-so-that-the-user-can-move-the-holograms-towers-that-it-spawns-in-luckily-the-holotoolkit-comes-with-an-input-and-gesture-handler-script-already-writted-therefore-i-was-able-to-simply-add-a-handdraggable-script-to-my-gameobjects-to-get-the-result-seen-above-it-should-be-considered-however-that-gameobjects-require-some-sort-of-mesh-for-the-handdraggable-script-to-work">Another important factor was to ensure that I added gesture handling to the application so that the user can move the holograms (towers) that it spawns in. Luckily the HoloToolkit comes with an input and gesture handler script already writted. Therefore, i was able to simply add a HandDraggable script to my Gameobjects to get the result seen above. It should be considered, however, that Gameobjects require some sort of mesh for the HandDraggable script to work.</h6>
+
+<h3 class="single-post-sub-head">Tower Targeting</h3>
+
+<h6 id="having-setup-the-tower-spawning-and-movement-i-then-needed-to-create-a-way-for-the-towers-to-identify-enemies-and-target-them">Having setup the tower spawning and movement, I then needed to create a way for the towers to identify enemies and target them.</h6>
+
+<p><img src="https://metrik.space/assets/targetsetup.png" alt="developer mode" /></p>
+
+<h6 id="before-the-start-method-i-defined-two-variables-a-public-string-of-the-tag-enemy-and-a-transform-called-target">Before the start() method, I defined two variables, a public string of the tag ‘Enemy’ and a Transform called target.</h6>
+
+<p><img src="https://metrik.space/assets/updatetargetfunction.png" alt="developer mode" /></p>
+
+<h6 id="after-this-i-created-a-script-that-sets-the-target-to-find-a-gameobject-with-the-tag-enemy-the-script-then-finds-the-nearest-gameobject-with-the-tag-enemy-and-works-out-whether-it-is-within-the-towers-range-variable-if-is-it-that-enemy-becomes-the-target-if-not-the-script-returns-null-and-there-is-no-target-enemy-as-well-as-this-i-set-up-a-gizmo-so-that-i-could-see-the-range-og-each-tower-within-the-inspector-for-testing-purposes-the-result-looked-like-this">After this, I created a script that sets the target to find a GameObject with the tag ‘Enemy’. The script then finds the nearest GameObject with the tag ‘Enemy’ and works out whether it is within the towers range variable. If is it, that Enemy becomes the target. If not the script returns null and there is no target enemy. As well as this, I set up a gizmo so that i could see the range og each tower within the inspector for testing purposes. The result looked like this:</h6>
+
+<p><img src="https://metrik.space/assets/towerrange.png" alt="developer mode" /></p>
+
+<p><img src="https://metrik.space/assets/towerrangegizmo.png" alt="developer mode" /></p>
+
+<h6 id="after-some-tinkering-with-the-range-settings-i-managed-to-reduce-the-size-of-the-towers-range-to-improve-gameplay">After some tinkering with the range settings, I managed to reduce the size of the towers range to improve gameplay.</h6>
+
+<h3 class="single-post-sub-head">Tower Shooting</h3>
+
+<h6 id="once-the-targeting-was-set-up-i-needed-to-make-the-tower-fire-projectiles-at-the-target-enemy-i-created-a-series-of-variables-that-i-wanted-to-be-able-to-edit-for-each-tower-prefab">Once the targeting was set up, I needed to make the tower fire projectiles at the target enemy. I created a series of variables that I wanted to be able to edit for each tower prefab:</h6>
+
+<p><img src="https://metrik.space/assets/towervariables.png" alt="developer mode" /></p>
+
+<p><img src="https://metrik.space/assets/firerate.png" alt="developer mode" /></p>
+
+<h6 id="i-then-created-a-simple-script-that-runs-a-shoot-function-if-the-countdown-timer-is-at-0-it-then-restarts-the-countdown-and-repeats-the-next-stage-was-to-fire-a-projectile">I then created a simple script that runs a shoot function if the countdown timer is at 0. It then restarts the countdown and repeats. The next stage was to fire a projectile.</h6>
+
+<p><img src="https://metrik.space/assets/towershootfunction.png" alt="developer mode" /></p>
+
+<h6 id="the-tower-shoot-function-simply-instantiates-a-bullet-prefab-at-the-fire-point-of-the-tower-plays-a-sound-clip-and-then-moves-towards-the-target">The tower shoot function simply instantiates a bullet prefab at the fire point of the tower, plays a sound clip and then moves towards the target.</h6>
+
+<h3 class="single-post-sub-head">Enemy Health</h3>
+
+<p><img src="https://metrik.space/assets/enemyhealth.png" alt="developer mode" /></p>
+
+<h6 id="before-i-could-implement-bullet-damage-into-the-game-i-needed-to-setup-the-health-stats-of-my-enemy-prefabs-before-the-start-function-variables-are-setup-for-health-speed-and-worth-once-again-these-are-all-public-so-that-i-could-create-multiple-prefabs-of-enemies-without-changing-any-of-the-code-as-well-as-this-i-created-a-death-animation-to-play-when-the-enemy-dies-more-on-this-later-the-damage-function-is-called-when-the-projectile-hits-the-enemy-it-simply-deducts-the-bullet-damage-from-the-health-of-the-enemy-when-the-enemies-health-reaches-0-a-death-animation-is-played-and-the-gameobject-is-destroyed">Before I could implement bullet damage into the game, I needed to setup the health stats of my enemy prefabs. Before the start function variables are setup for health, speed and worth. Once again, these are all public so that i could create multiple prefabs of enemies without changing any of the code. As well as this I created a death animation to play when the enemy dies (more on this later). The damage function is called when the projectile hits the enemy. It simply deducts the bullet damage from the health of the enemy. When the enemies health reaches 0, a death animation is played and the GameObject is destroyed.</h6>
+
+<h6 id="the-death-animations-were-created-with-unitys-inbuilt-particle-system-i-am-a-little-bit-of-a-novice-with-this-side-of-unity-however-as-i-was-only-blowing-up-cubes-i-created-a-really-simple-cube-exploding-effect-with-the-material-of-the-prefab-i-was-destroying-the-result-looked-like-this">The death animations were created with Unity’s inbuilt particle system. I am a little bit of a novice with this side of Unity, however, as I was only blowing up cubes, I created a really simple cube exploding effect with the material of the prefab I was destroying. The result looked like this:</h6>
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/JLo9Wdmjp_8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
+
+<h3 class="single-post-sub-head">Bullet Seeking and Damage</h3>
+
+<p><img src="https://metrik.space/assets/bulletvariablesandseek.png" alt="developer mode" /></p>
+
+<h6 id="to-make-the-bullet-move-towards-the-enemy-i-needed-to-set-up-a-series-of-variables-such-as-speed-damage-and-radius-after-this-the-script-finds-the-seek-function-from-the-tower-script-and-defines-the-target-after-this-the-bullet-prefab-moves-towards-the-target-which-is-affected-by-the-bullet-speed-once-the-target-is-hit-it-runs-a-function-called-hittarget">To make the bullet move towards the enemy, I needed to set up a series of variables such as speed, damage and radius. After this the script finds the seek function from the tower script and defines the target. After this, the bullet prefab moves towards the target which is affected by the bullet speed. Once the target is hit, it runs a function called HitTarget().</h6>
+
+<p><img src="https://metrik.space/assets/hittarget.png" alt="developer mode" /></p>
+
+<h6 id="the-hittarget-function-plays-an-animation-and-then-must-work-out-whether-the-explosion-radius-is-above-0-if-it-is-it-runs-the-explode-function-if-not-it-moves-straight-to-the-damage-function-once-this-has-been-completed-the-gameobject-is-destroyed">The HitTarget() function plays an animation and then must work out whether the explosion radius is above 0. If it is, it runs the Explode() function, if not, it moves straight to the Damage() function. Once this has been completed the GameObject is destroyed.</h6>
+
+<h6 id="the-explode-function-puts-all-of-the-gameobjects-with-the-tag-enemy-into-an-array-if-they-are-within-the-explosion-radius-then-for-each-enemy-it-runs-the-damage-function">The Explode() function puts all of the GameObjects with the tag ‘Enemy’ into an array if they are within the explosion radius. Then, for each enemy it runs the Damage() function.</h6>
+
+<h6 id="the-damage-function-locates-the-enemy-and-sends-the-damage-amount-the-the-enemy-script-where-the-damage-is-handled">The Damage() function locates the ‘Enemy’ and sends the damage amount the the Enemy script where the damage is handled.</h6>
+
+<h3 id="bringing-it-all-together">Bringing it all together!</h3>
+
+<h6 id="the-videos-below-will-show-the-results-of-using-an-explosion-radius-of-over-0-in-comparison-to-having-an-explosion-radius-of-0-the-towers-have-been-set-up-as-different-prefabs-the-tower-and-the-missile-tower-which-means-that-they-have-different-speeds-damages-and-radius-thanks-to-the-editable-public-variables-within-the-inspector-as-well-as-this-each-tower-has-its-own-sound-effect-and-impact-animation">The videos below will show the results of using an explosion radius of over 0 in comparison to having an explosion radius of 0. The towers have been set up as different prefabs. The tower, and the missile tower which means that they have different speeds, damages and radius’ thanks to the editable public variables within the inspector. As well as this each tower has its own sound effect and impact animation.</h6>
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/0hEbij8MeOA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/0vxt95BpYlo" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
+
+<h3 class="single-post-sub-head">Victory and Defeat Requirements</h3>
+
+<h6 id="the-victory-and-loss-system-was-extremely-basic-if-i-had-had-more-time-i-would-have-liked-to-implement-defeat-and-victory-ui-elements-into-the-game-with-a-restart-button-and-potentially-a-leaderboard-too-however-due-to-the-problems-encountered-with-vuforia-in-the-first-half-of-the-semester-my-development-time-was-cut-short-therefore-i-set-up-a-simple-system-for-victory-and-loss-when-the-final-wave-is-completed-the-game-restarts-the-wave-count-whereas-when--the-players-lives-reach-0-the-game-will-restart-entirely">The victory and loss system was extremely basic. If I had had more time, I would have liked to implement defeat and victory ui elements into the game with a restart button and potentially a leaderboard too. However, due to the problems encountered with Vuforia in the first half of the semester, my development time was cut short. Therefore, I set up a simple system for victory and loss. When the final wave is completed the game restarts the wave count whereas when  the players lives reach 0 the game will restart entirely.</h6>
+
+<p><img src="https://metrik.space/assets/sceneend.png" alt="developer mode" /></p>
+
+<h6 id="i-used-unitys-scene-manager-library-to-create-a-simple-script-that-restarted-the-active-scene-when-the-player-reached-0-lives">I used Unity’s scene manager library to create a simple script that restarted the active scene when the player reached 0 lives.</h6>
+
+<h3 class="single-post-sub-head">User Testing</h3>
+
+<h6 id="although-the-game-was-play-tested-throughout-development-i-ran-two-external-user-testing-sessions-one-with-a-group-fo-friends-and-one-at-the-end-of-year-show">Although the game was play tested throughout development, I ran two external user testing sessions. One with a group fo friends and one at the end of year show.</h6>
+
+<h3 id="friends-testing">Friends Testing</h3>
+
+<p><img src="https://metrik.space/assets/mixedrealitydefence.jpg" alt="developer mode" /></p>
+
+<h6 id="the-main-issue-found-with-user-testing-was-that-being-able-to-move-the-board-for-the-entire-game-would-mean-that-they-would-sometimes-accidentally-move-it-causing-for-all-of-the-towers-to-move-out-of-place-for-this-reason-i-decided-to-disable-the-handdraggable-script-on-the-board-after-the-first-wave-begins">The main issue found with user testing was that being able to move the board for the entire game would mean that they would sometimes accidentally move it causing for all of the towers to move out of place. For this reason, i decided to disable the HandDraggable script on the board after the first wave begins.</h6>
+
+<p><img src="https://metrik.space/assets/handdraggable.png" alt="developer mode" /></p>
+
+<h6 id="other-than-this-the-only-changes-that-i-needed-to-make-were-various-balancing-issues-reducing-certain-wave-speeds-count-and-rates-as-well-as-reducing-the-worth-of-a-lot-of-unity">Other than this, the only changes that i needed to make were various balancing issues. Reducing certain wave speeds, count and rates as well as reducing the worth of a lot of unity.</h6>
+
+<h3 id="friends-testing-1">Friends Testing</h3>
+
+<h6 id="the-game-was-also-tested-at-the-end-of-year-show-however-due-to-the-noise-inside-the-building-the-voice-recognition-did-not-seem-to-work-therefore-i-was-unable-to-gather-any-beneficial-feedback">The game was also tested at the end of year show, however, due to the noise inside the building, the voice recognition did not seem to work. Therefore, I was unable to gather any beneficial feedback.</h6>
+
+<h3 class="single-post-sub-head">Final opinions</h3>
+
+<h6 id="overall-i-was-really-pleased-with-the-final-outcome-of-the-project-which-can-be-seen-at-the-top-of-the-page-i-think-that-i-learnt-a-lot-about-unity-development-as-well-as-building-applications-for-hololens-as-well-as-this-i-found-the-project-really-fun-to-build-so-it-was-a-great-experience">Overall, I was really pleased with the final outcome of the project which can be seen at the top of the page. I think that I learnt a lot about Unity development as well as building applications for HoloLens. As well as this, I found the project really fun to build so it was a great experience!</h6>
+
+<h3 class="single-post-sub-head">Changes</h3>
+
+<h6 id="given-more-time-i-would-have-liked-to-change-the-victory-and-defeat-sections-of-the-game-as-they-were-a-little-rushed-as-well-as-this-it-would-have-been-better-to-use-a-different-enemy-movement-system-as-the-enemies-can-move-through-the-towers-that-the-user-places-down-which-makes-the-game-look-a-little-underdeveloped">Given more time, I would have liked to change the victory and defeat sections of the game as they were a little rushed. As well as this, it would have been better to use a different enemy movement system as the enemies can move through the towers that the user places down which makes the game look a little underdeveloped.</h6>
+
+<h3 class="single-post-sub-head">Future Plans</h3>
+
+<h6 id="in-future-i-would-like-to-add-a-few-more-tower-types-tower-upgrades-and-different-enemies-this-would-really-help-to-flesh-out-the-game-and-massively-improve-player-enjoymentn-i-think-that-i-will-continue-to-work-on-this-project-over-the-summer-and-potentially-ship-it-the-microsoft-store">In future, I would like to add a few more tower types, tower upgrades and different enemies. This would really help to flesh out the game and massively improve player enjoyment!n I think that I will continue to work on this project over the summer and potentially ship it the Microsoft Store.</h6>
+
+<h6 id="see-the-code-on-github">See the code on <a href="https://github.com/Reconkiwi/Football-Wordpress-Theme">GitHub</a></h6>
+<h6 id="download-the-visual-studio-files-on-github">Download the visual studio files on <a href="https://github.com/Reconkiwi/Football-Wordpress-Theme">GitHub</a></h6>
+
+<h3 class="single-post-sub-head">Useful Links</h3>
+
+<h6 id="here-are-a-few-useful-links-that-i-used-to-get-up-and-running">Here are a few useful links that I used to get up and running</h6>
+
+<ul>
+  <li>https://www.youtube.com/watch?v=beuoNuK2tbk&amp;list=PLPV2KyIb3jR4u5jX8za5iU1cqnQPmbzG0</li>
+  <li>https://docs.microsoft.com/en-us/windows/mixed-reality/install-the-tools</li>
+  <li>https://www.youtube.com/watch?v=ZeeJLsEXjno</li>
+  <li>https://www.youtube.com/watch?v=wS2LBCcnSQs&amp;list=PLX-uZVK_0K_4uNwvKian1bscP9mVvOp1M&amp;index=2</li>
+  <li>https://www.youtube.com/watch?v=1zN_9UHKgws</li>
+  <li>https://unity3d.com/partners/microsoft/mixed-reality</li>
+  <li>https://github.com/Microsoft/MixedRealityToolkit-Unity</li>
+  <li>https://medium.freecodecamp.org/how-to-create-your-first-hololens-app-with-unity-1afa364843d4</li>
+</ul>
+
+<h3 class="single-post-sub-head">NLT</h3>
+
+<p><a href="NLT2_Document_Ben_Goodwin.docx">Download the NTL HERE!</a></p>
+
 </div>
 </div>
 </div>

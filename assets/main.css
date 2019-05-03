@@ -17,7 +17,8 @@ width: 100vw;
 a {
 font-family: 'Rajdhani', sans-serif;
 font-weight: bold;
-
+color: #e83e8c !important;
+text-decoration: none;
 }
 
 h1 {
@@ -410,10 +411,15 @@ margin-top: 1vh;
 
 }
 
+ a {
+
+  color: #e83e8c !important;
+}
+
 .singe_post_cont iframe{
 
   width: 80%;
-  height: auto;
+  height: 1%;
   min-height: 50vh;
   border: 2px solid #313639;
   margin-left: 7.5vw;

@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/96/three.js"> </script>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://metrik.space/assets/main.css">
+    <link href="https://fonts.googleapis.com/css?family=Rajdhani:600" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.10.0/js/lightbox.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.10.0/css/lightbox.css" rel="stylesheet">
+    <link rel="apple-touch-icon" sizes="60x60" href="https://metrik.space/assets/favicon.ico/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="https://metrik.space/assets/favicon.ico/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="https://metrik.space/assets/favicon.ico/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="https://metrik.space/assets/favicon.ico/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="https://metrik.space/assets/favicon.ico/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="https://metrik.space/assets/favicon.ico/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="https://metrik.space/assets/favicon.ico/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="https://metrik.space/assets/favicon.ico/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="https://metrik.space/assets/favicon.ico/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://metrik.space/assets/favicon.ico/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="https://metrik.space/assets/favicon.ico/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="https://metrik.space/assets/favicon.ico/favicon-16x16.png">
+    <link rel="manifest" href="/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="https://metrik.space/assets/favicon.ico/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+    <title>METRIK</title>
+    <meta name="description" content="Welcome to Metrik. My name is Ben Goodwin. I am a 21 year old student developer studying at the University of Winchester. Although my course is mainly focussed on web development, I spend a lot of my time experimenting with the development of AR, VR and MR applications as well as various 2D and 3D game projects.">
+    <meta name="keywords" content="developer,student,code,design,development,designer,bristol,client,3D,web,websites,augmented reality,virtual reality,mixed reality,bath,winchester,vufroia,unity3d,unity,portfolio">
+
+  </head>
+  <body>
+    <section class="navigation" id="navbar">
+    <div class="nav-container">
+      <div class="brand">
+
+      </div>
+      <nav>
+        <div class="nav-mobile">
+          <a id="nav-toggle" href="#!"><span></span></a>
+        </div>
+        <ul class="nav-list">
+          <!-- Setting the links to #! will ensure that no action takes place on click. -->
+          <li><a href="https://metrik.space/">HOME</a></li>
+          <li><a href="https://metrik.space/#posts">PORTFOLIO</a></li>
+          <li><a href="https://metrik.space/#about">ABOUT ME</a></li>
+          <li><a href="https://metrik.space/#contact">CONTACT</a></li>
+          <li><a href="https://metrik.space/#cv">CV</a></li>
+        </ul>
+      </nav>
+    </div>
+  </section>
+      <script>
+      (function($) { // Begin jQuery
+    $(function() { // DOM ready
+      // If a link has a dropdown, add sub menu toggle.
+      $('nav ul li a:not(:only-child)').click(function(e) {
+        $(this).siblings('.nav-dropdown').toggle();
+        // Close one dropdown when selecting another
+        $('.nav-dropdown').not($(this).siblings()).hide();
+        e.stopPropagation();
+      });
+      // Clicking away from dropdown will remove the dropdown class
+      $('html').click(function() {
+        $('.nav-dropdown').hide();
+      });
+      // Toggle open and close nav styles on click
+      $('#nav-toggle').click(function() {
+        $('nav ul').slideToggle();
+      });
+      // Hamburger to X toggle
+      $('#nav-toggle').on('click', function() {
+        this.classList.toggle('active');
+      });
+    }); // end DOM ready
+  })(jQuery); // end jQuery
+      </script>
+      <script>
+  window.onscroll = function() {myFunction()};
+
+  var navbar = document.getElementById("navbar");
+  var sticky = navbar.offsetTop;
+
+  function myFunction() {
+    if (window.pageYOffset >= sticky) {
+      navbar.classList.add("sticky")
+    }
+  }
+  </script>
+
+
+	    <div class="container singe_post_cont" style="margin-top: 15vh; background-color: transparent !important; color: #eee9e9;">
+  <div class="row">
+    <div class="col-12">
+
+  <div style="color: #313639;">
+I was asked to compile the best of my work into an online and printed portfolio. Here are the results!
+</div>
+
+<div class="single-post-header" style="background-color: #ec3b83; margin-bottom: 10vh;">
+<iframe src="https://metrik.space/assets/printedportfolio.pdf"></iframe>
+
+<h1 class="post_title" style="text-align: center; color: #eee9e9;">Professional Portfolio - Y3S2</h1>
+</div>
+
+</div>
+</div>
+</div>
+
+
+<script>
+	var scroll = new SmoothScroll('a[href*="#"]');
+</script>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.compatibility.js"></script>
+
+</body>
+</html>
+

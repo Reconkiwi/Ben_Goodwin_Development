@@ -419,8 +419,8 @@ margin-top: 1vh;
 .singe_post_cont iframe{
 
   width: 80%;
-  height: 1%;
-  min-height: 50vh;
+  height: 20%;
+  min-height: 65vh;
   border: 2px solid #313639;
   margin-left: 7.5vw;
   margin-right: 7.5vw;
